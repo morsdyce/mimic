@@ -1,0 +1,37 @@
+# Temp files
+tmp/**
+.tmp/**
+
+# Sass
+.sass-cache
+
+# Logs
+logs
+*.log
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+node_modules
+
+# OS generated files
+.DS_STORE
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Editors stuff
+.idea
+.project
+
+# Build stuff
+/dist
+/app/dist
+
+# Testing
+/coverage
+/test/results
+/.test
