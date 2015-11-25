@@ -1,5 +1,5 @@
 {
-  "name": "shrederjs",
+  "name": "shredderjs",
   "version": "0.0.1",
   "description": "Bad ass client side mocking solution",
   "main": "app.js",
