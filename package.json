@@ -1,0 +1,55 @@
+{
+  "name": "shrederjs",
+  "version": "0.0.1",
+  "description": "Bad ass client side mocking solution",
+  "main": "app.js",
+  "babel": {
+    "stage": 1
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "webpack-dev-server --hot --progress",
+    "prebuild": "npm prune; npm install",
+    "build": "NODE_ENV=production webpack --progress",
+    "prebuildwin": "npm prune&npm install",
+    "buildwin": "set NODE_ENV=production&webpack --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/500tech/shredderjs.git"
+  },
+  "author": "500Tech <info@500tech.com>",
+  "contributors": [
+    {
+      "name": "Alex Ilyaev",
+      "email": "alexilyaev@gmail.com"
+    },
+    {
+      "name": "Maayan Glikser",
+      "email": "maayan@500tech.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "2.0.0",
+    "babel-core": "5.8.20",
+    "babel-loader": "5.3.2",
+    "css-loader": "0.19.0",
+    "file-loader": "0.8.4",
+    "fs-extra": "0.26.0",
+    "html-loader": "0.3.0",
+    "html-webpack-plugin": "1.6.1",
+    "json-loader": "0.5.2",
+    "node-sass": "3.3.2",
+    "raw-loader": "0.5.1",
+    "sass-loader": "2.0.1",
+    "style-loader": "0.12.4",
+    "url-loader": "0.5.6",
+    "webpack": "1.12.1",
+    "webpack-dev-server": "1.12.0"
+  }
+}
