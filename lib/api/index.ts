@@ -1,3 +1,5 @@
+import { ShredderStorage } from "./storage";
+
 export default class ShredderApi {
 
   version:string;
@@ -10,6 +12,27 @@ export default class ShredderApi {
 
   sayHello() {
     console.log('Hello API');
+  }
+
+  exportScenarios() {
+    const blob = new Blob(
+      [ShredderStorage.rawData()],
+      { type: 'application/json' }
+    );
+
+    let link = document.createElement('a');
+
+    link.download = 'scenarios.json';
+    link.href     = URL.createObjectURL(blob);
+
+    link.click();
+    link.remove();
+
+    link = undefined;
+  }
+
+  importScenarios() {
+    // TODO: Implement import from file
   }
 
 }
