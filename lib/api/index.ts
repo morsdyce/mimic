@@ -1,11 +1,11 @@
-export default class ShredderApi {
+export default class ShredderAPI {
 
   version:string;
   packageName:string;
 
   constructor() {
     this.version = '0.0.1';
-    this.packageName = 'ShredderApi'
+    this.packageName = 'ShredderAPI'
   }
 
   sayHello() {
@@ -16,4 +16,4 @@ export default class ShredderApi {
 
 console.log('API LOADED');
 
-export const api = new ShredderApi();
+export const API = new ShredderAPI();
