@@ -190,3 +190,25 @@ A user should be able to see the history of changes of each rule/set and opt to 
 
 A user could use special test helpers to load configurations from local files/urls and define the active rules or rule set.
 
+# Post Release Features
+
+## Dynamic mocks
+
+A user should have the ability to use a templating language defined by Shredder to allow using Parameters/Headers/Random generated data in mocked responses.
+
+As well as defining conditional blocks to change responses
+
+for example:
+
+```
+{
+  id: ${ random.id() }
+  user: ${params.name},
+  <if condition="params.name === 'joe'>
+    role: "admin"
+  </if>
+  <else>
+    role: "user"
+  </else>
+}
+```
