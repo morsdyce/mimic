@@ -2,16 +2,18 @@ import { ShredderStorage } from './storage';
 
 class XHRInterceptor {
   constructor() {
-    const rules = ShredderStorage.getRules();
+    const scenarios = ShredderStorage.getEnabledScenarios();
 
     xhook.before((request, responder) => {
-      for (let rule of rules) {
-        const methodsMatch = request.method === rule.request.method;
-        const urlsMatch    = request.url === rule.request.url;
-        const paramsMatch  = this.checkParamsEquality(request.body, rule.request.parameters);
+      for (let scenario of scenarios) {
+        for (let rule of scenario.rules) {
+          const methodsMatch = request.method === rule.request.method;
+          const urlsMatch    = request.url === rule.request.url;
+          const paramsMatch  = this.checkParamsEquality(request.body, rule.request.parameters);
 
-        if (methodsMatch && urlsMatch && paramsMatch && rule.active) {
-          return this.buildResponse(responder, rule.response);
+          if (methodsMatch && urlsMatch && paramsMatch && rule.active) {
+            return this.buildResponse(responder, rule.response);
+          }
         }
       }
 
@@ -50,12 +52,12 @@ class XHRInterceptor {
         const regex = responseParams[key] ? new RegExp(responseParams[key]) : null;
 
         if (regex && !requestParams[key].match(regex)) {
-          return false
+          return false;
         }
-      })
+      }
 
       return true;
-    } catch {
+    } catch (err) {
       return true;
     }
   }
