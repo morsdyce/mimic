@@ -1,48 +1,64 @@
-function _getRulesFromStorage() {
-  return JSON.parse(localStorage.getItem(`${ location.origin }-shredder`))
-}
+import { ShredderStorage } from './storage';
 
-function _checkParamsEquality(requestBody = {}, responseParams) {
-  const requestParams = JSON.parse(requestBody);
-  let isEqual = true;
+class XHRInterceptor {
+  constructor() {
+    const rules = ShredderStorage.getRules();
 
-  Object.keys(requestParams).forEach((key) => {
-    const regex = responseParams[key] ? new RegExp(responseParams[key]) : null;
+    xhook.before((request, responder) => {
+      for (let rule of rules) {
+        const methodsMatch = request.method === rule.request.method;
+        const urlsMatch    = request.url === rule.request.url;
+        const paramsMatch  = this.checkParamsEquality(request.body, rule.request.parameters);
 
-    if (regex && !requestParams[key].match(regex)) {
-      isEqual = false;
-    }
-  })
+        if (methodsMatch && urlsMatch && paramsMatch && rule.active) {
+          return this.buildResponse(responder, rule.response);
+        }
+      }
 
-  return isEqual;
-}
-
-function _createResponse(cb, responseObject) {
-  const response = {
-    status: responseObject.statusCode || 200,
-    data: JSON.stringify(responseObject.body || {}),
-    headers: responseObject.headers || {}
-  };
-
-  if (responseObject.delay > 0) {
-    return setTimeout(() => cb(response), responseObject.delay);
+      return responder()
+    });
   }
 
-  return cb(response);
-}
-
-const rules = _getRulesFromStorage();
-
-xhook.before((request, responder) => {
-  for (let rule of rules) {
-    const methodsMatch = request.method === rule.request.method;
-    const urlsMatch    = request.url === rule.request.url;
-    const paramsMatch  = _checkParamsEquality(request.body, rule.request.parameters);
-
-    if (methodsMatch && urlsMatch && paramsMatch) {
-      return _createResponse(responder, rule.response);
-    }
+  install() {
+    xhook.activate();
   }
 
-  return responder()
-});
+  uninstall() {
+    xhook.deactivate();
+  }
+
+  buildResponse(responder, responseRule) {
+    const response = {
+      status: responseRule.statusCode || 200,
+      data: JSON.stringify(responseRule.body || {}),
+      headers: responseRule.headers || {}
+    };
+
+    if (responseRule.delay > 0) {
+      return setTimeout(() => responder(response), responseRule.delay);
+    }
+
+    return responder(response);
+  }
+
+  checkParamsEquality(requestBody = {}, responseParams) {
+    try {
+      const requestParams = JSON.parse(requestBody);
+      const parameters    = Object.keys(requestParams);
+
+      for (let key of parameters) {
+        const regex = responseParams[key] ? new RegExp(responseParams[key]) : null;
+
+        if (regex && !requestParams[key].match(regex)) {
+          return false
+        }
+      })
+
+      return true;
+    } catch {
+      return true;
+    }
+  }
+}
+
+export default new XHRInterceptor();
