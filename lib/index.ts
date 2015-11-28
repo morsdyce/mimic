@@ -1,9 +1,8 @@
-class App {
+import API from 'api/index';
+import bootstrapUI from 'ui/index';
 
-  version:string;
+// bootstrap UI
+bootstrapUI();
 
-  constructor() {
-    this.version = '0.0.1';
-  }
-
-}
+// export API
+export const api = new API();

@@ -6,7 +6,10 @@ const config = {
 
   // set the context
   context: libPath,
-  entry: 'index.ts',
+  entry: {
+    'shredder.api': ['api/index.ts'],
+    'shredder': 'index.ts'
+  },
 
   // enable loading modules relatively (without the ../../ prefix)
   resolve: {
@@ -15,8 +18,10 @@ const config = {
   },
 
   output: {
-    libraryTarget: "commonjs2",
-    library: "Shredder"
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    libraryTarget: 'umd',
+    library: 'Shredder'
   },
 
   module: {
@@ -64,7 +69,7 @@ const config = {
 
   // webpack dev server configuration
   devServer: {
-    contentBase: "./lib",
+    contentBase: './lib',
     colors: true,
     noInfo: true,
     inline: true

@@ -7,7 +7,7 @@
     "prestart": "npm install",
     "start": "NODE_ENV=development webpack-dev-server",
     "prebuild": "npm prune; npm install",
-    "build": "NODE_ENV=production webpack -p dist",
+    "build": "NODE_ENV=production webpack -p",
     "prebuildwin": "npm prune&npm install",
     "buildwin": "set NODE_ENV=production&webpack --progress"
   },
