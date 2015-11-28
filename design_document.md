@@ -61,6 +61,7 @@ Initially the following parameters will be provided:
 1. Status Code
 1. Delay
 1. Response Data
+1. Response Headers
 1. Response Name
 1. Active
 
