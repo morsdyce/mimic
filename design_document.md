@@ -62,16 +62,22 @@ Initially the following parameters will be provided:
 1. Delay
 1. Response Data
 1. Response Headers
-1. Response Name
+1. Request Parameters
 1. Active
 
 In addition an Id field will also be generated with GUID identifier in order to prevent conflicts between rules. 
 
-Whenever an XHR is requested with the correct parameters (URL, Method) it should catch the request and return a fake response
+Whenever an XHR is requested with the correct parameters (URL, Method, Parameters) it should catch the request and return a fake response
 with the given parameters (Status Code, Delay, Response Data).
 
-A user can add multiple mocks for the same URL aslong as the mock name is different.
-If this is the first mock added to a URL/Method combination the mock should be set to active by default.
+A user can add multiple mocks for the same URL aslong as the mock key is different.
+
+The mock key should be composed from the following parameters:
+1. Method
+1. URL
+1. Parameter keys
+
+When a mock is created it should be set to active by default.
 
 ## Selecting an active mock rule
 
