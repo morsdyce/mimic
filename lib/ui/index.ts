@@ -3,9 +3,9 @@ import { ShredderStorage } from '../api/storage';
 
 class ShredderUI {
 
-  version:string;
-  packageName:string;
-  API:API;
+  version: string;
+  packageName: string;
+  API: API;
 
   constructor() {
     this.version = '0.0.1';
