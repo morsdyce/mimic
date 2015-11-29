@@ -17,7 +17,7 @@ class ShredderUI {
 
   exportScenarios() {
     const blob = new Blob(
-        [ShredderStorage.rawData()],
+        [ShredderStorage.getRaw()],
         { type: 'application/json' }
     );
 
