@@ -22,7 +22,7 @@ order to streamline development of frontend applications regardless of the appli
 
 
 ## Installation guidelines
-The library should have only a single point of entry in which it will include all of its resources such as 
+The library should have only a single point of entry in which it will include all of its resources such as
 javascript, stylesheets and additional assets.
 
 As well as zero configuration setup.
@@ -53,7 +53,7 @@ Whenever an XHR request occures in the application shredderjs should capture it 
 
 ## Add Mock Rule
 
-A user should be able to add an XHR request which shredderjs will override. 
+A user should be able to add an XHR request which shredderjs will override.
 Initially the following parameters will be provided:
 
 1. URL
@@ -65,7 +65,7 @@ Initially the following parameters will be provided:
 1. Request Parameters
 1. Active
 
-In addition an Id field will also be generated with GUID identifier in order to prevent conflicts between rules. 
+In addition an Id field will also be generated with GUID identifier in order to prevent conflicts between rules.
 
 Whenever an XHR is requested with the correct parameters (URL, Method, Parameters) it should catch the request and return a fake response
 with the given parameters (Status Code, Delay, Response Data).
@@ -122,34 +122,48 @@ An initial structure might look like this:
 ```
 {
   version: 1,
-  rules: [
-    {
-      id: '033ec4b7-1851-4fd2-84a0-2a6f55e1474f',
-      url: 'http://www.google.com',
-      method: 'GET',
-      statusCode: 200,
-      delay: 0,
-      response: 'Woop woop',
-      name: 'GET Good response',
-      active: true
-    },
-    {
-      id: 'ae44f1d7-e8d3-4e8e-b01a-7e622be9f2a9',
-      url: 'http://www.google.com',
-      method: 'GET',
-      statusCode: 200,
-      delay: 0,
-      response: 'Gotcha',
-      name: 'GET Bad response',
-      active: false
-    }
-  ],
   scenarios: [
-   {
-     name: 'My awesome scenario',
-     rules: ['033ec4b7-1851-4fd2-84a0-2a6f55e1474f', 'ae44f1d7-e8d3-4e8e-b01a-7e622be9f2a9'],
-     enabled: true
-   }
+    {
+      id: '218efaac-66a3-90bc-110f-b87182ce27fa',
+      name: 'My awesome scenario',
+      enabled: true,
+      rules: [
+        {
+          id: '033ec4b7-1851-4fd2-84a0-2a6f55e1474f',
+          active: true,
+          request: {
+            method: 'GET',
+            url: 'http://www.google.com',
+            parameters: {},
+            headers: {},
+          },
+          response: {
+            statusCode: 200,
+            delay: 0,
+            body: 'Woop woop',
+            headers: {}
+          }
+        },
+        {
+          id: 'ae44f1d7-e8d3-4e8e-b01a-7e622be9f2a9',
+          active: false,
+          request: {
+            method: 'POST',
+            url: 'http://www.google.com/search',
+            parameters: {
+              token: 'some post query'
+            },
+            headers: {}
+          },
+          response: {
+            statusCode: 200,
+            delay: 0,
+            body: 'Gotcha',
+            headers: {}
+          }
+        }
+      ]
+    }
   ]
 }
 ```
