@@ -23,7 +23,7 @@ class ShredderUI {
 
     let link = document.createElement('a');
 
-    link.download = 'scenarios.json';
+    // link.download = 'scenarios.json';
     link.href     = URL.createObjectURL(blob);
 
     link.click();

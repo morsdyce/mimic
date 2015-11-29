@@ -5,7 +5,7 @@
     "experimentalDecorators": true,
     "sourceMap": true
   },
-  "exclude": [
-    "node_modules"
+  "files": [
+  	"lib/index.ts"
   ]
 }
