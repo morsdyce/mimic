@@ -1,8 +1,8 @@
-import { ShredderStorage } from './storage';
+import { Scenarios } from './scenarios';
 
 class XHRInterceptor {
   constructor() {
-    const rules = ShredderStorage.getRules();
+    const rules = Scenarios.currentScenario.rules;
 
     xhook.before((request, responder) => {
       for (let rule of rules) {
@@ -15,7 +15,7 @@ class XHRInterceptor {
         }
       }
 
-      return responder()
+      return responder();
     });
   }
 
@@ -34,11 +34,9 @@ class XHRInterceptor {
       headers: responseRule.headers || {}
     };
 
-    if (responseRule.delay > 0) {
-      return setTimeout(() => responder(response), responseRule.delay);
-    }
-
-    return responder(response);
+    return responseRule.delay > 0
+      ? setTimeout(() => responder(response), responseRule.delay)
+      : responder(response);
   }
 
   checkParamsEquality(requestBody = {}, responseParams) {
@@ -50,12 +48,12 @@ class XHRInterceptor {
         const regex = responseParams[key] ? new RegExp(responseParams[key]) : null;
 
         if (regex && !requestParams[key].match(regex)) {
-          return false
+          return false;
         }
-      })
+      }
 
       return true;
-    } catch {
+    } catch (err) {
       return true;
     }
   }
