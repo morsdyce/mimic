@@ -1,6 +1,5 @@
 import { ShredderStorage } from './storage';
 import { Scenario } from './models/scenario';
-import { Rule } from './models/rule';
 
 export class Scenarios {
 
@@ -15,12 +14,7 @@ export class Scenarios {
     const fromStorage = ShredderStorage.getSerialized();
 
     fromStorage.scenarios.forEach((scenario) => {
-      const { id, name } = scenario;
-      const rules = [];
-
-      scenario.rules.forEach((rule) => rules.push(new Rule(rule)));
-
-      this.scenarios.push(new Scenario({ id, name, rules }));
+      this.scenarios.push(new Scenario(scenario));
 
       this.setCurrentScenario(fromStorage.currentScenario);
     });
@@ -32,9 +26,8 @@ export class Scenarios {
 
   saveToStorage() {
     const currentScenarioId   = this.currentScenario.id;
-    const serializedScenarios = JSON.stringify(this.scenarios);
 
-    ShredderStorage.save(serializedScenarios, currentScenarioId);
+    ShredderStorage.save(this.scenarios, currentScenarioId);
     return true;
   }
 
