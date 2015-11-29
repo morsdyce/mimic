@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "NODE_ENV=development webpack-dev-server",
+    "start": "webpack-dev-server",
     "prebuild": "npm prune; npm install",
-    "build": "NODE_ENV=production webpack -p",
+    "build": "NODE_ENV=production webpack -p --progress",
     "prebuildwin": "npm prune&npm install",
-    "buildwin": "set NODE_ENV=production&webpack --progress"
+    "buildwin": "set NODE_ENV=production&webpack -p --progress"
   },
   "repository": {
     "type": "git",

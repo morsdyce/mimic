@@ -25,7 +25,7 @@ export class Scenarios {
   }
 
   saveToStorage() {
-    const currentScenarioId   = this.currentScenario.id;
+    const currentScenarioId = this.currentScenario.id;
 
     ShredderStorage.save(this.scenarios, currentScenarioId);
     return true;

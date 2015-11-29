@@ -1,6 +1,7 @@
 import { Scenarios } from './scenarios';
 
 class XHRInterceptor {
+
   constructor() {
     const rules = Scenarios.currentScenario.rules;
 
