@@ -1,38 +1,28 @@
 export class ShredderStorage {
 
   constructor() {
-    if (!ShredderStorage.rawData()) {
-      ShredderStorage.saveScenarios({});
+    if (!ShredderStorage.getRaw()) {
+      ShredderStorage.save({}, null);
     }
   }
 
-  static saveScenarios(scenarios) {
+  static save(scenarios, currentScenario) {
     const version = '1.0.0';
 
     localStorage.setItem(
       `${ location.origin }-shredder`,
-      JSON.stringify({ version, scenarios })
+      JSON.stringify({ version, scenarios, currentScenario })
     );
 
     return true;
   }
 
-  static rawData() {
+  static getRaw() {
     return localStorage.getItem(`${ location.origin }-shredder`);
   }
 
-  static getAllScenarios() {
-    return JSON.parse(ShredderStorage.rawData()).scenarios;
-  }
-
-  static getEnabledScenarios() {
-    return ShredderStorage.getAllScenarios()
-      .filter((scenario) => scenario.enabled);
-  }
-
-  static getScenario(scenarioId) {
-    return ShredderStorage.getAllScenarios()
-      .filter((scenario) => scenario.id === scenarioId)[0];
+  static getSerialized() {
+    return JSON.stringify(ShredderStorage.getRaw());
   }
 
 }

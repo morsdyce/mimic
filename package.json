@@ -33,7 +33,8 @@
   "license": "MIT",
   "homepage": "",
   "dependencies": {
-
+    "uuid": "2.0.1",
+    "xhook": "1.3.3"
   },
   "devDependencies": {
     "node-sass": "3.3.2",

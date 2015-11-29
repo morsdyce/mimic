@@ -1,23 +1,21 @@
-import { ShredderStorage } from './storage';
+import { Scenarios } from './scenarios';
 
 class XHRInterceptor {
   constructor() {
-    const scenarios = ShredderStorage.getEnabledScenarios();
+    const rules = Scenarios.currentScenario.rules;
 
     xhook.before((request, responder) => {
-      for (let scenario of scenarios) {
-        for (let rule of scenario.rules) {
-          const methodsMatch = request.method === rule.request.method;
-          const urlsMatch    = request.url === rule.request.url;
-          const paramsMatch  = this.checkParamsEquality(request.body, rule.request.parameters);
+      for (let rule of rules) {
+        const methodsMatch = request.method === rule.request.method;
+        const urlsMatch    = request.url === rule.request.url;
+        const paramsMatch  = this.checkParamsEquality(request.body, rule.request.parameters);
 
-          if (methodsMatch && urlsMatch && paramsMatch && rule.active) {
-            return this.buildResponse(responder, rule.response);
-          }
+        if (methodsMatch && urlsMatch && paramsMatch && rule.active) {
+          return this.buildResponse(responder, rule.response);
         }
       }
 
-      return responder()
+      return responder();
     });
   }
 
@@ -36,11 +34,9 @@ class XHRInterceptor {
       headers: responseRule.headers || {}
     };
 
-    if (responseRule.delay > 0) {
-      return setTimeout(() => responder(response), responseRule.delay);
-    }
-
-    return responder(response);
+    return responseRule.delay > 0
+      ? setTimeout(() => responder(response), responseRule.delay)
+      : responder(response);
   }
 
   checkParamsEquality(requestBody = {}, responseParams) {
