@@ -5,14 +5,14 @@ class ShredderUI {
 
   version:string;
   packageName:string;
-  api:API;
+  API:API;
 
   constructor() {
     this.version = '0.0.1';
     this.packageName = 'ShredderUI';
 
-    this.api = new API();
-    this.api.sayHello();
+    this.API = new API();
+    this.API.sayHello();
   }
 
   exportScenarios() {
