@@ -1,5 +1,5 @@
-import { Scenarios } from './scenarios';
-import { Requests } from './requests';
+import Scenarios from './scenarios';
+import Requests from './requests';
 
 class XHRInterceptor {
   constructor() {

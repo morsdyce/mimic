@@ -35,3 +35,5 @@ export class Scenarios {
     return this.scenarios.filter((scenario) => scenario.id === scenarioId)[0];
   }
 }
+
+export default new Scenarios();

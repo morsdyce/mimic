@@ -23,3 +23,5 @@ export class Requests {
     this.capturedRequests.push(capturedRequest);
   }
 }
+
+export default new Requests();
