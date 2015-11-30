@@ -42,13 +42,10 @@ export class Scenarios {
 
   duplicateScenario(scenarioId) {
     const selectedScenario = this.getById(scenarioId);
-    let copiedRules = [];
-
-    selectedScenario.rules.forEach((rule) => copiedRules.push(rule));
 
     const newScenario = {
       name: `${ selectedScenario.name } copy`,
-      rules: copiedRules,
+      rules: selectedScenario.rules,
     };
 
     this.scenarios.push(new Scenario(newScenario));
