@@ -19,4 +19,10 @@ export class Scenario {
     this.rules.push(new Rule({ request, response }));
   }
 
+  updateRule(ruleId, request, response) {
+    const selectedRule = this.rules.filter((rule) => rule.id === ruleId);
+
+    selectedRule.update({ request, response });
+  }
+
 }
