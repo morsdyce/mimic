@@ -1,3 +1,4 @@
+import { xhook } from 'xhook';
 import Scenarios from './scenarios';
 import Requests from './requests';
 

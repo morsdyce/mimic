@@ -1,5 +1,11 @@
 export class Request {
 
+  public method;
+  public url;
+  public params;
+  public headers;
+  public response;
+
   constructor({ method, url, params, headers, response }) {
 
     /* Response object: { status, delay, headers, body } */
