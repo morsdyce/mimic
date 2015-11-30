@@ -47,7 +47,7 @@ class XHRInterceptor {
       : responder(response);
   }
 
-  checkParamsEquality(requestBody = {}, responseParams) {
+  checkParamsEquality(requestBody, responseParams) {
     try {
       const requestParams = JSON.parse(requestBody);
       const parameters    = Object.keys(requestParams);
