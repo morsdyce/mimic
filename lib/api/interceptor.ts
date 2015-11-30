@@ -1,4 +1,5 @@
-import { Scenarios } from './scenarios';
+import Scenarios from './scenarios';
+import Requests from './requests';
 
 class XHRInterceptor {
 
@@ -6,6 +7,9 @@ class XHRInterceptor {
     const rules = Scenarios.currentScenario.rules;
 
     xhook.before((request, responder) => {
+      // Use this to determine how much time the request took
+      request.startTime = Date.now();
+
       for (let rule of rules) {
         const methodsMatch = request.method === rule.request.method;
         const urlsMatch    = request.url === rule.request.url;
@@ -17,6 +21,10 @@ class XHRInterceptor {
       }
 
       return responder();
+    });
+
+    xhook.after((request, response) => {
+      Requests.capture(request, response);
     });
   }
 
@@ -40,7 +48,7 @@ class XHRInterceptor {
       : responder(response);
   }
 
-  checkParamsEquality(requestBody = {}, responseParams) {
+  checkParamsEquality(requestBody, responseParams) {
     try {
       const requestParams = JSON.parse(requestBody);
       const parameters    = Object.keys(requestParams);

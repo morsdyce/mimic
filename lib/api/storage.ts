@@ -1,6 +1,6 @@
-export class ShredderStorage {
+const STORAGE_KEY = `_shredder`;
 
-  static storageKey = `_shredder`;
+export class ShredderStorage {
 
   constructor() {
     if (!ShredderStorage.getRaw()) {
@@ -12,7 +12,7 @@ export class ShredderStorage {
     const version = '1.0.0';
 
     localStorage.setItem(
-      this.storageKey,
+      STORAGE_KEY,
       JSON.stringify({ version, scenarios, currentScenario })
     );
 
@@ -20,15 +20,11 @@ export class ShredderStorage {
   }
 
   static getRaw() {
-    return localStorage.getItem(this.storageKey);
+    return localStorage.getItem(STORAGE_KEY);
   }
 
   static getSerialized() {
-    return JSON.stringify(this.getRaw());
-  }
-
-  static getParsed() {
-    return JSON.parse(this.getRaw());
+    return JSON.parse(ShredderStorage.getRaw());
   }
 
 }
