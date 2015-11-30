@@ -1,4 +1,4 @@
-const STORAGE_KEY = `${ location.origin }-shredder`;
+const STORAGE_KEY = `_shredder`;
 
 export class ShredderStorage {
 
