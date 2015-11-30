@@ -1,11 +1,11 @@
 import API from 'api/index';
-import { ShredderStorage } from "api/storage";
+import { ShredderStorage } from 'api/storage';
 
 class ShredderUI {
 
-  version:string;
-  packageName:string;
-  API:API;
+  version: string;
+  packageName: string;
+  API: API;
 
   constructor() {
     this.version = '0.0.1';
@@ -23,7 +23,7 @@ class ShredderUI {
 
     let link = document.createElement('a');
 
-    link.download = 'scenarios.json';
+    // link.download = 'scenarios.json';
     link.href     = URL.createObjectURL(blob);
 
     link.click();
