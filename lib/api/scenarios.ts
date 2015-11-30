@@ -65,6 +65,12 @@ export class Scenarios {
 
     this.saveToStorage();
   }
+
+  updateRuleInScenario(scenarioId, ruleId, request, response) {
+    this.getById(scenarioId).updateRule(ruleId, request, response);
+
+    this.saveToStorage();
+  }
 }
 
 export default new Scenarios();
