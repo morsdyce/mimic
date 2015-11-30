@@ -35,6 +35,12 @@ export class Scenarios {
     return this.scenarios.filter((scenario) => scenario.id === scenarioId)[0];
   }
 
+  addRuleToScenario(scenarioId, capturedRequest) {
+    this.getById(scenarioId).addRule(capturedRequest);
+
+    this.saveToStorage();
+  }
+
   addScenario(name) {
     this.scenarios.push(new Scenario({ name }));
     this.saveToStorage();

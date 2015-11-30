@@ -15,4 +15,8 @@ export class Scenario {
     Object.assign(this, { id, name, rules: ruleObjects });
   }
 
+  addRule({ request, response }) {
+    this.rules.push(new Rule({ request, response }));
+  }
+
 }
