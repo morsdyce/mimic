@@ -15,15 +15,15 @@ let config = {
   context: libPath,
 
   entry: {
-    'shredder.api': ['api/index.ts'],
-    'shredder': 'index.ts'
+    'shredder.api': ['api/index.js'],
+    'shredder': 'index.js'
   },
 
   // Options affecting the resolving of modules
   resolve: {
     // Enable resolving modules relative to these paths
     root: [libPath],
-    extensions: ['', '.webpack.js', '.ts', '.js']
+    extensions: ['', '.webpack.js', '.js']
   },
 
   output: {
@@ -38,11 +38,11 @@ let config = {
 
   module: {
     loaders: [
-      // TypeScript
+      // Babel
       {
-        test: /\.ts$/,
+        test: /\.js$/,
         exclude,
-        loader: 'ts'
+        loader: 'babel'
       },
 
       // SCSS
