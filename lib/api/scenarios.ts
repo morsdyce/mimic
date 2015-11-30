@@ -60,3 +60,5 @@ export class Scenarios {
     this.saveToStorage();
   }
 }
+
+export default new Scenarios();
