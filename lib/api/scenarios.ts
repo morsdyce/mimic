@@ -25,7 +25,7 @@ export class Scenarios {
   }
 
   saveToStorage() {
-    const currentScenarioId   = this.currentScenario.id;
+    const currentScenarioId = this.currentScenario.id;
 
     ShredderStorage.save(this.scenarios, currentScenarioId);
     return true;
@@ -33,5 +33,33 @@ export class Scenarios {
 
   getById(scenarioId) {
     return this.scenarios.filter((scenario) => scenario.id === scenarioId)[0];
+  }
+
+  addScenario(name) {
+    this.scenarios.push(new Scenario({ name }));
+    this.saveToStorage();
+  }
+
+  duplicateScenario(scenarioId) {
+    const selectedScenario = this.getById(scenarioId);
+    let copiedRules = [];
+
+    selectedScenario.rules.forEach((rule) => copiedRules.push(rule));
+
+    const newScenario = {
+      name: `${ selectedScenario.name } copy`,
+      rules: copiedRules,
+    };
+
+    this.scenarios.push(new Scenario(newScenario));
+
+    this.saveToStorage();
+  }
+
+  removeScenario(scenarioId) {
+    this.scenarios = this.scenarios
+      .filter((scenario) => scenario.id !== scenarioId);
+
+    this.saveToStorage();
   }
 }
