@@ -28,15 +28,7 @@ javascript, stylesheets and additional assets.
 As well as zero configuration setup.
 
 ## Browser Support
-The library should work in the following browsers:
-
-- IE 9+
-- Edge
-- Chrome/Chrome Mobile
-- Firefox
-- Safari/Safari Mobile
-- Opera
-
+The library should work in evergreen browsers
 
 # Feature Breakdown
 
