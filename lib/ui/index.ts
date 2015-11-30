@@ -1,5 +1,5 @@
-import API from '../api/index';
-import { ShredderStorage } from '../api/storage';
+import API from 'api/index';
+import { ShredderStorage } from 'api/storage';
 
 class ShredderUI {
 
