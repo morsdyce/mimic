@@ -14,7 +14,7 @@ export class Requests {
       headers: request.headers,
       response: {
         status: response.status,
-        delay: (Number(new Date()) - request.startTime) || 0,
+        delay: (Date.now() - request.startTime) || 0,
         header: response.headers,
         body: response.data
       }

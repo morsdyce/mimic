@@ -7,7 +7,7 @@ class XHRInterceptor {
 
     xhook.before((request, responder) => {
       // Use this to determine how much time the request took
-      request.startTime = Number(new Date());
+      request.startTime = Date.now();
 
       for (let rule of rules) {
         const methodsMatch = request.method === rule.request.method;
