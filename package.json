@@ -34,6 +34,8 @@
   "homepage": "",
   "dependencies": {
     "react": "0.14.3",
+    "react-dnd": "2.0.2",
+    "react-dnd-html5-backend": "2.0.0",
     "react-dom": "0.14.3",
     "uuid": "2.0.1",
     "xhook": "1.3.3"
