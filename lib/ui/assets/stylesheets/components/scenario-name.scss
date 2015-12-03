@@ -1,0 +1,45 @@
+.scenario-name {
+  list-style: none;
+
+  .actions {
+    display: none;
+  }
+
+  &:hover {
+    .actions {
+      display: inline-block;
+      float: right;
+
+      .duplicate, .remove {
+        display: inline-block;
+        padding: 0 4px;
+
+        &:hover {
+          cursor: pointer;
+          color: #35bf42;
+        }
+      }
+    }
+  }
+
+  .name, .active-arrow {
+    display: inline-block;
+  }
+
+  .name {
+    padding: 10px 40px 10px 20px;
+
+    &.active {
+      background-color: #fff7bc;
+    }
+  }
+
+  .active-arrow {
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-left: 20px solid #fff7bc;
+    vertical-align: middle;
+  }
+}
