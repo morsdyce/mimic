@@ -1,0 +1,21 @@
+.scenario {
+
+  header {
+    h1 {
+      display: inline-block;
+    }
+
+    .actions {
+      display: inline-block;
+
+      .action {
+        display: inline-block;
+
+        &:hover {
+          cursor: pointer;
+          color: #35bf42;
+        }
+      }
+    }
+  }
+}
