@@ -60,6 +60,7 @@
     "node-sass": "3.4.2",
     "sass-loader": "3.1.2",
     "scss-loader": "0.0.1",
+    "superagent": "1.4.0",
     "url-loader": "0.5.7",
     "webpack": "1.12.9",
     "webpack-dev-server": "1.14.0"
