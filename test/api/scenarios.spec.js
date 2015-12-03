@@ -1,7 +1,7 @@
 import { API } from 'api';
 import Scenarios from 'api/scenarios';
 
-describe('scenrios', () => {
+describe('scenarios', () => {
 
   beforeEach(() => {
     API.clearStorage();
