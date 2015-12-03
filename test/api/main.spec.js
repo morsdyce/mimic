@@ -3,6 +3,10 @@ import superagent from 'superagent';
 
 describe('api interface', () => {
 
+  beforeEach(() => {
+    API.clearStorage();
+  });
+
   it('should export api version', () => {
     expect(API.version).toBe('0.0.1');
   });
