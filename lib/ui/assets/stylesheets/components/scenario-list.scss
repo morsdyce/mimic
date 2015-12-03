@@ -1,0 +1,27 @@
+.scenario-list {
+  display: inline-block;
+
+  .header {
+    border-bottom: 1px solid #ddd;
+
+    h3 {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .add-scenario {
+      display: inline-block;
+      float: right;
+      padding: 0 10px;
+
+      &:hover {
+        cursor: pointer;
+        color: #35bf42;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+  }
+}
