@@ -1,0 +1,69 @@
+/* =================================================
+   Global Styles
+   ================================================= */
+
+/**
+ * Apply a natural box layout model to all elements
+ * But allowing an overwrite for components
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+
+html {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font: 100%/130% Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+a:link,
+a:hover{
+    text-decoration: none;
+}
+
+/* =================================================
+   Root component content
+   ================================================= */
+
+.root {
+  padding-top: 20px;
+
+  .sidebar {
+    width: 200px;
+
+    .main-scenarios-list {
+      margin: 0 0 20px;
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          cursor: pointer;
+          display: block;
+          font-weight: bold;
+          height: 40px;
+          line-height: 40px;
+          padding-left: 20px;
+
+          &.selected {
+            background: lightyellow;
+          }
+        }
+      }
+    }
+  }
+}
