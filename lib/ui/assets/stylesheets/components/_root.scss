@@ -22,9 +22,10 @@
           height: 40px;
           line-height: 40px;
           padding-left: 20px;
+          width: 100%;
 
           &.selected {
-            background: lightyellow;
+            background: $colorLightYellow;
           }
         }
       }

@@ -1,10 +1,12 @@
 .scenario-list {
   display: inline-block;
+  width: 100%;
 
   .header {
     border-bottom: 1px solid #ddd;
+    margin-left: 20px;
 
-    h3 {
+    h4 {
       display: inline-block;
       margin: 0;
     }
@@ -16,7 +18,7 @@
 
       &:hover {
         cursor: pointer;
-        color: #35bf42;
+        color: $colorGreen;
       }
     }
   }

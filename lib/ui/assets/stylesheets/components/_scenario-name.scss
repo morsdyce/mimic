@@ -16,13 +16,14 @@
 
         &:hover {
           cursor: pointer;
-          color: #35bf42;
+          color: $colorGreen;
         }
       }
     }
   }
 
-  .name, .active-arrow {
+  .name,
+  .active-arrow {
     display: inline-block;
   }
 
