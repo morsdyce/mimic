@@ -1,0 +1,22 @@
+.import-export {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+
+  .import, .export {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: all .15s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #35bf42;
+      color: #fff;
+    }
+  }
+
+  .import {
+    border-right: 1px solid #ddd;
+  }
+}
