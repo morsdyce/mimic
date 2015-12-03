@@ -17,15 +17,15 @@ describe('api interface', () => {
 
     superagent.get('http://fake.com')
       .timeout(20)
-      .end( () => {
-      expect(API.capturedRequests.length).toBe(1);
+      .end(() => {
+        expect(API.capturedRequests.length).toBe(1);
 
-      let request = API.capturedRequests[0];
-      expect(request.method).toBe('GET');
-      expect(request.url).toBe('http://fake.com');
+        let request = API.capturedRequests[0];
+        expect(request.method).toBe('GET');
+        expect(request.url).toBe('http://fake.com');
 
-      done();
-    });
+        done();
+      });
 
   });
 
