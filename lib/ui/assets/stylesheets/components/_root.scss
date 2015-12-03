@@ -1,41 +1,5 @@
 /* =================================================
-   Global Styles
-   ================================================= */
-
-/**
- * Apply a natural box layout model to all elements
- * But allowing an overwrite for components
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- */
-
-html {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  font: 100%/130% Arial, sans-serif;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 1;
-}
-
-a:link,
-a:hover{
-    text-decoration: none;
-}
-
-/* =================================================
-   Root component content
+   Root component
    ================================================= */
 
 .root {
@@ -44,7 +8,7 @@ a:hover{
   .sidebar {
     width: 200px;
 
-    .main-scenarios-list {
+    .main-nav {
       margin: 0 0 20px;
       padding: 0;
 

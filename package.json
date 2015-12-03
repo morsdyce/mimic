@@ -36,6 +36,7 @@
   "homepage": "",
   "dependencies": {
     "classnames": "2.2.1",
+    "normalize.css": "3.0.3",
     "react": "0.14.3",
     "react-dnd": "2.0.2",
     "react-dnd-html5-backend": "2.0.0",
@@ -62,7 +63,6 @@
     "node-sass": "3.4.2",
     "sass-loader": "3.1.2",
     "scss-loader": "0.0.1",
-    "style-loader": "0.13.0",
     "superagent": "1.4.0",
     "url-loader": "0.5.7",
     "webpack": "1.12.9",
