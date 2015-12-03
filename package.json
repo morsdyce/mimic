@@ -35,6 +35,7 @@
   "license": "MIT",
   "homepage": "",
   "dependencies": {
+    "eventemitter3": "1.1.1",
     "react": "0.14.3",
     "react-dnd": "2.0.2",
     "react-dnd-html5-backend": "2.0.0",
