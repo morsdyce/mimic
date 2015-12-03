@@ -1,0 +1,33 @@
+/* =================================================
+   Root component
+   ================================================= */
+
+.root {
+  padding-top: 20px;
+
+  .sidebar {
+    width: 200px;
+
+    .main-nav {
+      margin: 0 0 20px;
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          cursor: pointer;
+          display: block;
+          font-weight: bold;
+          height: 40px;
+          line-height: 40px;
+          padding-left: 20px;
+
+          &.selected {
+            background: lightyellow;
+          }
+        }
+      }
+    }
+  }
+}
