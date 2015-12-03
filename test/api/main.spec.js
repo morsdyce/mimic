@@ -33,4 +33,27 @@ describe('api interface', () => {
 
   });
 
+  it('should get 0 scenarios', () => {
+    expect(API.scenarios.length).toBe(0);
+  });
+
+  it('should add a scenario', () => {
+    expect(API.scenarios.length).toBe(0);
+
+    API.addScenario('test scenario');
+
+    expect(API.scenarios.length).toBe(1);
+    expect(API.scenarios[0].name).toBe('test scenario');
+  });
+
+  // TODO: support clearing state when cleaning storage
+  xit('should clear persistent storage', () => {
+    expect(API.scenarios.length).toBe(0);
+
+    API.addScenario('test scenario');
+    API.clearStorage();
+
+    expect(API.scenarios.length).toBe(1);
+  });
+
 });
