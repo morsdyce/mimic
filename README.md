@@ -1,4 +1,4 @@
-Shredder
+bdsm
 ==========
 
 Bad ass client side mocking solution
@@ -39,8 +39,3 @@ Version Bump
 -------------
 
 - See [Bump a package version](https://docs.npmjs.com/cli/version)
-
-Why "Shredder"
--------------
-
-Because it's Bad Ass... and because it's inspired by [Leonardo](https://github.com/outbrain/Leonardo)

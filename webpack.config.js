@@ -15,8 +15,8 @@ let config = {
   context: libPath,
 
   entry: {
-    'shredder.api': ['api/index.js'],
-    'shredder': 'index.js'
+    'bdsm.api': ['api/index.js'],
+    'bdsm': 'index.js'
   },
 
   // Options affecting the resolving of modules
@@ -33,7 +33,7 @@ let config = {
     // [name] - Will be set per each key name in `entry`
     filename: distFilePattern,
     libraryTarget: 'umd',
-    library: 'Shredder'
+    library: 'bdsm'
   },
 
   module: {

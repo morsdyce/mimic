@@ -1,5 +1,5 @@
 {
-  "name": "shredderjs",
+  "name": "bdsm",
   "version": "0.0.1",
   "description": "Bad ass client side mocking solution",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/500tech/shredderjs.git"
+    "url": "https://github.com/500tech/bdsm.git"
   },
   "author": "500Tech <info@500tech.com>",
   "contributors": [
