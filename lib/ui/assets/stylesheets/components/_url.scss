@@ -1,0 +1,12 @@
+.url {
+  text-overflow: ellipsis;
+  width: 600px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+
+  .query {
+    color: $colorGray;
+  }
+}
