@@ -7,6 +7,10 @@ describe('scenarios', () => {
     API.clearStorage();
   });
 
+  it('should have currentScenario be set to "MockedRequests"', () => {
+    expect(Scenarios.currentScenario).toBe('MockedRequests');
+  });
+
   it('should get 0 scenarios', () => {
     expect(Scenarios.scenarios.length).toBe(0);
   });
