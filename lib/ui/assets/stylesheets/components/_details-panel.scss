@@ -1,0 +1,25 @@
+@import "details-panel/request-details";
+@import "details-panel/response-details";
+
+@import "details-panel/delay-field";
+@import "details-panel/status-code-field";
+
+.main-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+  max-width: 900px;
+}
+
+.details-panel {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid $colorLightGray;
+  border-radius: 4px;
+  width: 30%;
+  max-width: 350px;
+
+  .actions {
+    padding: 15px 25px;
+  }
+}
