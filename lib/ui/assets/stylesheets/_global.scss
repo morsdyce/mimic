@@ -33,3 +33,11 @@ a:link,
 a:hover{
     text-decoration: none;
 }
+
+label {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  margin-right: 10px;
+}

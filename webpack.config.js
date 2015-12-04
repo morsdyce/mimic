@@ -1,5 +1,6 @@
 'use strict';
 
+const webpack           = require('webpack');
 const path              = require('path');
 
 const appEnv            = process.env.NODE_ENV || 'development';
@@ -72,6 +73,16 @@ let config = {
       }
     ]
   },
+
+  plugins: [
+    // Remove duplicate `require`d files
+    new webpack.optimize.DedupePlugin(),
+
+    // Define global variables that will be available in any chunk
+    new webpack.DefinePlugin({
+      __ENV: JSON.stringify(appEnv)
+    }),
+  ],
 
   // Settings for webpack-dev-server (instead of using CLI flags)
   // `--hot` and `--progress` must be set using CLI
