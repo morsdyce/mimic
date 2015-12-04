@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "mockedRequests": [
+    {
+      "id": "3a92b13c-42f6-4c37-8923-7122e7969288",
+      "active": true,
+      "requestHash": "GET|http://jsonplaceholder.typicode.com/posts/1",
+      "method": "GET",
+      "url": "http://jsonplaceholder.typicode.com/posts/1",
+      "headers": {
+        "Accept": "*/*"
+      },
+      "params": {},
+      "states": [
+        {
+          "id": "e3495826-2c34-4043-8009-4b6abced28ed",
+          "name": "Original Response",
+          "response": {
+            "status": 200,
+            "delay": 966,
+            "body": "{\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}"
+          }
+        }
+      ],
+      "selectedStateId": "e3495826-2c34-4043-8009-4b6abced28ed"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "62b2534f-29f7-4b5b-a5df-93841af2e9a9",
+      "name": "bdsm",
+      "mockedRequests": [
+        {
+          "mockedRequestId": "d79799ab-b782-4785-aa21-727c02e5d49a",
+          "active": true,
+          "selectedStateId": "23432"
+        }
+      ]
+    }
+  ],
+  "currentScenario": "62b2534f-29f7-4b5b-a5df-93841af2e9a9"
+}
