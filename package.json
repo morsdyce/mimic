@@ -62,6 +62,7 @@
     "karma-sourcemap-loader": "0.3.6",
     "karma-webpack": "1.7.0",
     "node-sass": "3.4.2",
+    "react-toggle": "2.0.1",
     "sass-loader": "3.1.2",
     "scss-loader": "0.0.1",
     "superagent": "1.4.0",

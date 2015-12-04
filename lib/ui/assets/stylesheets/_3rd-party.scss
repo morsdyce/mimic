@@ -1,0 +1,12 @@
+@import "~react-toggle/style.css";
+
+.react-toggle {
+  vertical-align: sub;
+  margin-left: 20px;
+}
+
+.react-toggle--focus, .react-toggle:active {
+  .react-toggle-thumb {
+    box-shadow: none;
+  }
+}
