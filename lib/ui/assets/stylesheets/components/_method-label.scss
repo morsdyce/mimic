@@ -1,0 +1,34 @@
+.method-label {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0.6875rem;
+
+  &.GET {
+    color: $colorMethodGet;
+  }
+
+  &.POST {
+    color: $colorMethodPost;
+  }
+
+  &.PUT {
+    color: $colorMethodPut;
+  }
+
+  &.PATCH {
+    color: $colorMethodPatch;
+  }
+
+  &.DELETE {
+    color: $colorMethodDelete;
+  }
+
+  &.OPTIONS {
+    color: $colorMethodOptions;
+  }
+
+  &.HEAD {
+    color: $colorMethodHead;
+  }
+
+}
