@@ -1,15 +1,17 @@
 import { API } from 'api';
 
 // TODO: support clearing state when cleaning storage
-xdescribe('persistent storage', () => {
+describe('persistent storage', () => {
 
-  xit('should clear', () => {
+  it('should clear', () => {
     expect(API.scenarios.length).toBe(0);
 
     API.addScenario('test scenario');
+    expect(API.scenarios.length).toBe(1);
+
     API.clearStorage();
 
-    expect(API.scenarios.length).toBe(1);
+    expect(API.scenarios.length).toBe(0);
   });
 
 });
