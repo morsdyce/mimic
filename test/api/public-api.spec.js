@@ -3,8 +3,11 @@ import { PersistentStorage } from 'api/storage';
 import MockedRequests from 'api/mocked-requests';
 import Scenarios from 'api/scenarios';
 import Requests from 'api/requests';
+import Emitter from 'api/emitter';
 
 describe('api interface', () => {
+
+  const noop = () => {};
 
   it('should export api version', () => {
     expect(API.version).toBe('0.0.1');
@@ -125,6 +128,33 @@ describe('api interface', () => {
     API.clearStorage();
 
     expect(PersistentStorage.clear).toHaveBeenCalled();
+  });
+
+  it('should register an event listener', () => {
+    spyOn(Emitter, 'on');
+
+    expect(Emitter.on).not.toHaveBeenCalled();
+    API.on('event', noop, 'this');
+
+    expect(Emitter.on).toHaveBeenCalledWith('event', noop, 'this');
+  });
+
+  it('should register an event listener to be used once', () => {
+    spyOn(Emitter, 'once');
+
+    expect(Emitter.once).not.toHaveBeenCalled();
+    API.once('event', noop, 'this');
+
+    expect(Emitter.once).toHaveBeenCalledWith('event', noop, 'this');
+  });
+
+  it('should remove an event listener', () => {
+    spyOn(Emitter, 'removeListener');
+
+    expect(Emitter.removeListener).not.toHaveBeenCalled();
+    API.off('event', noop, 'this');
+
+    expect(Emitter.removeListener).toHaveBeenCalledWith('event', noop, 'this');
   });
 
 });
