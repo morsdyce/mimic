@@ -4,9 +4,12 @@
 
 .root {
   padding-top: 20px;
+  display: flex;
+  flex-direction: row;
 
   .sidebar {
     width: 200px;
+    min-width: 200px;
 
     .main-nav {
       margin: 0 0 20px;
@@ -23,6 +26,10 @@
           line-height: 40px;
           padding-left: 20px;
           width: 100%;
+
+          &:hover {
+            background: $colorExtraLightYellow;
+          }
 
           &.selected {
             background: $colorLightYellow;

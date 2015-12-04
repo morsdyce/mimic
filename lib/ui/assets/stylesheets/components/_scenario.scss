@@ -1,7 +1,13 @@
 .scenario {
 
   header {
-    h1 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-width: $requestRowMinWidth;
+    max-width: $requestRowMaxWidth;
+
+    .panel-title {
       display: inline-block;
     }
 
@@ -10,6 +16,7 @@
 
       .action {
         display: inline-block;
+        padding: 0 4px;
 
         &:hover {
           cursor: pointer;

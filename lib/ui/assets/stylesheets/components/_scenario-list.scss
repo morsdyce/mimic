@@ -3,8 +3,13 @@
   width: 100%;
 
   .header {
+    align-items: center;
+    cursor: default;
     border-bottom: 1px solid #ddd;
     margin-left: 20px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
 
     h4 {
       display: inline-block;
@@ -12,13 +17,16 @@
     }
 
     .add-scenario {
+      align-items: center;
+      color: $colorGray;
       display: inline-block;
-      float: right;
-      padding: 0 10px;
+      padding: 0 5px;
+      vertical-align: bottom;
 
       &:hover {
+        text-shadow: 0 0 10px #ddd;
         cursor: pointer;
-        color: $colorGreen;
+        color: black;
       }
     }
   }

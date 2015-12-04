@@ -1,0 +1,43 @@
+/* =================================================
+   Main Panel component
+   ================================================= */
+
+.main-panel {
+  padding: 0 20px;
+  width: 100%;
+
+  .panel-title {
+    cursor: default;
+    margin-left: 35px;
+  }
+
+  .hide-mocked-checkbox {
+    margin-left: 35px;
+  }
+
+  .request-row {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 0.9rem;
+    height: 40px;
+    justify-content: space-between;
+    line-height: 40px;
+    padding-left: 15px;
+    width: 100%;
+    min-width: $requestRowMinWidth;
+    max-width: $requestRowMaxWidth;
+
+    &:hover {
+      background: $colorExtraLightYellow;
+    }
+
+    &.selected {
+      background: $colorLightYellow;
+    }
+
+    button {
+      margin-right: 40px;
+    }
+  }
+}

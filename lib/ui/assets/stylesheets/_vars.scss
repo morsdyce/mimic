@@ -1,8 +1,14 @@
+/**
+ * Colors
+ */
+
 $colorLightYellow: #FFF7BC;
+$colorExtraLightYellow: #FFFFE2;
 $colorBlue: #0042CF;
 $colorGreen: #35BF42;
 $colorGolden: #C7B506;
 $colorGray: #A9A9A9;
+$colorLightGray: #CECECE;
 
 $colorMethodGet: #03C853;
 $colorMethodPost: #E87F00;
@@ -11,3 +17,10 @@ $colorMethodPatch: #895300;
 $colorMethodDelete: #EE3B3B;
 $colorMethodOptions: #AC5CE2;
 $colorMethodHead: #A7A7A7;
+
+/**
+ * Layout
+ */
+
+$requestRowMaxWidth: 800px;
+$requestRowMinWidth: 480px;

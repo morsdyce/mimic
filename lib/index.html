@@ -13,11 +13,16 @@
     <script src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.js"></script>
 
     <script>
-      $(function() {
-        $.get('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22AAPL%22%2C%22MSFT%22)&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json')
-            .then(function(response) {
-          console.log('Demo response', response)
-        })
+      $(function () {
+        $.get('http://jsonplaceholder.typicode.com/posts/1')
+            .then(function (response) {
+          console.log('Demo: jsonplaceholder post response', response)
+        });
+
+        $.get('http://jsonplaceholder.typicode.com/posts/1/comments')
+            .then(function (response) {
+          console.log('Demo: jsonplaceholder comments response', response)
+        });
       });
     </script>
   </body>
