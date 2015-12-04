@@ -4,6 +4,9 @@ import MockedRequests from 'api/mocked-requests';
 import Scenarios from 'api/scenarios';
 import Requests from 'api/requests';
 import Emitter from 'api/emitter';
+import EVENTS from 'api/constants/events';
+
+import importMock from './mocks/import.json';
 
 describe('api interface', () => {
 
@@ -95,7 +98,7 @@ describe('api interface', () => {
   });
 
   it('should get the current scenario', () => {
-    spyOn(Scenarios, 'getCurrentScenario').and.returnValue(1)
+    spyOn(Scenarios, 'getCurrentScenario').and.returnValue(1);
 
     expect(Scenarios.getCurrentScenario).not.toHaveBeenCalled();
 
@@ -160,6 +163,36 @@ describe('api interface', () => {
     API.off('event', noop, 'this');
 
     expect(Emitter.removeListener).toHaveBeenCalledWith('event', noop, 'this');
+  });
+
+  it('should export configuration', () => {
+    spyOn(PersistentStorage, 'getRaw');
+
+    expect(PersistentStorage.getRaw).not.toHaveBeenCalled();
+
+    API.export();
+    expect(PersistentStorage.getRaw).toHaveBeenCalled();
+  });
+
+  it('should import configuration', () => {
+    spyOn(Scenarios, 'mergeScenarios');
+    spyOn(MockedRequests, 'mergeMockedRequests');
+    spyOn(PersistentStorage, 'persist');
+    spyOn(Emitter, 'emit');
+
+    expect(Scenarios.mergeScenarios).not.toHaveBeenCalled();
+    expect(MockedRequests.mergeMockedRequests).not.toHaveBeenCalled();
+    expect(PersistentStorage.persist).not.toHaveBeenCalled();
+    expect(Emitter.emit).not.toHaveBeenCalled();
+
+    const json = JSON.stringify(importMock);
+    API.import(json);
+
+    expect(Scenarios.mergeScenarios).toHaveBeenCalledWith(importMock.scenarios);
+    expect(MockedRequests.mergeMockedRequests)
+      .toHaveBeenCalledWith(importMock.mockedRequests);
+    expect(PersistentStorage.persist).toHaveBeenCalled();
+    expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
   });
 
 });
