@@ -28,6 +28,11 @@ describe('api interface', () => {
     expect(API.scenarios.length).toBe(0);
   });
 
+  it('should have currentScenario property set to "MockedRequests"', () => {
+    expect(API.currentScenario).toBeDefined();
+    expect(API.currentScenario).toBe('MockedRequests');
+  });
+
   it('should get raw data', () => {
     spyOn(PersistentStorage, 'getRaw').and.returnValue('fake data');
 
