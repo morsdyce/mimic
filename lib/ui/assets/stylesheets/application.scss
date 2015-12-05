@@ -1,9 +1,9 @@
-@import "3rd-party";
-
 @import "vars";
 @import "global";
 @import "helpers";
 @import "buttons";
+
+@import "3rd-party";
 
 @import "components/root";
 @import "components/main-panel";
@@ -16,3 +16,4 @@
 @import "components/url";
 @import "components/method-label";
 @import "components/details-panel";
+@import "components/state-selector";

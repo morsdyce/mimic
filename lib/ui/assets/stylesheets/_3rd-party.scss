@@ -1,3 +1,7 @@
+/********************
+  React-toggle
+********************/
+
 @import "~react-toggle/style.css";
 
 .react-toggle {
@@ -9,4 +13,34 @@
   .react-toggle-thumb {
     box-shadow: none;
   }
+}
+
+
+/********************
+  React-select
+********************/
+
+@import "~react-select/scss/select";
+
+$select-text-color: $colorBlue;
+$select-arrow-color: $colorBlue;
+$select-input-bg: transparent;
+$select-padding-vertical: 0;
+$select-padding-horizontal: 10px;
+$select-input-border-focus: transparent;
+
+@import "~react-select/scss/components";
+
+.Select-control {
+  cursor: pointer;
+  border-color: transparent;
+}
+
+.Select-menu-outer {
+  box-shadow: none;
+}
+
+.Select .Select-control:hover {
+  box-shadow: none;
+  border-color: $select-input-border-color;
 }
