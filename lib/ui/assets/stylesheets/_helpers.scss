@@ -39,26 +39,6 @@
   display: inline-block;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.small-text {
-  font-size: 0.9rem;
-}
-
-.xs-text {
-  font-size: 0.6rem;
-}
-
 .margin-bottom-20 {
   margin-bottom: 20px;
 }
@@ -90,6 +70,34 @@
 .vertical-center-children {
   align-items: center;
   display: flex;
+}
+
+/**
+ * Text
+ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.small-text {
+  font-size: 0.9rem;
+}
+
+.xs-text {
+  font-size: 0.6rem;
+}
+
+.wrap-text {
+  word-wrap: break-word;
 }
 
 /**
