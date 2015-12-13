@@ -2,7 +2,7 @@
   "name": "bdsmjs",
   "version": "0.0.1",
   "description": "Bad ass client side mocking solution",
-  "main": "dist/index.js",
+  "main": "dist/bdsm.js",
   "scripts": {
     "prestart": "npm install",
     "start": "webpack-dev-server --progress",
