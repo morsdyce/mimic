@@ -1,6 +1,6 @@
 {
   "name": "bdsmjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bad ass client side mocking solution",
   "main": "dist/bdsm.js",
   "scripts": {
@@ -13,6 +13,9 @@
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
     "tdd": "NODE_ENV=test node_modules/.bin/karma start"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/500tech/bdsm.git"
