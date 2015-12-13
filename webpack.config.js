@@ -2,6 +2,7 @@
 
 const webpack           = require('webpack');
 const path              = require('path');
+const CleanPlugin       = require('clean-webpack-plugin');
 
 const appEnv            = process.env.NODE_ENV || 'development';
 const libPath           = path.join(__dirname, 'lib');
@@ -81,7 +82,7 @@ let config = {
     // Define global variables that will be available in any chunk
     new webpack.DefinePlugin({
       __ENV: JSON.stringify(appEnv)
-    }),
+    })
   ],
 
   // Settings for webpack-dev-server (instead of using CLI flags)
@@ -97,6 +98,13 @@ let config = {
 
 if (appEnv === 'development') {
   config.devtool = '#inline-source-map';
+}
+
+if (appEnv === 'production') {
+  config.plugins.push(
+    // Remove build related folders
+    new CleanPlugin(['dist'])
+  );
 }
 
 module.exports = config;
