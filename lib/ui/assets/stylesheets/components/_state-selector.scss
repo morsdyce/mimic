@@ -1,4 +1,14 @@
 .state-selector {
   font-size: 0.75rem;
   width: 200px;
+
+  .Select-control {
+    background: white;
+    border: 1px solid $colorLightCream;
+  }
+
+  .Select-menu-outer {
+    background: white;
+    overflow: auto;
+  }
 }
