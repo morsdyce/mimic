@@ -9,12 +9,10 @@
 @import "details-panel/response-body-field";
 
 .details-panel {
-  display: inline-block;
-  vertical-align: top;
   border: 1px solid $colorLightGray;
   border-radius: 4px;
-  width: 30%;
-  max-width: 350px;
+  height: 100%;
+  flex: 0 0 350px;
 
   .actions {
     padding: 0 25px 25px 25px;
