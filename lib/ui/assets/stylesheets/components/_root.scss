@@ -3,13 +3,16 @@
    ================================================= */
 
 .root {
-  padding-top: 20px;
   display: flex;
   flex-direction: row;
 
   .sidebar {
-    width: 200px;
-    min-width: 200px;
+    border-right: 1px solid #eee;
+    box-shadow: 0 0 5px #ccc;
+    flex-direction: column;
+    flex: 0 0 200px;
+    height: 100%;
+    padding-top: 25px;
 
     .main-nav {
       margin: 0 0 20px;
@@ -38,5 +41,10 @@
         }
       }
     }
+  }
+
+  .main-content {
+    padding: 15px;
+    width: 100%;
   }
 }

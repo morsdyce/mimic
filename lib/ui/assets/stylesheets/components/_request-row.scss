@@ -1,0 +1,36 @@
+/* =================================================
+   Request Row
+   ================================================= */
+
+.request-row {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9rem;
+  height: 40px;
+  justify-content: space-between;
+  line-height: 40px;
+  padding-left: 15px;
+  width: 100%;
+  // min-width: $requestRowMinWidth;
+  max-width: $requestRowMaxWidth;
+
+  &:hover {
+    background: $colorExtraLightYellow;
+  }
+
+  &.selected {
+    background: $colorLightYellow;
+  }
+
+  .request-info {
+    align-items: center;
+    display: flex;
+    max-width: $requestInfoMaxWidth;
+    width: 100%;
+  }
+
+  button {
+    margin-right: 40px;
+  }
+}
