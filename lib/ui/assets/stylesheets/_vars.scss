@@ -4,16 +4,18 @@
 
 $colorLightYellow: #FFF7BC;
 $colorExtraLightYellow: #FFFFE2;
-$colorBlue: #0042CF;
-$colorGreen: #35BF42;
-$colorGolden: #C7B506;
+$colorOrange: #F39C12;
+$colorPeterRiverBlue: #3498DB;
+$colorBelizeHoleBlue: #2475AB;
+$colorSilver: #7F8C8D;
+$colorGreen: #19AB27;
 $colorGray: #A9A9A9;
 $colorLightGray: #CECECE;
 $colorLightCream: #F2F2F2;
 $colorDanger: #C30000;
 
-$colorMethodGet: #03C853;
-$colorMethodPost: #E87F00;
+$colorMethodGet: $colorGreen;
+$colorMethodPost: $colorOrange;
 $colorMethodPut: #129DDF;
 $colorMethodPatch: #895300;
 $colorMethodDelete: #EE3B3B;
@@ -24,5 +26,6 @@ $colorMethodHead: #A7A7A7;
  * Layout
  */
 
-$requestRowMaxWidth: 800px;
 $requestRowMinWidth: 480px;
+$requestRowMaxWidth: 800px;
+$requestInfoMaxWidth: 600px;

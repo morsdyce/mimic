@@ -1,11 +1,10 @@
 .url {
-  text-overflow: ellipsis;
   font-size: 0.875rem;
-  width: 600px;
   overflow: hidden;
-  display: inline-block;
+  padding-right: 20px;
+  text-overflow: ellipsis;
   white-space: nowrap;
-  vertical-align: top;
+  width: 100%;
 
   .query {
     color: $colorGray;

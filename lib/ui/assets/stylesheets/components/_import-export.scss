@@ -1,15 +1,19 @@
 .import-export {
   border: 1px solid #ddd;
   border-radius: 4px;
-  display: inline-block;
+  display: inline-flex;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 13px;
 
   .import, .export {
-    padding: 10px 30px;
+    align-items: center;
+    display: flex;
     font-size: 1.2rem;
-    display: inline-block;
+    height: 40px;
+    justify-content: center;
+    position: relative;
     transition: all .15s;
+    width: 80px;
 
     &:hover {
       cursor: pointer;
@@ -20,7 +24,7 @@
 
   .import {
     border-right: 1px solid #ddd;
-    position: relative;
+
     input[type=file] {
       position: absolute;
       left: 0;
@@ -28,7 +32,7 @@
       width: 100%;
       height: 100%;
       cursor: pointer;
-      opacity: 0.001;      
+      visibility: hidden;
     }
   }
 }

@@ -4,20 +4,45 @@
 
 .btn {
   background: $colorGray;
-  display: inline-block;
-  color: #FFF;
-  font-size: 0.8rem;
   border: 0;
-  outline: 0;
-  padding: 0 10px;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
   height: 25px;
   line-height: 25px;
+  outline: 0;
+  padding: 0 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transition: all .15s;
 }
 
 .btn-mock {
-  background: $colorBlue;
+  background: $colorPeterRiverBlue;
+  border-bottom: 2px solid #2a8bcc;
+
+  &:hover {
+    background: darken($colorBelizeHoleBlue, 5%);
+    border-bottom-width: 1px;
+  }
+}
+
+.btn-unmock {
+  background: $colorSilver;
+  border-bottom: 2px solid #6d7b7c;
+
+  &:hover {
+    background: darken($colorSilver, 5%);
+    border-bottom-width: 1px;
+  }
 }
 
 .btn-edit {
-  background: $colorGolden;
+  background: $colorOrange;
+  border-bottom: 2px solid #e8930c;
+
+  &:hover {
+    background: darken($colorOrange, 5%);
+    border-bottom-width: 1px;
+  }
 }
