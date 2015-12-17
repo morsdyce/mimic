@@ -5,9 +5,9 @@
   "main": "dist/bdsm.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "node_modules/.bin/webpack-dev-server --progress",
+    "start": "webpack-dev-server --progress",
     "prebuild": "npm prune; npm install",
-    "build": "NODE_ENV=production node_modules/.bin/webpack -p --progress",
+    "build": "NODE_ENV=production webpack -p --progress",
     "prebuildwin": "npm prune&npm install",
     "buildwin": "set NODE_ENV=production&webpack -p --progress",
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
