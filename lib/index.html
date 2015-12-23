@@ -14,6 +14,10 @@
 
     <script>
       $(function () {
+
+        $.get('http://jsonplaceholder.typicode.com/posts/1');
+        $.get('http://jsonplaceholder.typicode.com/posts/1');
+
         $.get('http://jsonplaceholder.typicode.com/posts/1')
             .then(function (response) {
           console.log('Demo: jsonplaceholder GET post response', response)
