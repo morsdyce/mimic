@@ -2,6 +2,10 @@
   cursor: pointer;
   list-style: none;
 
+  &.drag-active {
+    background: $colorLightYellow;
+  }
+
   .actions {
     display: none;
 
