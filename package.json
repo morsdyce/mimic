@@ -1,6 +1,6 @@
 {
   "name": "bdsmjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bad ass client side mocking solution",
   "main": "dist/bdsm.js",
   "scripts": {
