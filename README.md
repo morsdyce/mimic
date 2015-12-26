@@ -3,8 +3,25 @@ bdsm
 
 Bad ass client side mocking solution
 
-Getting Started
------------------
+Using BDSM in your project
+--------------------------
+
+Add to your packages:
+
+    npm install bdsmjs --save
+
+Require in your app:
+
+    import 'bdsmjs';
+
+Once you reload the application, the BDSM logo will appear in bottom
+right corner.
+
+Enjoy!   
+
+
+Contributing to BDSM
+--------------------
 
 1. Install Node.js:
     - From [nodejs.org](https://nodejs.org/) (All platforms)
