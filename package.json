@@ -49,6 +49,7 @@
     "react-dom": "0.14.3",
     "react-notification-system": "0.2.6",
     "react-select": "0.9.1",
+    "semver": "5.1.0",
     "urijs": "1.17.0",
     "uuid": "2.0.1",
     "xhook": "1.3.3"
