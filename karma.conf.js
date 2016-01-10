@@ -7,7 +7,7 @@ delete webpackConfig.entry;
 delete webpackConfig.output;
 
 module.exports = (config) => {
-  config.set({
+  let configuration = {
     basePath: '',
 
     plugins: [
@@ -65,9 +65,11 @@ module.exports = (config) => {
         flags: ['--no-sandbox']
       }
     }
-  });
+  };
 
   if(process.env.TRAVIS) {
-    config.browsers = ['Chrome_travis_ci'];
+    configuration.browsers = ['Chrome_travis_ci'];
   }
+
+  config.set(configuration);
 };
