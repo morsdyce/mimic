@@ -1,3 +1,5 @@
+'use strict';
+
 const webpackConfig = require('./webpack.config');
 const karmaWebpack  = require('karma-webpack');
 
