@@ -57,7 +57,14 @@ module.exports = (config) => {
     logLevel: config.LOG_WARN,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: false,
+
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    }
   });
 
   if(process.env.TRAVIS) {
