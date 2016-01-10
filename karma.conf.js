@@ -59,4 +59,8 @@ module.exports = (config) => {
     browsers: ['Chrome'],
     singleRun: false
   });
+
+  if(process.env.TRAVIS) {
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };
