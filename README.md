@@ -1,7 +1,9 @@
 bdsm
 ==========
 
-Bad ass client side mocking solution
+Bad ass server mocks
+
+[![Build Status](https://travis-ci.org/500tech/bdsm.svg?branch=travis-chrome-test)](https://travis-ci.org/500tech/bdsm)
 
 Using BDSM in your project
 --------------------------
@@ -17,7 +19,7 @@ Require in your app:
 Once you reload the application, the BDSM logo will appear in bottom
 right corner.
 
-Enjoy!   
+Enjoy!
 
 
 Contributing to BDSM
@@ -51,8 +53,3 @@ Contributing to BDSM
     ```
     npm run buildwin
     ```
-
-Version Bump
--------------
-
-- See [Bump a package version](https://docs.npmjs.com/cli/version)
