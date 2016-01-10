@@ -1,42 +1,56 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mockedRequests": [
     {
-      "id": "3a92b13c-42f6-4c37-8923-7122e7969288",
+      "id": "e3a89307-fd58-4bfc-8c62-2674e0bfdc7b",
       "active": true,
-      "requestHash": "GET|http://jsonplaceholder.typicode.com/posts/1",
+      "requestHash": "GET|http://jsonplaceholder.typicode.com/posts/1|",
       "method": "GET",
       "url": "http://jsonplaceholder.typicode.com/posts/1",
       "headers": {
         "Accept": "*/*"
       },
-      "params": {},
+      "params": null,
       "states": [
         {
-          "id": "e3495826-2c34-4043-8009-4b6abced28ed",
+          "id": "c285f7de-7878-48dd-9293-79612fd2463f",
           "name": "Original Response",
           "response": {
             "status": 200,
-            "delay": 966,
+            "delay": 958,
+            "headers": "{\"pragma\":\"no-cache\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"expires\":\"-1\"}",
             "body": "{\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}"
           }
         }
       ],
-      "selectedStateId": "e3495826-2c34-4043-8009-4b6abced28ed"
-    }
-  ],
-  "scenarios": [
+      "selectedStateId": "c285f7de-7878-48dd-9293-79612fd2463f"
+    },
     {
-      "id": "62b2534f-29f7-4b5b-a5df-93841af2e9a9",
-      "name": "bdsm",
-      "mockedRequests": [
+      "id": "1b24c8e6-46e8-42bd-bc92-2fddafefa711",
+      "active": true,
+      "requestHash": "PUT|http://jsonplaceholder.typicode.com/posts/1?q=bla&amount=3|{\"user\":{\"name\":\"adam\"}}",
+      "method": "PUT",
+      "url": "http://jsonplaceholder.typicode.com/posts/1?q=bla&amount=3",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json, text/javascript, */*; q=0.01"
+      },
+      "params": "{\"user\":{\"name\":\"adam\"}}",
+      "states": [
         {
-          "mockedRequestId": "d79799ab-b782-4785-aa21-727c02e5d49a",
-          "active": true,
-          "selectedStateId": "23432"
+          "id": "eb489a1d-1bca-488e-8863-ae8ebf5d4d02",
+          "name": "Original Response",
+          "response": {
+            "status": 200,
+            "delay": 1285,
+            "headers": "{\"pragma\":\"no-cache\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"expires\":\"-1\"}",
+            "body": "{\n  \"user\": {\n    \"name\": \"adam\"\n  },\n  \"id\": 1\n}"
+          }
         }
-      ]
+      ],
+      "selectedStateId": "eb489a1d-1bca-488e-8863-ae8ebf5d4d02"
     }
   ],
-  "currentScenario": "62b2534f-29f7-4b5b-a5df-93841af2e9a9"
+  "scenarios": [],
+  "currentScenario": "MockedRequests"
 }
