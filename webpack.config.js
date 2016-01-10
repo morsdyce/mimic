@@ -96,7 +96,7 @@ let config = {
 
 };
 
-if (appEnv === 'development') {
+if (appEnv !== 'production') {
   config.devtool = '#inline-source-map';
 }
 
