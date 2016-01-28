@@ -29,7 +29,14 @@
     width: 100%;
   }
 
-  button {
+  .buttons {
     margin-right: 40px;
   }
+}
+
+.mocked-response-name {
+  padding-left: 65px;
+  font-size: 14px;
+  margin-top: -11px;
+  color: $colorGray;
 }

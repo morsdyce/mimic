@@ -195,4 +195,14 @@ describe('api interface', () => {
     expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
   });
 
+  it('should allow to set app name', () => {
+    spyOn(PersistentStorage, 'setAppName');
+    API.setAppName('newname');
+    expect(PersistentStorage.setAppName).toHaveBeenCalledWith('newname');
+  });
+
+  it('should allow to get app name', () => {
+    spyOn(PersistentStorage, 'getAppName').and.returnValue('newname');
+    expect(API.getAppName()).toEqual('newname');
+  });
 });
