@@ -1,0 +1,22 @@
+.request-row {
+  position: relative;
+}
+
+.request-actions {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+
+.request-url {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.request-method {
+  color: rgba(0,0,0, .54);
+}
+
+.request-params {
+  color: #7E7E7E;
+}
