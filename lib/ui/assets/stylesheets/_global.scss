@@ -21,12 +21,18 @@ html {
 
 html,
 body {
-  font: 100%/130% Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
   z-index: 1;
+}
+
+body {
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0px;
 }
 
 a:link,
