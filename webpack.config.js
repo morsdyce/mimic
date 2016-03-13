@@ -42,7 +42,7 @@ let config = {
     loaders: [
       // Babel
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude,
         loader: 'babel'
       },
