@@ -51,6 +51,7 @@ let config = {
       {
         test: /\.(css|scss)$/,
         loaders: [
+          'style',
           'css',
           'autoprefixer',
           'sass?includePaths[]=' + encodeURIComponent(libPath)

@@ -75,6 +75,7 @@
     "clean-webpack-plugin": "0.1.6",
     "css-loader": "0.23.1",
     "file-loader": "0.8.5",
+    "iframe-loader": "git+https://github.com/morsdyce/iframe-loader.git",
     "jasmine-core": "2.4.1",
     "json-loader": "0.5.4",
     "karma": "0.13.19",
@@ -89,6 +90,7 @@
     "react-toggle": "2.0.1",
     "sass-loader": "3.1.2",
     "scss-loader": "0.0.1",
+    "style-loader": "0.13.0",
     "url-loader": "0.5.7",
     "webpack": "1.12.10",
     "webpack-dev-server": "1.14.0"
