@@ -15,6 +15,14 @@
     <script>
 //      bdsm.api.setAppName('testBDSMApp');
       $(function () {
+          fetch('http://jsonplaceholder.typicode.com/posts/3')
+              .then(function(response) {
+                return response.json();
+              })
+              .then(function (response) {
+                console.log('Demo: jsonplaceholder GET post response', response)
+              });
+
         $.get('http://jsonplaceholder.typicode.com/posts/1')
             .then(function (response) {
           console.log('Demo: jsonplaceholder GET post response', response)
@@ -30,8 +38,7 @@
           data: JSON.stringify({"user": {"name": "adam"} }),
           contentType: "application/json; charset=utf-8",
           dataType: "json"
-        })
-            .then(function (response) {
+        }).then(function (response) {
           console.log('Demo: jsonplaceholder PUT post response', response)
         });
       });
