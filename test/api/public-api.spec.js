@@ -1,6 +1,5 @@
 import { API } from 'api';
 import { PersistentStorage } from 'api/storage';
-import MockedRequests from 'api/mocked-requests';
 import Scenarios from 'api/scenarios';
 import Requests from 'api/requests';
 import Emitter from 'api/emitter';
@@ -21,30 +20,8 @@ describe('api interface', () => {
     expect(API.capturedRequests.length).toBe(0);
   });
 
-  it('should have mockedRequests property', () => {
-    expect(API.mockedRequests).toBeDefined();
-    expect(API.mockedRequests.length).toBe(0);
-  });
-
   it('should have scenarios property', () => {
     expect(API.scenarios).toBeDefined();
-    expect(API.scenarios.length).toBe(0);
-  });
-
-  it('should have currentScenario property set to "MockedRequests"', () => {
-    expect(API.currentScenario).toBeDefined();
-    expect(API.currentScenario).toBe('MockedRequests');
-  });
-
-  it('should get raw data', () => {
-    spyOn(PersistentStorage, 'getRaw').and.returnValue('fake data');
-
-    expect(PersistentStorage.getRaw).not.toHaveBeenCalled();
-
-    let data = API.rawData;
-
-    expect(data).toBe('fake data');
-    expect(PersistentStorage.getRaw).toHaveBeenCalled();
   });
 
   it('should add a scenario', () => {
@@ -87,45 +64,14 @@ describe('api interface', () => {
     expect(Scenarios.duplicateScenario).toHaveBeenCalledWith(1);
   });
 
-  it('should set the current scenario', () => {
-    spyOn(Scenarios, 'setCurrentScenario');
-
-    expect(Scenarios.setCurrentScenario).not.toHaveBeenCalled();
-
-    API.setCurrentScenario(1);
-
-    expect(Scenarios.setCurrentScenario).toHaveBeenCalledWith(1);
-  });
-
-  it('should get the current scenario', () => {
-    spyOn(Scenarios, 'getCurrentScenario').and.returnValue(1);
-
-    expect(Scenarios.getCurrentScenario).not.toHaveBeenCalled();
-
-    let currentScenario = API.getCurrentScenario();
-
-    expect(Scenarios.getCurrentScenario).toHaveBeenCalled();
-    expect(currentScenario).toBe(1);
-  });
-
-  it('should add mocked request to scenario', () => {
-    spyOn(Scenarios, 'addMockedRequestToScenario');
-
-    expect(Scenarios.addMockedRequestToScenario).not.toHaveBeenCalled();
-
-    API.addMockedRequestToScenario(1, 2);
-
-    expect(Scenarios.addMockedRequestToScenario).toHaveBeenCalledWith(1, 2);
-  });
-
   it('should mock a request', () => {
-    spyOn(MockedRequests, 'addMockedRequest');
+    spyOn(Scenarios, 'mockRequest');
 
-    expect(MockedRequests.addMockedRequest).not.toHaveBeenCalled();
+    expect(Scenarios.mockRequest).not.toHaveBeenCalled();
 
-    API.mockRequest('request');
+    API.mockRequest(1, 2);
 
-    expect(MockedRequests.addMockedRequest).toHaveBeenCalledWith('request');
+    expect(Scenarios.mockRequest).toHaveBeenCalledWith(1, 2);
   });
 
   it('should clear storage', () => {
@@ -176,12 +122,10 @@ describe('api interface', () => {
 
   it('should import configuration', () => {
     spyOn(Scenarios, 'mergeScenarios');
-    spyOn(MockedRequests, 'mergeMockedRequests');
     spyOn(PersistentStorage, 'persist');
     spyOn(Emitter, 'emit');
 
     expect(Scenarios.mergeScenarios).not.toHaveBeenCalled();
-    expect(MockedRequests.mergeMockedRequests).not.toHaveBeenCalled();
     expect(PersistentStorage.persist).not.toHaveBeenCalled();
     expect(Emitter.emit).not.toHaveBeenCalled();
 
@@ -189,8 +133,6 @@ describe('api interface', () => {
     API.import(json);
 
     expect(Scenarios.mergeScenarios).toHaveBeenCalledWith(importMock.scenarios);
-    expect(MockedRequests.mergeMockedRequests)
-      .toHaveBeenCalledWith(importMock.mockedRequests);
     expect(PersistentStorage.persist).toHaveBeenCalled();
     expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
   });

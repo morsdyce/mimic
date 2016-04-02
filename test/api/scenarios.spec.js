@@ -7,10 +7,6 @@ describe('scenarios', () => {
     API.clearStorage();
   });
 
-  it('should have currentScenario be set to "MockedRequests"', () => {
-    expect(Scenarios.currentScenario).toBe('MockedRequests');
-  });
-
   it('should get 0 scenarios', () => {
     expect(Scenarios.scenarios.length).toBe(0);
   });
@@ -22,13 +18,6 @@ describe('scenarios', () => {
 
     expect(Scenarios.scenarios.length).toBe(1);
     expect(Scenarios.scenarios[0].name).toBe('test scenario');
-  });
-
-  it('should set the current scenario', () => {
-    Scenarios.addScenario('test scenario');
-
-    Scenarios.setCurrentScenario(Scenarios.scenarios[0].id);
-    expect(Scenarios.currentScenario).toBe(Scenarios.scenarios[0].id);
   });
 
   it('should get a scenario by id', () => {
