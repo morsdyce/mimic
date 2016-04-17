@@ -6,10 +6,7 @@
   "scripts": {
     "prestart": "npm install",
     "start": "webpack-dev-server --progress",
-    "prebuild": "npm prune; npm install",
-    "build": "NODE_ENV=production webpack -p --progress",
-    "prebuildwin": "npm prune&npm install",
-    "buildwin": "set NODE_ENV=production&webpack -p --progress",
+    "build": "NODE_ENV=production webpack --progress",
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
     "tdd": "NODE_ENV=test node_modules/.bin/karma start"
   },
@@ -87,6 +84,7 @@
     "karma-sourcemap-loader": "0.3.6",
     "karma-webpack": "1.7.0",
     "node-sass": "3.4.2",
+    "raw-loader": "0.5.1",
     "react-toggle": "2.0.1",
     "sass-loader": "3.1.2",
     "scss-loader": "0.0.1",
