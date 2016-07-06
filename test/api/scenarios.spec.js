@@ -3,7 +3,7 @@ import Scenarios from 'api/scenarios';
 
 describe('scenarios', () => {
 
-  afterEach(() => {
+  beforeEach(() => {
     API.clearStorage();
   });
 
