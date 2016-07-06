@@ -13,4 +13,32 @@
 
 .request-details-status-code {
   margin: 15px 0;
+
+  .Select {
+    outline: none;
+  }
+
+  .Select-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .http-status-code-label {
+    cursor: text;
+    transform-origin: left top;
+    pointer-events: none;
+    user-select: none;
+    color: rgba(0,0,0,0.5);
+    font-size: 12px;
+    font-weight: 500;
+    margin: 8px 0 0 0;
+  }
+
+  .delay-text-field {
+    label {
+      top: 32px !important;
+    }
+  }
 }
+
