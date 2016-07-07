@@ -23,6 +23,20 @@ right corner.
 Enjoy!
 
 
+Using Mocks tracked by git
+==========================
+If you want to use mocks which will be committed into git and you're using webpack you can use the following code to import the mocks on application start:
+
+```
+import bdsm from 'bdsmjs';
+const mocks = require.context(__dirname + '/mocks', true, /\.json$/);
+mocks.keys().forEach((key) => bdsm.import(JSON.stringify(mocks(key))));
+```
+
+This assumes your mocks are placed in the mocks directory which is located at the root of the project.
+In the mocks directory you have exports for either complete scenarios or separate mock requests.
+
+
 Contributing to BDSM
 --------------------
 
