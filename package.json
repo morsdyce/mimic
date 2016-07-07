@@ -54,6 +54,7 @@
     "react-dnd": "2.0.2",
     "react-dnd-html5-iframe-backend": "2.0.0",
     "react-dom": "0.14.7",
+    "react-frame-component": "0.6.1",
     "react-notification-system": "0.2.6",
     "react-redux": "4.4.0",
     "react-select": "0.9.1",
