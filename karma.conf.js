@@ -48,7 +48,8 @@ module.exports = (config) => {
       'karma-clear-screen-reporter',
       'karma-mocha-reporter',
       'karma-chrome-launcher',
-      'karma-sourcemap-loader'
+      'karma-sourcemap-loader',
+      'karma-sauce-launcher'
     ],
 
     frameworks: ['jasmine'],
