@@ -1,7 +1,36 @@
 'use strict';
 
+const fs = require('fs');
 const webpackConfig = require('./webpack.config');
 const karmaWebpack  = require('karma-webpack');
+
+const customLaunchers = {
+  'SL_Chrome': {
+    base: 'SauceLabs',
+    browserName: 'chrome'
+  },
+  'SL_InternetExplorer': {
+    base: 'SauceLabs',
+    browserName: 'internet explorer',
+    version: '10'
+  },
+  'SL_FireFox': {
+    base: 'SauceLabs',
+    browserName: 'firefox',
+  }
+};
+
+if(process.env.TRAVIS) {
+  if (!process.env.SAUCE_USERNAME) {
+    if (!fs.existsSync('sauce.json')) {
+      console.log('Create a sauce.json with your credentials based on the sauce-sample.json file.');
+      process.exit(1);
+    } else {
+      process.env.SAUCE_USERNAME = require('./sauce').username;
+      process.env.SAUCE_ACCESS_KEY = require('./sauce').accessKey;
+    }
+  }
+}
 
 // Remove entry and output to allow testing
 /* eslint-disable prefer-reflect */
@@ -52,25 +81,24 @@ module.exports = (config) => {
       output: 'minimal'
     },
 
-    reporters: ['osx', 'clear-screen', 'mocha'],
+    reporters: ['osx', 'clear-screen', 'mocha', 'saucelabs'],
+
+    sauceLabs: {
+      testName: 'BDSM'
+    },
+    captureTimeout: 120000,
+    customLaunchers: customLaunchers,
 
     port: 9876,
     colors: true,
     logLevel: config.LOG_WARN,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false,
-
-    customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    }
+    singleRun: false
   };
 
   if(process.env.TRAVIS) {
-    configuration.browsers = ['Chrome_travis_ci'];
+    configuration.browsers = Object.keys(customLaunchers);
   }
 
   config.set(configuration);
