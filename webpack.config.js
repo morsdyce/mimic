@@ -69,7 +69,7 @@ let config = {
       {
         test: /\.(jpe?g|png|gif|eot|woff2?|ttf|svg)(\?.*)?$/i,
         loaders: [
-          'url?limit=5120&name=' + assetsPathPattern
+          'url?limit=999999&name=' + assetsPathPattern
         ]
       }
     ]
