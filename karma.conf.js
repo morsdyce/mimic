@@ -85,7 +85,9 @@ module.exports = (config) => {
     reporters: ['osx', 'clear-screen', 'mocha', 'saucelabs'],
 
     sauceLabs: {
-      testName: 'BDSM'
+      testName: 'BDSM',
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+      startConnect: false
     },
     captureTimeout: 120000,
     customLaunchers: customLaunchers,
