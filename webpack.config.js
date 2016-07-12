@@ -81,7 +81,10 @@ let config = {
 
     // Define global variables that will be available in any chunk
     new webpack.DefinePlugin({
-      __ENV: JSON.stringify(appEnv)
+      __ENV: JSON.stringify(appEnv),
+      'process.env': {
+        'NODE_ENV': JSON.stringify(appEnv)
+      }
     })
   ],
 
@@ -103,7 +106,19 @@ if (appEnv !== 'production') {
 if (appEnv === 'production') {
   config.plugins.push(
     // Remove build related folders
-    new CleanPlugin(['dist'])
+    new CleanPlugin(['dist']),
+
+    new webpack.optimize.OccurrenceOrderPlugin(true),
+
+    new webpack.optimize.DedupePlugin(),
+
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true
+      },
+      comments: false
+    })
   );
 }
 

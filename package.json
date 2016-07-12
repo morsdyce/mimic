@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "npm install",
     "start": "webpack-dev-server --progress",
-    "build": "NODE_ENV=production webpack --progress",
+    "build": "NODE_ENV=production webpack -p --progress",
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
     "tdd": "NODE_ENV=test node_modules/.bin/karma start"
   },
