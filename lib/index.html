@@ -51,6 +51,15 @@
           console.log('Demo: jsonplaceholder PUT post response', response)
         });
 
+        $.ajax('http://jsonplaceholder.typicode.com/posts/1?q=bla&amount=3', {
+          method: 'PUT',
+          data: JSON.stringify({"user": {"name": "adam", "id": 1} }),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json"
+        }).then(function (response) {
+          console.log('Demo: jsonplaceholder PUT post response', response)
+        });
+
         $.ajax('http://jsonplaceholder.typicode.com/posts/2' +
             '?q=bla&amount=3', {
           method: 'PUT',
