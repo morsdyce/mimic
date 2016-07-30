@@ -76,9 +76,6 @@ let config = {
   },
 
   plugins: [
-    // Remove duplicate `require`d files
-    new webpack.optimize.DedupePlugin(),
-
     // Define global variables that will be available in any chunk
     new webpack.DefinePlugin({
       __ENV: JSON.stringify(appEnv),
