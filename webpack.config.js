@@ -10,6 +10,7 @@ const distPath          = path.join(__dirname, 'dist');
 const exclude           = /node_modules/;
 const assetsPathPattern = '[path][name].[hash].[ext]';
 const distFilePattern   = '[name].js';
+const packageConfig     = require('./package.json');
 
 let config = {
 
@@ -78,6 +79,7 @@ let config = {
   plugins: [
     // Define global variables that will be available in any chunk
     new webpack.DefinePlugin({
+      __VERSION: JSON.stringify(packageConfig.version),
       __ENV: JSON.stringify(appEnv),
       'process.env': {
         'NODE_ENV': JSON.stringify(appEnv)
