@@ -1,6 +1,7 @@
 .search {
   background: #00BCD4;
   padding: 10px 5px;
+  position: relative;
 
   input[type="text"] {
     padding: 10px;
@@ -11,7 +12,8 @@
   }
 
   .search-icon {
-    position: relative;
-    top: .8vh;
+    position: absolute;
+    top: 18px;
+    right: 12px;
   }
 }
