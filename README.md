@@ -6,6 +6,8 @@ Bad ass server mocks
 [![Build Status](https://travis-ci.org/500tech/bdsm.svg?branch=master)](https://travis-ci.org/500tech/bdsm)
 [![npm version](https://badge.fury.io/js/bdsmjs.svg)](https://badge.fury.io/js/bdsmjs)
 
+![short introduction](https://github.com/500tech/bdsm/raw/master/introduction.gif)
+
 Using BDSM in your project
 --------------------------
 
@@ -40,10 +42,7 @@ In the mocks directory you have exports for either complete scenarios or separat
 Contributing to BDSM
 --------------------
 
-1. Install Node.js:
-    - From [nodejs.org](https://nodejs.org/) (All platforms)
-    - Or using [Homebrew](http://blog.teamtreehouse.com/install-node-js-npm-mac) (Mac)
-    - Or any other [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+
 1. Clone the repo
 1. Install dependencies (at the root of the repo):
 
@@ -61,10 +60,4 @@ Contributing to BDSM
 
     ```
     npm run build
-    ```
-
-1. Build for deployment (Windows only)
-
-    ```
-    npm run buildwin
     ```

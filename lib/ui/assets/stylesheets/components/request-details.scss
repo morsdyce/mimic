@@ -72,3 +72,22 @@
   text-transform: uppercase;
   border-bottom: 2px solid #52b665;
 }
+
+.request-params-title {
+  text-align: center;
+  font: inherit;
+  font-family: Roboto, sans-serif;
+  outline: none;
+  padding: 11px 12px;
+  margin: 5px 0;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.request-details-params {
+  .editor-frame {
+    min-height: 15vh;
+  }
+}

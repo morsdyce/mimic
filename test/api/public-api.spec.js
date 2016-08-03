@@ -12,7 +12,7 @@ describe('api interface', () => {
   const noop = () => {};
 
   it('should export api version', () => {
-    expect(API.version).toBe('0.0.1');
+    expect(API.version).toBeDefined();
   });
 
   it('should have capturedRequests property', () => {
@@ -112,12 +112,9 @@ describe('api interface', () => {
   });
 
   it('should export configuration', () => {
-    spyOn(PersistentStorage, 'getRaw');
+    const json = API.export();
 
-    expect(PersistentStorage.getRaw).not.toHaveBeenCalled();
-
-    API.export();
-    expect(PersistentStorage.getRaw).toHaveBeenCalled();
+    expect(json).toEqual('{"version":"1.0.2","scenarios":[{"id":"default-scenario","name":"Default Scenario","active":true,"mockedRequests":[]}]}');
   });
 
   it('should import configuration', () => {
