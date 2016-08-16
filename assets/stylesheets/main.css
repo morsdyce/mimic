@@ -111,26 +111,35 @@ body {
 }
 
 .features-section {
-  margin-top: 30px;
+  margin-top: 0;
   padding-bottom: 30px;
 }
 
+.features-section p {
+  font-size: 1.8rem;
+}
+
+p.app-description {
+  text-align: center;
+  font-size: 2rem;
+}
+
 .feature-icon {
-  height: 130px;
+  height: 80px;
 }
 
 .feature-icon-test {
-  width: 125px;
+  width: 85px;
 }
 
 .feature-icon-share {
-  width: 100px;
-  margin-top: 15px;
+  width: 60px;
+  margin-top: 19px;
 }
 
 .feature-icon-docs {
-  width: 100px;
-  margin-top: 16px;
+  width: 60px;
+  margin-top: 20px;
 }
 
 @media (max-width: 992px) {
