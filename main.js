@@ -114,22 +114,33 @@ var mockData = {
   ]
 };
 
-if (!localStorage.getItem('imported_sample')) {
-  window.bdsm.api.import(JSON.stringify(mockData));
-  localStorage.setItem('imported_sample', '1');
+if (screen.width > 720) {
+  $.ajaxSetup({ 'cache': true });
+  $.holdReady(true);
+  $.getScript("https://npmcdn.com/bdsmjs@0.3.1/dist/bdsm.js", function() {
+    $.holdReady(false);
+    $.ajaxSetup({ 'cache': false });
+  });
 }
 
-$.get('http://500tech.github.io/bdsm/api/content')
-  .then(function(response) {
-    $('.details-content').html(response);
-  });
+$(function() {
+  if (!localStorage.getItem('imported_sample')) {
+    window.bdsm.api.import(JSON.stringify(mockData));
+    localStorage.setItem('imported_sample', '1');
+  }
 
-$.get('http://500tech.github.io/bdsm/api/some-random-name/json')
-  .then(function(response) {
-    console.log('Received GET JSON response', response);
-  });
+  $.get('http://500tech.github.io/bdsm/api/content')
+    .then(function(response) {
+      $('.details-content').html(response);
+    });
 
-$.post('http://500tech.github.io/bdsm/api/body-wildcards', { name: 'bdsm', awesomeness: 9999 })
-  .then(function(response) {
-    console.log('Received post JSON response', response);
-  });
+  $.get('http://500tech.github.io/bdsm/api/some-random-name/json')
+    .then(function(response) {
+      console.log('Received GET JSON response', response);
+    });
+
+  $.post('http://500tech.github.io/bdsm/api/body-wildcards', { name: 'bdsm', awesomeness: 9999 })
+    .then(function(response) {
+      console.log('Received post JSON response', response);
+    });
+});
