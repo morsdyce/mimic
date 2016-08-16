@@ -1,6 +1,7 @@
 body {
   font-family: Open Sans, sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 .header {
@@ -86,6 +87,7 @@ body {
 }
 
 .details-content {
+  padding-bottom: 50px;
   font-size: 1.7rem;
 }
 
@@ -110,6 +112,7 @@ body {
 
 .features-section {
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 
 .feature-icon {
