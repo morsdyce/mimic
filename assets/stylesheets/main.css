@@ -160,4 +160,8 @@ p.app-description {
   .menu {
     text-align: right;
   }
+
+  .github-corner {
+    display: none;
+  }
 }
