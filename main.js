@@ -123,10 +123,30 @@ if (screen.width > 720) {
   });
 }
 
+function animateToggle() {
+  var bdsmToggle = $('[alt="Toggle BDSM"]');
+  var counter = 0;
+
+  var interval = setInterval(function() {
+    if (counter > 3) {
+      clearInterval(interval);
+      return;
+    }
+
+    counter += 1;
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    $(bdsmToggle).addClass('animated pulse').one(animationEnd, function() {
+      $(bdsmToggle).removeClass('animated pulse');
+    });
+  }, 1500);
+}
+
 $(function() {
-  if (!localStorage.getItem('imported_sample')) {
+  if (!localStorage.getItem('firstVisit')) {
     window.bdsm.api.import(JSON.stringify(mockData));
-    localStorage.setItem('imported_sample', '1');
+
+    animateToggle();
+    localStorage.setItem('firstVisit', '1');
   }
 
   $.get('http://500tech.github.io/bdsm/api/content')
