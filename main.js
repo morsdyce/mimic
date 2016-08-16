@@ -114,7 +114,7 @@ var mockData = {
   ]
 };
 
-if (screen.width > 720) {
+if (screen.width > 1024) {
   $.ajaxSetup({ 'cache': true });
   $.holdReady(true);
   $.getScript("https://npmcdn.com/bdsmjs@0.3.1/dist/bdsm.js", function() {

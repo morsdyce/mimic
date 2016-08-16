@@ -147,6 +147,7 @@ p.app-description {
   .watch-screencast-button {
     display: block;
     margin: 10px auto;
+    font-size: 2rem;
   }
 
   .features-menu,
