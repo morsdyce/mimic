@@ -1,3 +1,5 @@
+$.ajaxSetup({ 'cache': true });
+
 var mockData = {
   "version": "1.0.2",
   "scenarios": [
@@ -115,11 +117,9 @@ var mockData = {
 };
 
 if (screen.width > 1024) {
-  $.ajaxSetup({ 'cache': true });
   $.holdReady(true);
   $.getScript("https://npmcdn.com/bdsmjs@0.3.1/dist/bdsm.js", function() {
     $.holdReady(false);
-    $.ajaxSetup({ 'cache': false });
   });
 }
 
