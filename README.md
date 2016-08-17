@@ -6,7 +6,7 @@ Bad ass server mocks
 [![Build Status](https://travis-ci.org/500tech/bdsm.svg?branch=master)](https://travis-ci.org/500tech/bdsm)
 [![npm version](https://badge.fury.io/js/bdsmjs.svg)](https://badge.fury.io/js/bdsmjs)
 
-![short introduction](https://github.com/500tech/bdsm/raw/master/introduction.gif)
+![short introduction](http://500tech.github.io/bdsm/assets/images/bdsm_intro.gif)
 
 Using BDSM in your project
 --------------------------
