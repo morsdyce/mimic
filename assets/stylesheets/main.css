@@ -36,10 +36,19 @@ body {
 
 .macbook {
   text-align: center;
+  position: relative;
 }
 
 .macbook img {
   width: 60%;
+}
+
+.animated-intro {
+  position: absolute;
+  top: 13%;
+  left: 28%;
+  width: 44% !important;
+  display: inline-block;
 }
 
 .call-to-action {
