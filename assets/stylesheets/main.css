@@ -4,6 +4,11 @@ body {
   overflow-x: hidden;
 }
 
+.logo {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 3.8rem;
+}
+
 .header {
   margin: 10px 0;
 }
