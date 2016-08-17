@@ -7,6 +7,15 @@ body {
 .logo {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 3.8rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.logo:focus,
+.logo:hover {
+  color: #000;
+  text-decoration: none;
+  outline: none;
 }
 
 .header {
@@ -80,6 +89,12 @@ body {
   box-shadow: 2px 3px 2px rgba(0,0,0,0.08);
 }
 
+.get-started-button:focus,
+.watch-screencast-button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
 .watch-screencast-button:hover {
   text-decoration: none;
   color: gray;
@@ -136,6 +151,19 @@ body {
 p.app-description {
   text-align: center;
   font-size: 2rem;
+}
+
+.quickstart p {
+  font-size: 2rem;
+}
+
+.quickstart ol li {
+  font-size: 1.5rem;
+}
+
+.quickstart video {
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .feature-icon {
