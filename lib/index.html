@@ -69,6 +69,15 @@
         }).then(function (response) {
           console.log('Demo: jsonplaceholder PUT post response', response)
         });
+
+        $.ajax('http://localhost/api/login', {
+          method: 'POST',
+          data: JSON.stringify({"user": "test", "password": "test" }),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json"
+        }).then(function (response) {
+          console.log('Demo: jsonplaceholder PUT post response', response)
+        });
       });
     </script>
   </body>
