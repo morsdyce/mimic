@@ -118,7 +118,7 @@ var mockData = {
 
 if (screen.width > 1024) {
   $.holdReady(true);
-  $.getScript("https://npmcdn.com/bdsmjs@0.3.1/dist/bdsm.js", function() {
+  $.getScript("https://npmcdn.com/bdsm@1.0.1/dist/bdsm.js", function() {
     $.holdReady(false);
   });
 }
