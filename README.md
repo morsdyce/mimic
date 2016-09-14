@@ -13,11 +13,11 @@ Using BDSM in your project
 
 Add to your packages:
 
-    npm install bdsmjs --save
+    npm install bdsm --save
 
 Require in your app:
 
-    import 'bdsmjs';
+    import 'bdsm';
 
 Once you reload the application, the BDSM logo will appear in bottom
 right corner.
