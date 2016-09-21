@@ -30,7 +30,7 @@ Using Mocks tracked by git
 If you want to use mocks which will be committed into git and you're using webpack you can use the following code to import the mocks on application start:
 
 ```
-import bdsm from 'bdsmjs';
+import bdsm from 'bdsm';
 const mocks = require.context(__dirname + '/mocks', true, /\.json$/);
 mocks.keys().forEach((key) => bdsm.import(JSON.stringify(mocks(key))));
 ```
