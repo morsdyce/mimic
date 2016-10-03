@@ -7,6 +7,7 @@
     "prestart": "npm install",
     "start": "webpack-dev-server --progress",
     "build": "NODE_ENV=production webpack -p --progress",
+    "build:dev": "NODE_ENV=development webpack",
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
     "tdd": "NODE_ENV=test node_modules/.bin/karma start"
   },
@@ -68,7 +69,7 @@
     "superagent": "1.6.0",
     "urijs": "1.17.0",
     "uuid": "2.0.1",
-    "xhook": "git+https://github.com/morsdyce/xhook.git#1b3241544d8ae55a92ac585dacef43fec150de06",
+    "xhook": "git+https://github.com/morsdyce/xhook.git#bd74241bdee9c4b857bc3d991b7ce2e4c4387639",
     "autoprefixer-loader": "3.1.0",
     "babel-core": "6.10.4",
     "babel-loader": "6.2.4",
