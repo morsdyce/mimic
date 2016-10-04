@@ -19,6 +19,8 @@ let config = {
 
   entry: {
     'bdsm.api': ['api/index.js'],
+    'bdsm.worker': ['api/worker.js'],
+    'worker': ['worker_example.js'],
     'bdsm': 'index.js'
   },
 
