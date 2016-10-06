@@ -15,7 +15,8 @@
     "dist/bdsm.js",
     "dist/bdsm.api.js",
     "dist/bdsm.worker.js",
-    "worker.js"
+    "worker.js",
+    "api.js"
   ],
   "repository": {
     "type": "git",
