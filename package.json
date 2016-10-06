@@ -1,6 +1,6 @@
 {
   "name": "bdsm",
-  "version": "1.0.3-beta.2",
+  "version": "1.0.3-beta.6",
   "description": "Bad ass client side mocking solution",
   "main": "dist/bdsm.js",
   "scripts": {
@@ -12,7 +12,10 @@
     "tdd": "NODE_ENV=test node_modules/.bin/karma start"
   },
   "files": [
-    "dist"
+    "dist/bdsm.js",
+    "dist/bdsm.api.js",
+    "dist/bdsm.worker.js",
+    "worker.js"
   ],
   "repository": {
     "type": "git",
