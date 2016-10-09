@@ -9,6 +9,7 @@ node_js:
 
 install:
 - npm install -g nightwatch
+- npm install
 
 before_install:
  - export CHROME_BIN=/usr/bin/google-chrome
