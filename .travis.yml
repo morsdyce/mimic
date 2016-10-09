@@ -1,8 +1,13 @@
+addons:
+  sauce_connect: true
 sudo: required
 dist: trusty
 language: node_js
 node_js:
  - "6"
+
+install:
+- npm install -g nightwatch
 
 before_install:
  - export CHROME_BIN=/usr/bin/google-chrome
@@ -12,3 +17,12 @@ before_install:
  - sudo apt-get install -y libappindicator1 fonts-liberation
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
+
+before_script:
+  - npm run build
+  - start:integration-server &
+
+script:
+  - nightwatch --config nightwatch-ci.js
+  // This one feels hacky, but does the job of killing the server
+  - pkill node
