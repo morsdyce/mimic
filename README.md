@@ -4,7 +4,7 @@ bdsm
 Bad ass server mocks
 
 [![Build Status](https://travis-ci.org/500tech/bdsm.svg?branch=master)](https://travis-ci.org/500tech/bdsm)
-[![npm version](https://badge.fury.io/js/bdsmjs.svg)](https://badge.fury.io/js/bdsmjs)
+[![npm version](https://badge.fury.io/js/bdsm.svg)](https://badge.fury.io/js/bdsm)
 
 ![short introduction](http://500tech.github.io/bdsm/assets/images/bdsm_intro.gif)
 
@@ -30,7 +30,7 @@ Using Mocks tracked by git
 If you want to use mocks which will be committed into git and you're using webpack you can use the following code to import the mocks on application start:
 
 ```
-import bdsm from 'bdsmjs';
+import bdsm from 'bdsm';
 const mocks = require.context(__dirname + '/mocks', true, /\.json$/);
 mocks.keys().forEach((key) => bdsm.import(JSON.stringify(mocks(key))));
 ```
