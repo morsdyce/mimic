@@ -1,5 +1,6 @@
 addons:
   sauce_connect: true
+
 sudo: required
 dist: trusty
 language: node_js
@@ -20,9 +21,8 @@ before_install:
 
 before_script:
   - npm run build
-  - start:integration-server &
+  - npm run start:integration-server &
 
 script:
   - nightwatch --config nightwatch-ci.js
-  // This one feels hacky, but does the job of killing the server
   - pkill node
