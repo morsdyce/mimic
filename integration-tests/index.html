@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+
+<div>
+  <h3>Requests Basics</h3>
+  <button id="get-fetch">Get FETCH</button>
+  <button id="get-xhr">Get XHR</button>
+
+  <button id="post-fetch">POST FETCH</button>
+  <button id="post-xhr">POST XHR</button>
+</div>
+
+<div>
+  <h3>Url wildcards</h3>
+  <button id="get-fetch-wildcard">Get FETCH Wildcard</button>
+  <button id="get-xhr-wildcard">Get XHR wildcard</button>
+</div>
+
+<div>
+  <h3>Request param wildcards</h3>
+  <button id="post-fetch-params-wildcard">POST FETCH Request Body Wildcard</button>
+  <button id="post-xhr-params-wildcard">POST XHR Request Body wildcard</button>
+</div>
+
+<div>
+  <h3>Url Wildcards + Request param wildcards</h3>
+  <button id="post-fetch-both-wildcard">POST FETCH Request Body + url Wildcard</button>
+  <button id="post-xhr-both-wildcard">POST XHR Request Body + url wildcard</button>
+</div>
+
+<div>
+  <h3>Request Delays</h3>
+  <button id="get-fetch-delay">Get FETCH Delay</button>
+  <button id="get-xhr-delay">Get XHR Delay</button>
+</div>
+
+<div>
+  <h3>Web worker request</h3>
+  <button id="webworker-get-fetch">Get FETCH</button>
+  <button id="webworker-get-xhr">Get XHR</button>
+</div>
+
+<h3>Result</h3>
+<div id="result"></div>
+
+<script src="../dist/bdsm.js"></script>
+<script>
+  function outputResponse(response) {
+    $('#result').text(response);
+  }
+
+  function outputError() {
+    $('#result').text('request failed');
+  }
+
+  function outputWorkerResponse(response) {
+    const data = response.data ? JSON.stringify(response.data) : 'request failed';
+    $('#result').text(data);
+  }
+
+  function clearResponse() {
+    $('#result').text('');
+  }
+
+  function parseResponseAsText(response) {
+    return response.text();
+  }
+
+  function getRandomString() {
+    return Math.round(Math.random() * 100).toString();
+  }
+
+
+  // Request basics
+  $('#get-fetch').click(function() {
+    clearResponse();
+    fetch('http://bdsm-example.com/get')
+      .then(parseResponseAsText)
+      .then(outputResponse)
+      .catch(outputError);
+  });
+
+  $('#get-xhr').click(function() {
+    clearResponse();
+    $.get('http://bdsm-example.com/get')
+      .then(outputResponse)
+      .fail(outputError);
+  });
+
+  $('#post-fetch').click(function() {
+    clearResponse();
+    fetch('http://bdsm-example.com/post', {
+      method: 'post',
+      body: JSON.stringify({ user: 'user', password: 'password' })
+    }).then(parseResponseAsText)
+      .then(outputResponse)
+      .catch(outputError);
+  });
+
+  $('#post-xhr').click(function() {
+    clearResponse();
+    $.post('http://bdsm-example.com/post', {
+      user: 'user',
+      password: 'password'
+    }).then(outputResponse)
+      .fail(outputError);
+  });
+
+  // Url Wildcards
+  $('#get-fetch-wildcard').click(function() {
+    clearResponse();
+    fetch('http://bdsm-example.com/get-wildcard/' + getRandomString())
+      .then(parseResponseAsText)
+      .then(outputResponse)
+      .catch(outputError);
+  });
+
+  $('#get-xhr-wildcard').click(function() {
+    clearResponse();
+    $.get('http://bdsm-example.com/get-wildcard/' + getRandomString())
+      .then(outputResponse)
+      .fail(outputError);
+  });
+
+  // Request parameters wildcards
+  $('#post-fetch-params-wildcard').click(function() {
+    clearResponse();
+    fetch('http://bdsm-example.com/post-wildcard', {
+      method: 'post',
+      body: JSON.stringify({ user: 'user' + getRandomString(), password: 'password' + getRandomString() })
+    }).then(parseResponseAsText)
+      .then(outputResponse)
+      .catch(outputError);
+  });
+
+  $('#post-xhr-params-wildcard').click(function() {
+    clearResponse();
+    $.post('http://bdsm-example.com/post-wildcard', {
+      user: 'user' + getRandomString(),
+      password: 'password' + getRandomString()
+    }).then(outputResponse)
+      .fail(outputError);
+  });
+
+  // Url wildcards + request param wildcards
+  $('#post-fetch-both-wildcard').click(function() {
+    clearResponse();
+    fetch('http://bdsm-example.com/post-wildcard-both/' + getRandomString(), {
+      method: 'post',
+      body: JSON.stringify({ user: 'user' + getRandomString(), password: 'password' + getRandomString() })
+    }).then(parseResponseAsText)
+      .then(outputResponse)
+      .catch(outputError);
+  });
+
+  $('#post-xhr-both-wildcard').click(function() {
+    clearResponse();
+    $.post('http://bdsm-example.com/post-wildcard-both/' + getRandomString(), {
+      user: 'user' + getRandomString(),
+      password: 'password' + getRandomString()
+    }).then(outputResponse)
+      .fail(outputError);
+  });
+
+  // request delays
+  $('#get-fetch-delay').click(function() {
+    clearResponse();
+    fetch('http://bdsm-example.com/get-delay')
+      .then(parseResponseAsText)
+      .then(outputResponse)
+      .catch(outputError);
+  });
+
+  $('#get-xhr-delay').click(function() {
+    clearResponse();
+    $.get('http://bdsm-example.com/get-delay')
+      .then(outputResponse)
+      .fail(outputError);
+  });
+
+  // web worker requests
+  $('#webworker-get-fetch').click(function() {
+    clearResponse();
+    var worker = new Worker('worker.js');
+    window.bdsm.api.bootstrapWorker(worker);
+
+    worker.onmessage = outputWorkerResponse;
+
+    worker.postMessage({
+      type: 'REQUEST',
+      url: 'http://bdsm-example.com/worker',
+      method: 'GET',
+      requestMethod: 'fetch'
+    });
+  });
+
+  $('#webworker-get-xhr').click(function() {
+    clearResponse();
+    var worker = new Worker('worker.js');
+    window.bdsm.api.bootstrapWorker(worker);
+
+    worker.onmessage = outputWorkerResponse;
+
+    worker.postMessage({
+      type: 'REQUEST',
+      url: 'http://bdsm-example.com/worker',
+      method: 'GET',
+      requestMethod: 'xhr'
+    });
+  });
+</script>
+</body>
+</html>
