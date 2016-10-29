@@ -34,7 +34,7 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         platform: 'OS X 10.11',
-        version: '47',
+        version: '54',
       },
     },
   }
