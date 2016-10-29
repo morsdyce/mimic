@@ -11,7 +11,7 @@
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
     "tdd": "NODE_ENV=test node_modules/.bin/karma start",
     "start:integration-server": "http-server .",
-    "test:integration": "nightwatch"
+    "test:integration": "npm run build ; npm run start:integration-server & nightwatch ; pkill node"
   },
   "files": [
     "dist/bdsm.js",
