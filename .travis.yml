@@ -23,6 +23,7 @@ before_install:
 before_script:
   - npm run build
   - npm run start:integration-server &
+  - sleep 5
 
 script:
   - nightwatch --config nightwatch-ci.js
