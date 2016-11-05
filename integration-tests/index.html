@@ -49,7 +49,10 @@
 <h3>Result</h3>
 <div id="result"></div>
 
-<script src="../dist/bdsm.js"></script>
+<script src="../dist/bdsm.remote.js"></script>
+<script>
+  window.bdsm.default(({ hostname: 'localhost', port: 5000 }));
+</script>
 <script>
   function outputResponse(response) {
     $('#result').text(response);
