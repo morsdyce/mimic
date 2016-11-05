@@ -51,7 +51,7 @@
 
 <script src="../dist/bdsm.remote.js"></script>
 <script>
-  window.bdsm.default(({ hostname: 'localhost', port: 5000 }));
+  window.api = window.bdsm.default(({ hostname: 'localhost', port: 5000 }));
 </script>
 <script>
   function outputResponse(response) {
@@ -191,7 +191,7 @@
   $('#webworker-get-fetch').click(function() {
     clearResponse();
     var worker = new Worker('worker.js');
-    window.bdsm.api.bootstrapWorker(worker);
+    window.api.bootstrapWorker(worker);
 
     worker.onmessage = outputWorkerResponse;
 
@@ -206,7 +206,7 @@
   $('#webworker-get-xhr').click(function() {
     clearResponse();
     var worker = new Worker('worker.js');
-    window.bdsm.api.bootstrapWorker(worker);
+    window.api.bootstrapWorker(worker);
 
     worker.onmessage = outputWorkerResponse;
 
