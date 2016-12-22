@@ -22,7 +22,7 @@ function handleSuccess(resultId) {
 $(function() {
 
   $('.test1').click(function() {
-    $.get('http://500tech.github.io/bdsm/example.json')
+    $.get('http://500tech.github.io/bdsm/example')
       .done(handleSuccess('result1'))
       .fail(handleFailure('result1'));
   });
