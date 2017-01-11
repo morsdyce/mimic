@@ -35,7 +35,7 @@ The library should work in evergreen browsers
 ## Tracking XHR Requests
 
 Keep track of XHR requests of the installed application and create an api to list all XHR requests that were tracked.
-Whenever an XHR request occures in the application bdsm should capture it and save the following details:
+Whenever an XHR request occures in the application mimic should capture it and save the following details:
 
 1. Method
 1. URL
@@ -45,7 +45,7 @@ Whenever an XHR request occures in the application bdsm should capture it and sa
 
 ## Add Mock Rule
 
-A user should be able to add an XHR request which bdsm will override.
+A user should be able to add an XHR request which mimic will override.
 Initially the following parameters will be provided:
 
 1. URL
@@ -200,7 +200,7 @@ A user could use special test helpers to load configurations from local files/ur
 
 ## Dynamic mocks
 
-A user should have the ability to use a templating language defined by bdsm to allow using Parameters/Headers/Random generated data in mocked responses.
+A user should have the ability to use a templating language defined by mimic to allow using Parameters/Headers/Random generated data in mocked responses.
 
 As well as defining conditional blocks to change responses
 

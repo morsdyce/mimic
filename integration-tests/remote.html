@@ -49,9 +49,9 @@
 <h3>Result</h3>
 <div id="result"></div>
 
-<script src="../dist/bdsm.remote.js"></script>
+<script src="../dist/mimic.remote.js"></script>
 <script>
-  window.api = window.bdsm.default(({ hostname: 'localhost', port: 5000 }));
+  window.api = window.mimic.default(({ hostname: 'localhost', port: 5000 }));
 </script>
 <script>
   function outputResponse(response) {
@@ -83,7 +83,7 @@
   // Request basics
   $('#get-fetch').click(function() {
     clearResponse();
-    fetch('http://bdsm-example.com/get')
+    fetch('http://mimic-example.com/get')
       .then(parseResponseAsText)
       .then(outputResponse)
       .catch(outputError);
@@ -91,14 +91,14 @@
 
   $('#get-xhr').click(function() {
     clearResponse();
-    $.get('http://bdsm-example.com/get')
+    $.get('http://mimic-example.com/get')
       .then(outputResponse)
       .fail(outputError);
   });
 
   $('#post-fetch').click(function() {
     clearResponse();
-    fetch('http://bdsm-example.com/post', {
+    fetch('http://mimic-example.com/post', {
       method: 'post',
       body: JSON.stringify({ user: 'user', password: 'password' })
     }).then(parseResponseAsText)
@@ -108,7 +108,7 @@
 
   $('#post-xhr').click(function() {
     clearResponse();
-    $.post('http://bdsm-example.com/post', {
+    $.post('http://mimic-example.com/post', {
       user: 'user',
       password: 'password'
     }).then(outputResponse)
@@ -118,7 +118,7 @@
   // Url Wildcards
   $('#get-fetch-wildcard').click(function() {
     clearResponse();
-    fetch('http://bdsm-example.com/get-wildcard/' + getRandomString())
+    fetch('http://mimic-example.com/get-wildcard/' + getRandomString())
       .then(parseResponseAsText)
       .then(outputResponse)
       .catch(outputError);
@@ -126,7 +126,7 @@
 
   $('#get-xhr-wildcard').click(function() {
     clearResponse();
-    $.get('http://bdsm-example.com/get-wildcard/' + getRandomString())
+    $.get('http://mimic-example.com/get-wildcard/' + getRandomString())
       .then(outputResponse)
       .fail(outputError);
   });
@@ -134,7 +134,7 @@
   // Request parameters wildcards
   $('#post-fetch-params-wildcard').click(function() {
     clearResponse();
-    fetch('http://bdsm-example.com/post-wildcard', {
+    fetch('http://mimic-example.com/post-wildcard', {
       method: 'post',
       body: JSON.stringify({ user: 'user' + getRandomString(), password: 'password' + getRandomString() })
     }).then(parseResponseAsText)
@@ -144,7 +144,7 @@
 
   $('#post-xhr-params-wildcard').click(function() {
     clearResponse();
-    $.post('http://bdsm-example.com/post-wildcard', {
+    $.post('http://mimic-example.com/post-wildcard', {
       user: 'user' + getRandomString(),
       password: 'password' + getRandomString()
     }).then(outputResponse)
@@ -154,7 +154,7 @@
   // Url wildcards + request param wildcards
   $('#post-fetch-both-wildcard').click(function() {
     clearResponse();
-    fetch('http://bdsm-example.com/post-wildcard-both/' + getRandomString(), {
+    fetch('http://mimic-example.com/post-wildcard-both/' + getRandomString(), {
       method: 'post',
       body: JSON.stringify({ user: 'user' + getRandomString(), password: 'password' + getRandomString() })
     }).then(parseResponseAsText)
@@ -164,7 +164,7 @@
 
   $('#post-xhr-both-wildcard').click(function() {
     clearResponse();
-    $.post('http://bdsm-example.com/post-wildcard-both/' + getRandomString(), {
+    $.post('http://mimic-example.com/post-wildcard-both/' + getRandomString(), {
       user: 'user' + getRandomString(),
       password: 'password' + getRandomString()
     }).then(outputResponse)
@@ -174,7 +174,7 @@
   // request delays
   $('#get-fetch-delay').click(function() {
     clearResponse();
-    fetch('http://bdsm-example.com/get-delay')
+    fetch('http://mimic-example.com/get-delay')
       .then(parseResponseAsText)
       .then(outputResponse)
       .catch(outputError);
@@ -182,7 +182,7 @@
 
   $('#get-xhr-delay').click(function() {
     clearResponse();
-    $.get('http://bdsm-example.com/get-delay')
+    $.get('http://mimic-example.com/get-delay')
       .then(outputResponse)
       .fail(outputError);
   });
@@ -197,7 +197,7 @@
 
     worker.postMessage({
       type: 'REQUEST',
-      url: 'http://bdsm-example.com/worker',
+      url: 'http://mimic-example.com/worker',
       method: 'GET',
       requestMethod: 'fetch'
     });
@@ -212,7 +212,7 @@
 
     worker.postMessage({
       type: 'REQUEST',
-      url: 'http://bdsm-example.com/worker',
+      url: 'http://mimic-example.com/worker',
       method: 'GET',
       requestMethod: 'xhr'
     });

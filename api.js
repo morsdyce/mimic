@@ -1,2 +1,2 @@
-const api = require('./dist/bdsm.api.js');
+const api = require('./dist/mimic.api.js');
 module.exports = api;
