@@ -307,7 +307,7 @@ module.exports = {
       .url('http://127.0.0.1:8080/integration-tests')
       .waitForElementVisible('#webworker-get-xhr', 1000)
       .click('#webworker-get-xhr')
-      .pause(1000)
+      .pause(1500)
       .assert.containsText('#result', 'request failed')
       .end();
   },
@@ -320,7 +320,7 @@ module.exports = {
       })
       .waitForElementVisible('#webworker-get-xhr', 1000)
       .click('#webworker-get-xhr')
-      .pause(1000)
+      .pause(1500)
       .assert.containsText('#result', '"FETCH-WORKER"')
       .end();
   },

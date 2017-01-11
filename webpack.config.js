@@ -20,6 +20,7 @@ let config = {
   entry: {
     'bdsm.api': ['api/index.js'],
     'bdsm.worker': ['api/worker.js'],
+    'bdsm.remote': ['api/remote.js'],
 
     'bdsm': 'index.js'
   },

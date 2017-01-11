@@ -1,6 +1,6 @@
 {
   "name": "bdsm",
-  "version": "1.0.3",
+  "version": "1.0.4-beta.6",
   "description": "Bad ass client side mocking solution",
   "main": "dist/bdsm.js",
   "scripts": {
@@ -17,8 +17,11 @@
     "dist/bdsm.js",
     "dist/bdsm.api.js",
     "dist/bdsm.worker.js",
+    "dist/bdsm.remote.js",
     "worker.js",
-    "api.js"
+    "api.js",
+    "remote.js",
+    "react-native.js"
   ],
   "repository": {
     "type": "git",
@@ -75,7 +78,7 @@
     "lodash": "4.6.1",
     "material-ui": "0.14.4",
     "nightwatch": "0.9.8",
-    "node-sass": "3.4.2",
+    "node-sass": "3.11.2",
     "normalize.css": "3.0.3",
     "raw-loader": "0.5.1",
     "react": "0.14.7",
@@ -98,6 +101,7 @@
     "sass-loader": "3.1.2",
     "scss-loader": "0.0.1",
     "semver": "5.1.0",
+    "socketcluster-client": "5.0.17",
     "standard-headers": "0.1.1",
     "style-loader": "0.13.0",
     "superagent": "1.6.0",
@@ -107,6 +111,6 @@
     "webpack": "1.12.10",
     "webpack-dev-server": "1.14.0",
     "worker-loader": "0.7.1",
-    "xhook": "git+https://github.com/morsdyce/xhook.git#bd74241bdee9c4b857bc3d991b7ce2e4c4387639"
+    "xhook": "git+https://github.com/morsdyce/xhook.git#48ab024a3e19483609b6c8236d135f4a78a7dcec"
   }
 }
