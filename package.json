@@ -1,8 +1,8 @@
 {
-  "name": "bdsm",
+  "name": "mimic",
   "version": "1.0.4-beta.6",
   "description": "Bad ass client side mocking solution",
-  "main": "dist/bdsm.js",
+  "main": "dist/mimic.js",
   "scripts": {
     "prestart": "npm install",
     "start": "webpack-dev-server --progress",
@@ -14,10 +14,10 @@
     "test:integration": "npm run build ; npm run start:integration-server & nightwatch ; pkill node"
   },
   "files": [
-    "dist/bdsm.js",
-    "dist/bdsm.api.js",
-    "dist/bdsm.worker.js",
-    "dist/bdsm.remote.js",
+    "dist/mimic.js",
+    "dist/mimic.api.js",
+    "dist/mimic.worker.js",
+    "dist/mimic.remote.js",
     "worker.js",
     "api.js",
     "remote.js",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/500tech/bdsm.git"
+    "url": "https://github.com/500tech/mimic.git"
   },
   "author": "500Tech <info@500tech.com>",
   "contributors": [

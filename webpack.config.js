@@ -18,11 +18,11 @@ let config = {
   context: libPath,
 
   entry: {
-    'bdsm.api': ['api/index.js'],
-    'bdsm.worker': ['api/worker.js'],
-    'bdsm.remote': ['api/remote.js'],
+    'mimic.api': ['api/index.js'],
+    'mimic.worker': ['api/worker.js'],
+    'mimic.remote': ['api/remote.js'],
 
-    'bdsm': 'index.js'
+    'mimic': 'index.js'
   },
 
   // Options affecting the resolving of modules
@@ -39,7 +39,7 @@ let config = {
     // [name] - Will be set per each key name in `entry`
     filename: distFilePattern,
     libraryTarget: 'umd',
-    library: 'bdsm'
+    library: 'mimic'
   },
 
   module: {
