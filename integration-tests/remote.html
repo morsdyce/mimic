@@ -49,7 +49,10 @@
 <h3>Result</h3>
 <div id="result"></div>
 
-<script src="../dist/mimic.js"></script>
+<script src="../dist/mimic.remote.js"></script>
+<script>
+  window.api = window.mimic.default(({ hostname: 'localhost', port: 5000 }));
+</script>
 <script>
   function outputResponse(response) {
     $('#result').text(response);
@@ -188,7 +191,7 @@
   $('#webworker-get-fetch').click(function() {
     clearResponse();
     var worker = new Worker('worker.js');
-    window.mimic.api.bootstrapWorker(worker);
+    window.api.bootstrapWorker(worker);
 
     worker.onmessage = outputWorkerResponse;
 
@@ -203,7 +206,7 @@
   $('#webworker-get-xhr').click(function() {
     clearResponse();
     var worker = new Worker('worker.js');
-    window.mimic.api.bootstrapWorker(worker);
+    window.api.bootstrapWorker(worker);
 
     worker.onmessage = outputWorkerResponse;
 

@@ -1,2 +1,2 @@
-const worker = require('./dist/bdsm.worker.js');
+const worker = require('./dist/mimic.worker.js');
 module.exports = worker;
