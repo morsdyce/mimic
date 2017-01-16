@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mimic - 2 Minute Quickstart</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|PT+Sans+Narrow:700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/stylesheets/animate.css">
+  <link rel="stylesheet" href="../assets/stylesheets/main.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row header">
+    <div class="col-lg-4 col-lg-offset-2 col-xs-2">
+      <a href="/mimic" class="logo"><span>Mimic</span></a>
+    </div>
+    <div class="col-lg-6 col-xs-10 menu">
+      <ul>
+        <li class="features-menu"><a href="/#features">Features</a></li>
+        <li class="get-started-menu"><a href="/#get-started">Get Started</a></li>
+        <li><a target="_blank" href="https://mimic.readme.io/reference">API</a></li>
+        <li class="get-started-menu"><a href="/guides">Guides</a></li>
+        <li><a href="https://github.com/500tech/mimic" target="_blank">Contribute</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+      <div class="row promo">
+        <div class="col-xs-12 slogan">
+          <p>Mocking requests with React Native</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="divider"></div>
+        </div>
+      </div>
+
+      <div class="row quickstart">
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+          <h2>Introduction</h2>
+          <p>Mimic allows you to see and mock all networks requests coming from your React native application.
+          In this guide we will see how we can easily install Mimic into our application and mock our first request.</p>
+          <p>You can also check our <a href="https://github.com/morsdyce/mimic-react-native-example" target="_blank">example repository on github</a></p>
+        </div>
+      </div>
+
+      <div class="row quickstart">
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+          <h2>Installing React Native</h2>
+          <p>
+            First lets create a new react-native application.
+            If you've never worked with react native before please head to the
+            <a target="_blank" href="https://facebook.github.io/react-native/">React Native Website</a>
+            for installation instructions.
+          </p>
+          <p>Once you've finished installing you can generate a new app by running the following commands in your terminal:</p>
+        </div>
+      </div>
+
+      <div class="row quickstart">
+        <div class="col-xs-12 getting-started-section">
+          <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+              <pre>
+<code>
+  <span class="c1"># Generate React Native Application</span>
+  react-native init myApp
+
+  <span class="c1"># Enter the application directory</span>
+  cd myApp
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row quickstart">
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+          <h2>Installing Mimic</h2>
+          <p>Now that we're in our application we need to install Mimic in our project as well as installing Mimic remote server</p>
+        </div>
+      </div>
+
+      <div class="row quickstart">
+        <div class="col-xs-12 getting-started-section">
+          <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+              <pre>
+<code>
+  <span class="c1"># Install Mimic library locally in our project</span>
+  npm install --save-dev mimic
+
+  <span class="c1"># Installing Mimic remote debugger agent globally in our system</span>
+  npm install --global mimic-remote
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84345045-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- fork at github -->
+<a href="https://github.com/500tech/mimic" target="_blank" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<script src="https://cdn.jsdelivr.net/g/jquery@2.2.4,bootstrap@3.3.6"></script>
+<script src="https://npmcdn.com/mimic@latest/dist/mimic.js"></script>
+<script src="../quickstart.js"></script>
+</body>
+</html>
