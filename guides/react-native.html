@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/stylesheets/animate.css">
   <link rel="stylesheet" href="../assets/stylesheets/main.css">
+  <link rel="stylesheet" href="../assets/stylesheets/react-native.css">
 </head>
 <body>
 <div class="container-fluid">
@@ -45,9 +46,48 @@
           <h2>Introduction</h2>
           <p>Mimic allows you to see and mock all networks requests coming from your React native application.
           In this guide we will see how we can easily install Mimic into our application and mock our first request.</p>
-          <p>You can also check our <a href="https://github.com/morsdyce/mimic-react-native-example" target="_blank">example repository on github</a></p>
+          <p>You can also check our <a href="https://github.com/morsdyce/mimic-react-native-example" target="_blank">example repository on GitHub</a></p>
         </div>
       </div>
+
+      <div class="row quickstart">
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+          <h2>TL;DR</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="row quickstart">
+        <div class="col-xs-12 getting-started-section">
+          <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+              <pre>
+<code>
+  react-native init myApp
+  cd myApp
+  npm install --save-dev mimic
+  npm install -g mimic-remote
+
+  <span class="c1"># In application code</span>
+  import connect from 'mimic/react-native';
+  connect();
+
+  <span class="c1"># In a new terminal tab</span>
+  mimic-remote
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12">
 
       <div class="row quickstart">
         <div class="col-lg-8 col-lg-offset-2 col-xs-12">
@@ -61,6 +101,9 @@
           <p>Once you've finished installing you can generate a new app by running the following commands in your terminal:</p>
         </div>
       </div>
+
+    </div>
+  </div>
 
       <div class="row quickstart">
         <div class="col-xs-12 getting-started-section">
@@ -84,12 +127,18 @@
         </div>
       </div>
 
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+
       <div class="row quickstart">
         <div class="col-lg-8 col-lg-offset-2 col-xs-12">
           <h2>Installing Mimic</h2>
           <p>Now that we're in our application we need to install Mimic in our project as well as installing Mimic remote server</p>
         </div>
       </div>
+
+    </div>
+  </div>
 
       <div class="row quickstart">
         <div class="col-xs-12 getting-started-section">
@@ -103,7 +152,7 @@
   npm install --save-dev mimic
 
   <span class="c1"># Installing Mimic remote debugger agent globally in our system</span>
-  npm install --global mimic-remote
+  npm install -g mimic-remote
 </code>
               </pre>
                 </div>
@@ -113,9 +162,150 @@
         </div>
       </div>
 
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+      <div class="row quickstart">
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+          <h2>Importing Mimic and first use</h2>
+          <p>
+            To use mimic we need to import it on our main application entry point. In most cases this is <strong>index.ios.js</strong> or <strong>index.android.js</strong>
+          </p>
+          <p>Once we imported the module we can use the connect function to connect to our local Mimic server</p>
+        </div>
+      </div>
     </div>
-
   </div>
+
+      <div class="row quickstart">
+        <div class="col-xs-12 getting-started-section">
+          <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+              <pre>
+<code>
+  <span class="c1"># Import Mimic into our project</span>
+  import connect from 'mimic/react-native';
+
+  <span class="c1"># connect to Mimic Server</span>
+  connect();
+
+  <span class="c1"># You can also specify a custom host and port to connect to</span>
+  connect({ host: 'localhost', port: 5000 });
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+
+      <div class="row quickstart">
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+          <h2>Full code example</h2>
+          <p>You can also check our <a href="https://github.com/morsdyce/mimic-react-native-example" target="_blank">example repository on GitHub</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="row quickstart">
+        <div class="col-xs-12 getting-started-section">
+          <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+              <pre>
+<code>
+<span class="c1"># Full example</span>
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Button
+} from 'react-native';
+
+import connect from 'mimic/react-native';
+
+connect();
+
+export default class mimicReactNative extends Component {
+   render() {
+    return // my view;
+   }
+}
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+  <div class="row quickstart">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+      <h2>Starting mimic server</h2>
+      <p>
+        Now your application is ready to go, all you now need is to start up the Mimic server and start mocking!
+      </p>
+      <p>To start the Mimic server run</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <div class="row quickstart">
+    <div class="col-xs-12 getting-started-section">
+      <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+              <pre>
+<code>
+  <span class="c1"># Running Mimic server</span>
+  mimic-remote
+
+  <span class="c1"># You can also run it on a different port (by default 5000)</span>
+  mimic-remote --port 4000
+
+  <span class="c1"># Or use shorthand syntax</span>
+  mimic-remote -p 4000
+</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+
+  <div class="row quickstart last-section">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+      <h2>Start Mocking!</h2>
+      <p>
+        We're all finished with installation, point your browser to http://localhost:5000 and start mocking.
+      </p>
+      <p>It is important to note that Mimic will hold off all your application requests until Mimic is open in your browser window</p>
+      <p>This is a current limitation of the implementation to allow you to mock any request that goes out at the start of the application.</p>
+    </div>
+  </div>
+  </div>
+</div>
+
 </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
