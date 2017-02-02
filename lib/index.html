@@ -29,7 +29,7 @@
           .then(function (response) {
             console.log('Demo: jsonplaceholder GET post response', response)
           });
-
+        
         fetch('http://jsonplaceholder.typicode.com/posts/3', {
           method: 'post',
           body: JSON.stringify({ user: 'user', password: 'password' })
