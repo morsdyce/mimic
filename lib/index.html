@@ -14,14 +14,18 @@
 
     <script>
       $(function () {
-        fetch('http://jsonplaceholder.typicode.com/posts/3')
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function (response) {
-            console.log('Demo: jsonplaceholder GET post response', response)
-          });
-
+        {
+          let accumulator = 0;
+          setInterval(() => {
+            fetch(`http://jsonplaceholder.typicode.com/posts/${accumulator++}`)
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function (response) {
+              console.log('Demo: jsonplaceholder GET post response', response)
+            });
+          }, 300);
+        }
         fetch('http://jsonplaceholder.typicode.com/posts/3', {
           method: 'post',
           body: JSON.stringify({ user: 'user', password: 'password' })
