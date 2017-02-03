@@ -22,7 +22,7 @@
     $('button').on('click', function (event) {
 
       if (event.target.dataset.post) {
-        fetch('http://jsonplaceholder.typicode.com/posts/3', {
+        fetch('https://jsonplaceholder.typicode.com/posts/3', {
           method: 'post',
           body: JSON.stringify({ user: 'user', password: 'password', gender: 'male', age: 28, birthday: '11/2/1980', agreeToTerms: true, email: 'joe@doe.com' })
         }).then(function(response) {
@@ -37,7 +37,7 @@
         return;
       }
 
-      $.get('http://uinames.com/api/?amount=2&region=' + event.target.dataset.region);
+      $.get('https://uinames.com/api/?amount=2&region=' + event.target.dataset.region);
     });
 
 
