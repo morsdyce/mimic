@@ -130,7 +130,7 @@ An initial structure might look like this:
             headers: {},
           },
           response: {
-            statusCode: 200,
+            status: 200,
             delay: 0,
             body: 'Woop woop',
             headers: {}
@@ -148,7 +148,7 @@ An initial structure might look like this:
             headers: {}
           },
           response: {
-            statusCode: 200,
+            status: 200,
             delay: 0,
             body: 'Gotcha',
             headers: {}
