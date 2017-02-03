@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mimic</title>
+</head>
+
+<body style="margin: 0;">
+<h1>Welcome to mimic</h1>
+
+<button data-region="germany">DEMO: German Names</button>
+<button data-region="russia">DEMO: Russian Names</button>
+<button data-region="israel">DEMO: Israeli Names</button>
+
+<script src="https://unpkg.com/mimic@ux"></script>
+
+<!-- FOR TESTING PURPOSES ONLY -->
+<script src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.js"></script>
+
+<script>
+  $(function () {
+    $('button').on('click', function (event) {
+      $.get('http://uinames.com/api/?amount=2&region=' + event.target.dataset.region);
+    });
+
+  });
+</script>
+</body>
+</html>
