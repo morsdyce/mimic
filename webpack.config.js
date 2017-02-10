@@ -1,8 +1,9 @@
 'use strict';
 
-const webpack           = require('webpack');
-const path              = require('path');
-const CleanPlugin       = require('clean-webpack-plugin');
+const webpack                       = require('webpack');
+const path                          = require('path');
+const CleanPlugin                   = require('clean-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const appEnv            = process.env.NODE_ENV || 'development';
 const libPath           = path.join(__dirname, 'lib');
@@ -106,6 +107,8 @@ if (appEnv === 'production') {
   config.plugins.push(
     // Remove build related folders
     new CleanPlugin(['dist']),
+
+    new LodashModuleReplacementPlugin(),
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,
