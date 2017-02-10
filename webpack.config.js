@@ -29,6 +29,10 @@ let config = {
   resolve: {
     // Enable resolving modules relative to these paths
     root: [libPath],
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat'
+    },
     extensions: ['', '.webpack.js', '.js']
   },
 
