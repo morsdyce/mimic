@@ -103,14 +103,12 @@ describe('api interface', () => {
     spyOn(Emitter, 'emit');
 
     expect(Mocks.mergeMocks).not.toHaveBeenCalled();
-    expect(PersistentStorage.persist).not.toHaveBeenCalled();
     expect(Emitter.emit).not.toHaveBeenCalled();
 
     const json = JSON.stringify(importMock);
     API.import(json);
 
     expect(Mocks.mergeMocks).toHaveBeenCalledWith(importMock.mocks);
-    expect(PersistentStorage.persist).toHaveBeenCalled();
     expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
   });
 
