@@ -11,6 +11,8 @@
     <button data-region="russia">DEMO: Russian Names</button>
     <button data-region="israel">DEMO: Israeli Names</button>
 
+    <button data-xml="true">XML FETCH</button>
+
     <script src="mimic.js"></script>
 
     <!-- FOR TESTING PURPOSES ONLY -->
@@ -19,6 +21,11 @@
     <script>
       $(function () {
         $('button').on('click', function (event) {
+          if (event.target.dataset.xml) {
+            $.get(`https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.shinty.com%2Fnews%2F%22%20and%20xpath%3D%22%2F%2Fdiv%5B%40class%3D%5C'topStories%5C'%5D%2Ful%2Fli%22&diagnostics=true`);
+            return;
+          }
+
           $.get('http://uinames.com/api/?amount=2&region=' + event.target.dataset.region);
         });
 
@@ -29,7 +36,7 @@
           .then(function (response) {
             console.log('Demo: jsonplaceholder GET post response', response)
           });
-        
+
         fetch('http://jsonplaceholder.typicode.com/posts/3', {
           method: 'post',
           body: JSON.stringify({ user: 'user', password: 'password' })
