@@ -1,6 +1,6 @@
 {
   "version": "1.0.1",
-  "mockedRequests": [
+  "mocks": [
     {
       "id": "e3a89307-fd58-4bfc-8c62-2674e0bfdc7b",
       "active": true,
@@ -50,7 +50,5 @@
       ],
       "selectedStateId": "eb489a1d-1bca-488e-8863-ae8ebf5d4d02"
     }
-  ],
-  "scenarios": [],
-  "currentScenario": "MockedRequests"
+  ]
 }
