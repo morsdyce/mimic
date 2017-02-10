@@ -7,7 +7,6 @@ const CleanPlugin       = require('clean-webpack-plugin');
 const appEnv            = process.env.NODE_ENV || 'development';
 const libPath           = path.join(__dirname, 'lib');
 const distPath          = path.join(__dirname, 'dist');
-const exclude           = /node_modules/;
 const assetsPathPattern = '[path][name].[hash].[ext]';
 const distFilePattern   = '[name].js';
 const packageConfig     = require('./package.json');
@@ -28,12 +27,15 @@ let config = {
   // Options affecting the resolving of modules
   resolve: {
     // Enable resolving modules relative to these paths
-    root: [libPath],
+    modules: [
+      libPath,
+      'node_modules'
+    ],
     alias: {
       'react': 'preact-compat',
       'react-dom': 'preact-compat'
     },
-    extensions: ['', '.webpack.js', '.js']
+    extensions: ['.webpack.js', '.js']
   },
 
   output: {
@@ -47,38 +49,32 @@ let config = {
   },
 
   module: {
-    loaders: [
+    rules: [
       // Babel
       {
         test: /\.jsx?$/,
-        exclude,
-        loader: 'babel'
+        loader: 'babel-loader',
+        include: [
+          path.resolve('lib'),
+          path.resolve('node_modules/preact-compat/src')
+        ]
       },
 
       // SCSS
       {
         test: /\.(css|scss)$/,
-        loaders: [
-          'css',
-          'autoprefixer',
-          'sass?includePaths[]=' + encodeURIComponent(libPath)
+        use: [
+          'css-loader',
+          'autoprefixer-loader',
+          'sass-loader?includePaths[]=' + encodeURIComponent(libPath)
         ]
-      },
-
-      // JSON
-      {
-        test: /\.json$/,
-        loader: 'json',
-        exclude
       },
 
       // Allow `require`ing image/font files (also when included in CSS)
       // Inline assets under 5kb as Base64 data URI, otherwise uses `file-loader`
       {
         test: /\.(jpe?g|png|gif|eot|woff2?|ttf|svg)(\?.*)?$/i,
-        loaders: [
-          'url?limit=999999&name=' + assetsPathPattern
-        ]
+        loader: 'url-loader?limit=999999&name=' + assetsPathPattern
       }
     ]
   },
@@ -94,11 +90,8 @@ let config = {
     })
   ],
 
-  // Settings for webpack-dev-server (instead of using CLI flags)
-  // `--hot` and `--progress` must be set using CLI
   devServer: {
     contentBase: libPath,
-    colors: true,
     noInfo: true,
     inline: true
   }
@@ -114,11 +107,17 @@ if (appEnv === 'production') {
     // Remove build related folders
     new CleanPlugin(['dist']),
 
-    new webpack.optimize.OccurrenceOrderPlugin(true),
-
-    new webpack.optimize.DedupePlugin(),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
 
     new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true
+      },
       compress: {
         warnings: false,
         screw_ie8: true
