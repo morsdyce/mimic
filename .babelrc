@@ -1,4 +1,4 @@
 {
   "presets": [["es2015", { "modules": false }], "react"],
-  "plugins": ["lodash", "transform-object-rest-spread"]
+  "plugins": ["lodash", "transform-object-rest-spread", "styled-components"]
 }
