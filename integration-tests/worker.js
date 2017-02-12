@@ -1,8 +1,6 @@
 importScripts('../dist/mimic.worker.js');
 importScripts('https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.js');
 
-self.mimic.default({ hostname: 'localhost', port: 5000 });
-
 self.addEventListener('message', (message) => {
   const { method, url, requestMethod } = message.data;
 

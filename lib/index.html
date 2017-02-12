@@ -7,6 +7,10 @@
   <body style="margin: 0;">
     <h1>Welcome to mimic</h1>
 
+    <button data-region="germany">DEMO: German Names</button>
+    <button data-region="russia">DEMO: Russian Names</button>
+    <button data-region="israel">DEMO: Israeli Names</button>
+
     <script src="mimic.js"></script>
 
     <!-- FOR TESTING PURPOSES ONLY -->
@@ -14,6 +18,10 @@
 
     <script>
       $(function () {
+        $('button').on('click', function (event) {
+          $.get('http://uinames.com/api/?amount=2&region=' + event.target.dataset.region);
+        });
+
         fetch('http://jsonplaceholder.typicode.com/posts/3')
           .then(function(response) {
             return response.json();
@@ -21,7 +29,7 @@
           .then(function (response) {
             console.log('Demo: jsonplaceholder GET post response', response)
           });
-
+        
         fetch('http://jsonplaceholder.typicode.com/posts/3', {
           method: 'post',
           body: JSON.stringify({ user: 'user', password: 'password' })
