@@ -94,7 +94,7 @@ describe('api interface', () => {
   it('should export configuration', () => {
     const json = API.export();
 
-    expect(json).toEqual('{"version":"1.0.2","mocks":[]}');
+    expect(json).toEqual('{"version":"2.0.0","mocks":[],"groups":[]}');
   });
 
   it('should import configuration', () => {
