@@ -1,4 +1,12 @@
 {
-  "presets": [["es2015", { "modules": false }], "react"],
-  "plugins": ["lodash", "transform-object-rest-spread", "styled-components"]
+  "presets": [
+    ["es2015", { "modules": false }],
+    "react"
+  ],
+  "plugins": [
+    "lodash",
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    "styled-components"
+  ]
 }
