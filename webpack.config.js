@@ -108,7 +108,11 @@ if (appEnv === 'production') {
     // Remove build related folders
     new CleanPlugin(['dist']),
 
-    new LodashModuleReplacementPlugin(),
+    new LodashModuleReplacementPlugin({
+      paths: true,
+      shorthands: true,
+      collections: true
+    }),
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,
