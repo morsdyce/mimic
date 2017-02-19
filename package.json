@@ -82,11 +82,14 @@
     "raw-loader": "0.5.1",
     "react-click-outside": "2.2.0",
     "react-codemirror": "0.3.0",
+    "react-dnd": "2.2.3",
+    "react-dnd-html5-backend": "2.2.3",
     "react-frame-component": "0.6.1",
+    "recompose": "0.22.0",
     "sass-loader": "6.0.1",
     "socketcluster-client": "5.2.5",
     "style-loader": "0.13.1",
-    "styled-components": "1.4.3",
+    "styled-components": "2.0.0-3",
     "superagent": "1.6.0",
     "urijs": "1.18.7",
     "url-loader": "0.5.7",
@@ -95,8 +98,5 @@
     "webpack-dev-server": "2.4.0",
     "worker-loader": "0.7.1",
     "xhook": "git+https://github.com/morsdyce/xhook.git#48ab024a3e19483609b6c8236d135f4a78a7dcec"
-  },
-  "dependencies": {
-    "styled-components": "2.0.0-3"
   }
 }
