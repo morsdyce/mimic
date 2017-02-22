@@ -1,4 +1,4 @@
-import { API } from 'api';
+import API from 'api';
 
 // TODO: support clearing state when cleaning storage
 describe('persistent storage', () => {

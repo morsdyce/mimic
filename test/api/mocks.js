@@ -1,4 +1,4 @@
-import { API } from 'api';
+import API from 'api';
 import Mocks from 'api/mocks';
 
 const request = {

@@ -1,4 +1,4 @@
-import { API } from 'api';
+import API from 'api';
 import { PersistentStorage } from 'api/storage';
 import Mocks from 'api/mocks';
 import Requests from 'api/requests';
