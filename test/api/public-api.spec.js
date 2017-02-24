@@ -1,6 +1,7 @@
 import API from 'api';
 import { PersistentStorage } from 'api/storage';
 import Mocks from 'api/mocks';
+import Groups from 'api/groups';
 import Requests from 'api/requests';
 import Emitter from 'api/emitter';
 import EVENTS from 'api/constants/events';
@@ -99,16 +100,19 @@ describe('api interface', () => {
 
   it('should import configuration', () => {
     spyOn(Mocks, 'mergeMocks');
+    spyOn(Groups, 'mergeGroups');
     spyOn(PersistentStorage, 'persist');
     spyOn(Emitter, 'emit');
 
     expect(Mocks.mergeMocks).not.toHaveBeenCalled();
+    expect(Groups.mergeGroups).not.toHaveBeenCalled();
     expect(Emitter.emit).not.toHaveBeenCalled();
 
     const json = JSON.stringify(importMock);
     API.import(json);
 
     expect(Mocks.mergeMocks).toHaveBeenCalledWith(importMock.mocks);
+    expect(Groups.mergeGroups).toHaveBeenCalledWith(importMock.groups);
     expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
   });
 
