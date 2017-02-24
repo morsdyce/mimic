@@ -50,5 +50,12 @@
       ],
       "selectedStateId": "eb489a1d-1bca-488e-8863-ae8ebf5d4d02"
     }
+  ],
+  "groups": [
+    {
+      "id": "1b24c8e6-46e8-42bd-bc92-2fddafefa7123",
+      "name": "my group",
+      "active": true
+    }
   ]
 }
