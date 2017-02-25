@@ -32,10 +32,6 @@ let config = {
       libPath,
       'node_modules'
     ],
-    alias: {
-      'react': 'preact-compat',
-      'react-dom': 'preact-compat'
-    },
     extensions: ['.webpack.js', '.js']
   },
 

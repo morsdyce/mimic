@@ -98,5 +98,9 @@
     "webpack-dev-server": "2.4.1",
     "worker-loader": "0.7.1",
     "xhook": "git+https://github.com/morsdyce/xhook.git#48ab024a3e19483609b6c8236d135f4a78a7dcec"
+  },
+  "dependencies": {
+    "react": "15.4.2",
+    "react-dom": "15.4.2"
   }
 }
