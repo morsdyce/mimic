@@ -1,61 +1,108 @@
 {
-  "version": "1.0.1",
+  "version": "2.0.0",
   "mocks": [
     {
-      "id": "e3a89307-fd58-4bfc-8c62-2674e0bfdc7b",
-      "active": true,
-      "requestHash": "GET|http://jsonplaceholder.typicode.com/posts/1|",
+      "id": "e6d6017f-eb24-4777-9010-07cd814ea9b8",
+      "active": false,
       "method": "GET",
-      "url": "http://jsonplaceholder.typicode.com/posts/1",
-      "headers": {
-        "Accept": "*/*"
-      },
-      "params": null,
-      "states": [
-        {
-          "id": "c285f7de-7878-48dd-9293-79612fd2463f",
-          "name": "Original Response",
-          "response": {
-            "status": 200,
-            "delay": 958,
-            "headers": "{\"pragma\":\"no-cache\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"expires\":\"-1\"}",
-            "body": "{\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}"
-          }
-        }
-      ],
-      "selectedStateId": "c285f7de-7878-48dd-9293-79612fd2463f"
-    },
-    {
-      "id": "1b24c8e6-46e8-42bd-bc92-2fddafefa711",
-      "active": true,
-      "requestHash": "PUT|http://jsonplaceholder.typicode.com/posts/1?q=bla&amount=3|{\"user\":{\"name\":\"adam\"}}",
-      "method": "PUT",
-      "url": "http://jsonplaceholder.typicode.com/posts/1?q=bla&amount=3",
+      "url": "http://jsonplaceholder.typicode.com/posts/2?q=bla&amount=3hjsaa",
       "headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Accept": "application/json, text/javascript, */*; q=0.01"
       },
       "params": "{\"user\":{\"name\":\"adam\"}}",
-      "states": [
-        {
-          "id": "eb489a1d-1bca-488e-8863-ae8ebf5d4d02",
-          "name": "Original Response",
-          "response": {
-            "status": 200,
-            "delay": 1285,
-            "headers": "{\"pragma\":\"no-cache\",\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-cache\",\"expires\":\"-1\"}",
-            "body": "{\n  \"user\": {\n    \"name\": \"adam\"\n  },\n  \"id\": 1\n}"
-          }
-        }
-      ],
-      "selectedStateId": "eb489a1d-1bca-488e-8863-ae8ebf5d4d02"
+      "response": {
+        "delay": 500,
+        "status": 500,
+        "headers": {
+          "pragma": "no-cache",
+          "content-type": "application/json",
+          "cache-control": "no-cache",
+          "expires": -1
+        },
+        "body": "{\"user\":{\"name\":\"adam\"},\"id\":2}"
+      },
+      "name": "Favorite mock Copy",
+      "origin": "http://localhost:8080",
+      "groupId": "cc383b3d-c518-4b24-b663-11d66d7e8e4c"
+    },
+    {
+      "id": "709b7ee6-495d-48b8-9b72-f57cb2b93cc5",
+      "active": false,
+      "method": "GET",
+      "url": "http://jsonplaceholder.typicode.com/posts/2",
+      "headers": {
+        "Accept": "*/*"
+      },
+      "response": {
+        "status": 405,
+        "delay": 112,
+        "headers": {
+          "pragma": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "public, max-age=14400",
+          "expires": "Fri, 24 Feb 2017 03:04:17 GMT"
+        },
+        "body": "{\"userId\":1,\"id\":2,\"title\":\"qui est esse\",\"body\":\"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"}"
+      },
+      "name": "Hi There Copy",
+      "origin": "http://localhost:8080",
+      "groupId": "cc383b3d-c518-4b24-b663-11d66d7e8e4c"
+    },
+    {
+      "id": "d31c1f44-c7ee-4668-93e2-df2a23d6c527",
+      "active": true,
+      "method": "GET",
+      "url": "http://uinames.com/api/?amount=2&region=germany",
+      "headers": {
+        "Accept": "*/*"
+      },
+      "response": {
+        "delay": 774,
+        "status": 200,
+        "headers": {
+          "pragma": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-cache",
+          "expires": -1
+        },
+        "body": "[{\"name\":\"Moritz\",\"surname\":\"Horn\",\"gender\":\"male\",\"region\":\"Germany\"},{\"name\":\"Helene\",\"surname\":\"Schmitz\",\"gender\":\"female\",\"region\":\"Germany\"}]"
+      },
+      "name": "Request 1",
+      "origin": "http://localhost:8080",
+      "groupId": "cc383b3d-c518-4b24-b663-11d66d7e8e4c"
+    },
+    {
+      "id": "69542b3f-1bff-4d4f-a3d4-17c0ceacbe59",
+      "active": false,
+      "method": "GET",
+      "url": "http://uinames.com/api/?amount=2&region=germany",
+      "headers": {
+        "Accept": "*/*"
+      },
+      "response": {
+        "delay": 439,
+        "status": 200,
+        "headers": {
+          "pragma": "no-cache",
+          "content-type": "application/json",
+          "cache-control": "no-cache",
+          "expires": -1
+        },
+        "body": "[{\"name\":\"Wolfgang\",\"surname\":\"Bergmann\",\"gender\":\"male\",\"region\":\"Germany\"},{\"name\":\"Elina\",\"surname\":\"Brandt\",\"gender\":\"female\",\"region\":\"Germany\"}]"
+      },
+      "name": "Request 2",
+      "origin": "http://localhost:8080",
+      "groupId": "cc383b3d-c518-4b24-b663-11d66d7e8e4c"
     }
   ],
   "groups": [
-    {
-      "id": "1b24c8e6-46e8-42bd-bc92-2fddafefa7123",
-      "name": "my group",
-      "active": true
-    }
+    [
+      {
+        "id": "cc383b3d-c518-4b24-b663-11d66d7e8e4c",
+        "name": "Let the bodies hit the floor!!!!! Copy",
+        "active": true
+      }
+    ]
   ]
 }
