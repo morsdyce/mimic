@@ -112,7 +112,7 @@ describe('api interface', () => {
     API.import(json);
 
     expect(Mocks.mergeMocks).toHaveBeenCalledWith(importMock.mocks, undefined);
-    expect(Groups.mergeGroups).toHaveBeenCalledWith(importMock.groups, importMock.mocks, undefined);
+    expect(Groups.mergeGroups).toHaveBeenCalledWith(importMock.groups);
     expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
   });
 
