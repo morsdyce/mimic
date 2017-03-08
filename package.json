@@ -1,6 +1,6 @@
 {
   "name": "mimic",
-  "version": "2.0.0-alpha.7",
+  "version": "2.0.0-alpha.8",
   "description": "Bad ass client side mocking solution",
   "main": "dist/mimic.js",
   "scripts": {
