@@ -23,7 +23,8 @@
     "worker.js",
     "api.js",
     "remote.js",
-    "react-native.js"
+    "react-native.js",
+    "nativescript.js"
   ],
   "repository": {
     "type": "git",
@@ -98,6 +99,9 @@
     "webpack": "2.2.1",
     "webpack-dev-server": "2.4.1",
     "worker-loader": "0.7.1",
-    "xhook": "1.4.1"
+    "xhook": "git://github.com/ilyagelman/xhook.git#54d5d90"
+  },
+  "dependencies": {
+    "nativescript-websockets": "1.3.1"
   }
 }
