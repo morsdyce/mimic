@@ -98,7 +98,7 @@ describe('api interface', () => {
     expect(json).toEqual('{"version":"2.0.0","mocks":[],"groups":[]}');
   });
 
-  it('should import configuration', () => {
+  it('should import configuration', (done) => {
     spyOn(Mocks, 'mergeMocks');
     spyOn(Groups, 'mergeGroups');
     spyOn(PersistentStorage, 'persist');
@@ -109,11 +109,14 @@ describe('api interface', () => {
     expect(Emitter.emit).not.toHaveBeenCalled();
 
     const json = JSON.stringify(importMock);
-    API.import(json);
+    API.import(json).then((status) => {
+      expect(Mocks.mergeMocks).toHaveBeenCalledWith(importMock.mocks, undefined);
+      expect(Groups.mergeGroups).toHaveBeenCalledWith(importMock.groups);
+      expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
+      expect(status.success).toEqual(true);
 
-    expect(Mocks.mergeMocks).toHaveBeenCalledWith(importMock.mocks, undefined);
-    expect(Groups.mergeGroups).toHaveBeenCalledWith(importMock.groups);
-    expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
+      done();
+    });
   });
 
   it('should allow to set app name', () => {
