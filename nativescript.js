@@ -4,7 +4,7 @@ global.appSettings = appSettings;
 global.isNativeScript = true;
 
 if (!global.WebSocket) {
-  require('nativescript-websockets');
+  global.WebSocket = require('nativescript-websockets');
 }
 
 const remote = require('./dist/mimic.remote.js');
