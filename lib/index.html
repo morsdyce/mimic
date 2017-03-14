@@ -51,6 +51,9 @@
 
         fetch('http://jsonplaceholder.typicode.com/posts/3', {
           method: 'post',
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({ user: 'user', password: 'password' })
         }).then(function(response) {
           return response.json();
