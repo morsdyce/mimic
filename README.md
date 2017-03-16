@@ -5,7 +5,7 @@ Mimic
 [![npm version](https://badge.fury.io/js/mimic.svg)](https://badge.fury.io/js/mimic)
 [![Known Vulnerabilities](https://snyk.io/test/github/500tech/mimic/badge.svg)](https://snyk.io/test/github/500tech/mimic)
 
-![short introduction](http://500tech.github.io/mimic/assets/images/mimic_intro.gif)
+![short introduction](https://mimic.js.org/assets/images/mimic_screenshot.png)
 
 Using Mimic in your project
 --------------------------
