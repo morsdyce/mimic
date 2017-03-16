@@ -1,6 +1,7 @@
-import { API } from 'api';
+import API from 'api';
 import { PersistentStorage } from 'api/storage';
-import Scenarios from 'api/scenarios';
+import Mocks from 'api/mocks';
+import Groups from 'api/groups';
 import Requests from 'api/requests';
 import Emitter from 'api/emitter';
 import EVENTS from 'api/constants/events';
@@ -20,58 +21,38 @@ describe('api interface', () => {
     expect(API.capturedRequests.length).toBe(0);
   });
 
-  it('should have scenarios property', () => {
-    expect(API.scenarios).toBeDefined();
+  it('should have mocks property', () => {
+    expect(API.mocks).toBeDefined();
   });
 
-  it('should add a scenario', () => {
-    spyOn(Scenarios, 'addScenario');
+  it('should rename a mock', () => {
+    spyOn(Mocks, 'renameMock');
 
-    expect(Scenarios.addScenario).not.toHaveBeenCalled();
+    expect(Mocks.renameMock).not.toHaveBeenCalled();
 
-    API.addScenario('test scenario');
+    API.renameMock(1, 'test mock');
 
-    expect(Scenarios.addScenario).toHaveBeenCalledWith('test scenario');
+    expect(Mocks.renameMock).toHaveBeenCalledWith(1, 'test mock');
   });
 
-  it('should rename a scenario', () => {
-    spyOn(Scenarios, 'renameScenario');
+  it('should remove a mock', () => {
+    spyOn(Mocks, 'removeMock');
 
-    expect(Scenarios.renameScenario).not.toHaveBeenCalled();
+    expect(Mocks.removeMock).not.toHaveBeenCalled();
 
-    API.renameScenario(1, 'test scenario');
+    API.removeMock(1);
 
-    expect(Scenarios.renameScenario).toHaveBeenCalledWith(1, 'test scenario');
-  });
-
-  it('should remove a scenario', () => {
-    spyOn(Scenarios, 'removeScenario');
-
-    expect(Scenarios.removeScenario).not.toHaveBeenCalled();
-
-    API.removeScenario(1);
-
-    expect(Scenarios.removeScenario).toHaveBeenCalledWith(1);
-  });
-
-  it('should duplicate a scenario', () => {
-    spyOn(Scenarios, 'duplicateScenario');
-
-    expect(Scenarios.duplicateScenario).not.toHaveBeenCalled();
-
-    API.duplicateScenario(1);
-
-    expect(Scenarios.duplicateScenario).toHaveBeenCalledWith(1);
+    expect(Mocks.removeMock).toHaveBeenCalledWith(1);
   });
 
   it('should mock a request', () => {
-    spyOn(Scenarios, 'mockRequest');
+    spyOn(Mocks, 'mockRequest');
 
-    expect(Scenarios.mockRequest).not.toHaveBeenCalled();
+    expect(Mocks.mockRequest).not.toHaveBeenCalled();
 
-    API.mockRequest(1, 2);
+    API.mockRequest(1);
 
-    expect(Scenarios.mockRequest).toHaveBeenCalledWith(1, 2);
+    expect(Mocks.mockRequest).toHaveBeenCalledWith(1);
   });
 
   it('should clear storage', () => {
@@ -114,24 +95,28 @@ describe('api interface', () => {
   it('should export configuration', () => {
     const json = API.export();
 
-    expect(json).toEqual('{"version":"1.0.2","scenarios":[{"id":"default-scenario","name":"Default Scenario","active":true,"mockedRequests":[]}]}');
+    expect(json).toEqual('{"version":"2.0.0","mocks":[],"groups":[]}');
   });
 
-  it('should import configuration', () => {
-    spyOn(Scenarios, 'mergeScenarios');
+  it('should import configuration', (done) => {
+    spyOn(Mocks, 'mergeMocks');
+    spyOn(Groups, 'mergeGroups');
     spyOn(PersistentStorage, 'persist');
     spyOn(Emitter, 'emit');
 
-    expect(Scenarios.mergeScenarios).not.toHaveBeenCalled();
-    expect(PersistentStorage.persist).not.toHaveBeenCalled();
+    expect(Mocks.mergeMocks).not.toHaveBeenCalled();
+    expect(Groups.mergeGroups).not.toHaveBeenCalled();
     expect(Emitter.emit).not.toHaveBeenCalled();
 
     const json = JSON.stringify(importMock);
-    API.import(json);
+    API.import(json).then((status) => {
+      expect(Mocks.mergeMocks).toHaveBeenCalledWith(importMock.mocks, undefined);
+      expect(Groups.mergeGroups).toHaveBeenCalledWith(importMock.groups);
+      expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
+      expect(status.success).toEqual(true);
 
-    expect(Scenarios.mergeScenarios).toHaveBeenCalledWith(importMock.scenarios);
-    expect(PersistentStorage.persist).toHaveBeenCalled();
-    expect(Emitter.emit).toHaveBeenCalledWith(EVENTS.IMPORT);
+      done();
+    });
   });
 
   it('should allow to set app name', () => {

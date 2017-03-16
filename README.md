@@ -3,6 +3,7 @@ Mimic
 
 [![Build Status](https://travis-ci.org/500tech/mimic.svg?branch=master)](https://travis-ci.org/500tech/mimic)
 [![npm version](https://badge.fury.io/js/mimic.svg)](https://badge.fury.io/js/mimic)
+[![Known Vulnerabilities](https://snyk.io/test/github/500tech/mimic/badge.svg)](https://snyk.io/test/github/500tech/mimic)
 
 ![short introduction](http://500tech.github.io/mimic/assets/images/mimic_intro.gif)
 
