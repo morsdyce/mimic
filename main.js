@@ -118,7 +118,7 @@ var mockData = {
 
 if (screen.width > 1024) {
   $.holdReady(true);
-  $.getScript("https://npmcdn.com/mimic@1.0.2/dist/mimic.js", function() {
+  $.getScript("https://npmcdn.com/mimic@latest/dist/mimic.js", function() {
     $.holdReady(false);
   });
 }
