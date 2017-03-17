@@ -24,7 +24,8 @@
     "api.js",
     "remote.js",
     "react-native.js",
-    "nativescript.js"
+    "nativescript.js",
+    "polyfills/**/*"
   ],
   "repository": {
     "type": "git",
@@ -99,6 +100,6 @@
     "webpack": "2.2.1",
     "webpack-dev-server": "2.4.1",
     "worker-loader": "0.7.1",
-    "xhook": "1.4.2"
+    "xhook": "ilyagelman/xhook#54d5d902777eb600e471c3f03f00035f04625819"
   }
 }
