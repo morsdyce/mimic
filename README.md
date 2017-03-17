@@ -5,6 +5,8 @@ Mimic
 [![npm version](https://badge.fury.io/js/mimic.svg)](https://badge.fury.io/js/mimic)
 [![Known Vulnerabilities](https://snyk.io/test/github/500tech/mimic/badge.svg)](https://snyk.io/test/github/500tech/mimic)
 
+Seamless client side mocking [https://mimic.js.org](https://mimic.js.org)
+
 ![short introduction](https://mimic.js.org/assets/images/mimic_screenshot.png)
 
 Using Mimic in your project
@@ -60,7 +62,12 @@ Contributing to Mimic
     ```
     npm run build
     ```
-    
+
+Acknowledgements
+-------
+Thanks [Ilya Birman](http://ilyabirman.net) for the new UI for Mimic 2.0
+
+
 License
 -------
 
