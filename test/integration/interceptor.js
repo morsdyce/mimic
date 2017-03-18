@@ -284,7 +284,7 @@ module.exports = {
       .url('http://127.0.0.1:8080/integration-tests')
       .waitForElementVisible('#webworker-get-fetch', 1000)
       .click('#webworker-get-fetch')
-      .pause(1000)
+      .pause(5000)
       .assert.containsText('#result', 'request failed')
       .end();
   },
@@ -297,7 +297,7 @@ module.exports = {
       })
       .waitForElementVisible('#webworker-get-fetch', 1000)
       .click('#webworker-get-fetch')
-      .pause(1000)
+      .pause(5000)
       .assert.containsText('#result', '"FETCH-WORKER"')
       .end();
   },
@@ -307,7 +307,7 @@ module.exports = {
       .url('http://127.0.0.1:8080/integration-tests')
       .waitForElementVisible('#webworker-get-xhr', 1000)
       .click('#webworker-get-xhr')
-      .pause(1500)
+      .pause(5000)
       .assert.containsText('#result', 'request failed')
       .end();
   },
@@ -320,7 +320,7 @@ module.exports = {
       })
       .waitForElementVisible('#webworker-get-xhr', 1000)
       .click('#webworker-get-xhr')
-      .pause(1500)
+      .pause(5000)
       .assert.containsText('#result', '"FETCH-WORKER"')
       .end();
   },
