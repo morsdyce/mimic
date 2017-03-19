@@ -40,6 +40,13 @@ This assumes your mocks are placed in the mocks directory which is located at th
 In the mocks directory you have exports for either complete scenarios or separate mock requests.
 
 
+Guides
+-------------
+
+* [Using mimic with React Native](https://github.com/500tech/mimic/blob/master/docs/react-native.md)
+* [Using mimic with NativeScript](https://github.com/500tech/mimic/blob/master/docs/nativescript.md)
+
+
 Contributing to Mimic
 --------------------
 
