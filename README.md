@@ -27,7 +27,7 @@ Enjoy!
 
 
 Using Mocks tracked by git
-==========================
+--------------------------
 If you want to use mocks which will be committed into git and you're using webpack you can use the following code to import the mocks on application start:
 
 ```
