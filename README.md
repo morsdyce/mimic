@@ -47,6 +47,19 @@ Guides
 * [Using mimic with NativeScript](https://github.com/500tech/mimic/blob/master/docs/nativescript.md)
 
 
+Other Usages
+------------
+The main and the most obvious use case for mimic is when the API for a UI feature is not ready or incomplete,
+but it can be helpful in more situations. For example:
+
+* You have a demo of the product, but the API server is unstable.
+* You want to work on a feature outside of company's VPN
+* You need access to API, but don't have an internet connection or it is unstable.
+
+In the cases above, you can use the "recording" feature to record all the real responses from server
+by hand and then use them for your needs in the future.
+
+
 Contributing to Mimic
 --------------------
 
@@ -69,6 +82,8 @@ Contributing to Mimic
     ```
     npm run build
     ```
+
+1. Please submit PRs to the `next` branch, as we keep master as the latest version of mimic.
 
 Acknowledgements
 -------
