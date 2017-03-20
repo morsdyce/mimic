@@ -9,6 +9,9 @@ Seamless client side mocking [https://mimic.js.org](https://mimic.js.org)
 
 ![short introduction](https://mimic.js.org/assets/images/mimic_screenshot.png)
 
+### What is mimic?
+Mimic is a tool for mocking server responses on the client side.
+
 Using Mimic in your project
 --------------------------
 
