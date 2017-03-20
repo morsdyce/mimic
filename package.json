@@ -1,6 +1,6 @@
 {
   "name": "mimic",
-  "version": "2.0.1",
+  "version": "2.0.2-beta.6",
   "description": "Bad ass client side mocking solution",
   "main": "dist/mimic.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "api.js",
     "remote.js",
     "react-native.js",
-    "nativescript.js"
+    "nativescript.js",
+    "polyfills/**/*"
   ],
   "repository": {
     "type": "git",
@@ -99,6 +100,6 @@
     "webpack": "2.2.1",
     "webpack-dev-server": "2.4.1",
     "worker-loader": "0.7.1",
-    "xhook": "1.4.2"
+    "xhook": "1.4.3"
   }
 }
