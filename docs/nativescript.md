@@ -12,23 +12,34 @@ Since with NativeScript we don't have access to the debugger, in order to access
 the mimic itself and the proxy that would connect the UI with your NativeScript application.
 
 ```
-$ npm install -g mimic-remote
-$ npm install -D mimic
+npm install -g mimic-remote
+npm install --save mimic
 ```
 
 Since mimic uses websockets to communicate with its UI,
-you would also need to add the [nativescript-websockets](https://www.npmjs.com/package/nativescript-websockets) plugin:
+you also need to add the [nativescript-websockets](https://www.npmjs.com/package/nativescript-websockets) plugin:
 
 ```
-$ npm install -S nativescript-websockets
-$ tns plugin add nativescript-websockets
+npm install --save nativescript-websockets
+tns plugin add nativescript-websockets
 ```
 
-* `-S` is a shortcut for --save
-* `-D` is a shortcut for --save-dev
+First we need to run Mimic remote cli tool so we can communicate with NativeScript
+
+open a new terminal tab and run mimic-remote:
+
+```
+mimic-remote
+
+# You can also run it on a different port (by default 5000)
+mimic-remote --port 4000
+
+# Or use shorthand syntax
+mimic-remote -p 4000
+```
 
 The second step is to import mimic inside the entry point of your application.
-In most cases this is app/app.js
+In most cases this is app.js or index.js
 
 ```
 // Load Mimic and nativescript-websockets dependency
@@ -41,19 +52,6 @@ connect();
 // you can also specify a custom host and port to connect to
 // connect({ host: 'localhost', port: 5000 });
 ```
-
-Now open a new terminal tab and run the proxy:
-
-```
-$ mimic-remote
-
-# You can also run it on a different port (by default 5000)
-$ mimic-remote --port 4000
-
-# Or use shorthand syntax
-$ mimic-remote -p 4000
-```
-
 
 ## Using mimic
 

@@ -52,7 +52,7 @@ Other Usages
 The main and the most obvious use case for mimic is when the API for a UI feature is not ready or incomplete,
 but it can be helpful in more situations. For example:
 
-* You have a demo of the product, but the API server is unstable.
+* You have a demo of the product, but the API server is unstable or you need to use fake data.
 * You want to work on a feature outside of company's VPN
 * You need access to API, but don't have an internet connection or it is unstable.
 

@@ -9,14 +9,27 @@ Check out the [example repository](https://github.com/morsdyce/mimic-react-nativ
 ## Installation
 
 Since with React Native we don't have access to the debugger, in order to access the Mimic UI you would need both
-the mimic itself and the proxy that would connect the UI with your React Native application.
+the mimic itself and mimic-remote cli that would connect the UI with your React Native application.
 
 ```
-$ npm install -g mimic-remote
-$ npm install -D mimic
+npm install -g mimic-remote
+npm install --save-dev mimic
 ```
 
-* `-D` is a shortcut for --save-dev
+First we need to run Mimic remote cli tool so we can communicate with React Native
+
+open a new terminal tab and run mimic-remote:
+
+```
+mimic-remote
+
+# You can also run it on a different port (by default 5000)
+mimic-remote --port 4000
+
+# Or use shorthand syntax
+mimic-remote -p 4000
+```
+
 
 The second step is to import mimic inside the entry point of your application.
 In most cases this is index.ios.js or index.android.js
@@ -31,19 +44,6 @@ connect();
 // you can also specify a custom host and port to connect to
 // connect({ host: 'localhost', port: 5000 });
 ```
-
-Now open a new terminal tab and run the proxy:
-
-```
-$ mimic-remote
-
-# You can also run it on a different port (by default 5000)
-$ mimic-remote --port 4000
-
-# Or use shorthand syntax
-$ mimic-remote -p 4000
-```
-
 
 ## Using mimic
 
