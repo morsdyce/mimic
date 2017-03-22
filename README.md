@@ -5,6 +5,8 @@ Mimic
 [![npm version](https://badge.fury.io/js/mimic.svg)](https://badge.fury.io/js/mimic)
 [![Known Vulnerabilities](https://snyk.io/test/github/500tech/mimic/badge.svg)](https://snyk.io/test/github/500tech/mimic)
 
+Seamless client side mocking [https://mimic.js.org](https://mimic.js.org)
+
 ![short introduction](https://mimic.js.org/assets/images/mimic_screenshot.png)
 
 Using Mimic in your project
@@ -25,7 +27,7 @@ Enjoy!
 
 
 Using Mocks tracked by git
-==========================
+--------------------------
 If you want to use mocks which will be committed into git and you're using webpack you can use the following code to import the mocks on application start:
 
 ```
@@ -36,6 +38,26 @@ mocks.keys().forEach((key) => mimic.import(JSON.stringify(mocks(key))));
 
 This assumes your mocks are placed in the mocks directory which is located at the root of the project.
 In the mocks directory you have exports for either complete scenarios or separate mock requests.
+
+
+Guides
+-------------
+
+* [Using mimic with React Native](https://github.com/500tech/mimic/blob/master/docs/react-native.md)
+* [Using mimic with NativeScript](https://github.com/500tech/mimic/blob/master/docs/nativescript.md)
+
+
+Other Usages
+------------
+The main and the most obvious use case for mimic is when the API for a UI feature is not ready or incomplete,
+but it can be helpful in more situations. For example:
+
+* You have a demo of the product, but the API server is unstable or you need to use fake data.
+* You want to work on a feature outside of company's VPN
+* You need access to API, but don't have an internet connection or it is unstable.
+
+In the cases above, you can use the "recording" feature to record all the real responses from server
+by hand and then use them for your needs in the future.
 
 
 Contributing to Mimic
@@ -60,7 +82,14 @@ Contributing to Mimic
     ```
     npm run build
     ```
-    
+
+1. Please submit PRs to the `next` branch, as we keep master as the latest version of mimic.
+
+Acknowledgements
+-------
+Thanks [Ilya Birman](http://ilyabirman.net) for the new UI for Mimic 2.0
+
+
 License
 -------
 
