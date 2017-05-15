@@ -101,5 +101,10 @@
     "webpack-dev-server": "2.4.1",
     "worker-loader": "0.7.1",
     "xhook": "1.4.3"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/mimic",
+    "logo": "https://opencollective.com/opencollective/logo.txt"
   }
 }
