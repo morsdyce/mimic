@@ -79,6 +79,7 @@
     "lodash-webpack-plugin": "0.11.4",
     "nightwatch": "0.9.15",
     "node-sass": "4.5.3",
+    "prop-types": "15.5.10",
     "raw-loader": "0.5.1",
     "react": "15.5.4",
     "react-click-outside": "2.3.1",
