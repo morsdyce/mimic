@@ -1,5 +1,7 @@
+import 'index';
 import superagent from 'superagent';
 import Requests from 'api/requests';
+
 
 describe('xhr interceptor', () => {
 
