@@ -6,7 +6,7 @@ import Requests from 'api/requests';
 import Emitter from 'api/emitter';
 import EVENTS from 'api/constants/events';
 
-import importMock from './mocks/import.json';
+import importMock from './fixtures/import.json';
 
 describe('api interface', () => {
 
