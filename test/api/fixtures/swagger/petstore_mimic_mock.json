@@ -1,0 +1,47 @@
+{
+    "groups": [
+        [
+            {
+                "active": true,
+                "id": "cc383b3d-c518-4b24-b663-11d66d7e8e4c",
+                "name": "pet"
+            }
+        ]
+    ],
+    "mocks": [
+        {
+            "active": true,
+            "groupId": "cc383b3d-c518-4b24-b663-11d66d7e8e4c",
+            "headers": {
+                "Accept": "*/*"
+            },
+            "id": "709b7ee6-495d-48b8-9b72-f57cb2b93cc5",
+            "method": "GET",
+            "name": "findPetsByStatus_200",
+            "origin": "http://pestore.swagger.io/pet/findByStatus",
+            "response": {
+                "body": "{\"id\": 0, \"category\": { \"id\": 0, \"name\": \"string\" }, \"name\": \"doggie\", \"photoUrls\": [ \"string\" ], \"tags\": [ { \"id\": 0, \"name\": \"string\" } ], \"status\": \"available\"}",
+                "delay": 500,
+                "status": 200
+            },
+            "url": "http://pestore.swagger.io/pet/findByStatus"
+        },
+        {
+            "active": false,
+            "groupId": "cc383b3d-c518-4b24-b663-11d66d7e8e4c",
+            "headers": {
+                "Accept": "*/*"
+            },
+            "id": "709b7ee6-495d-48b8-9b72-f57cb2b93cc5",
+            "method": "GET",
+            "name": "findPetsByStatus_400",
+            "origin": "http://pestore.swagger.io/pet/findByStatus",
+            "response": {
+                "delay": 500,
+                "status": 400
+            },
+            "url": "http://pestore.swagger.io/pet/findByStatus"
+        }
+    ],
+    "version": "2.0.0"
+}

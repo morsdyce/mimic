@@ -9,6 +9,7 @@
     "build": "NODE_ENV=production webpack --progress",
     "build:dev": "NODE_ENV=development webpack",
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run",
+    "test-watch": "node node_modules/karma/bin/karma start --browsers=Chrome --single-run=false --auto-watch",
     "tdd": "NODE_ENV=test node_modules/.bin/karma start",
     "start:integration-server": "http-server .",
     "test:integration": "npm run build ; sleep 5 ; npm run start:integration-server & nightwatch ; pkill node",
@@ -107,5 +108,8 @@
     "type": "opencollective",
     "url": "https://opencollective.com/mimic",
     "logo": "https://opencollective.com/opencollective/logo.txt"
+  },
+  "dependencies": {
+    "jsc": "0.3.11"
   }
 }
