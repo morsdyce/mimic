@@ -14,6 +14,7 @@
     </style>
     <script src="https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/g/es6-promise@4.1.0(es6-promise.auto.js)"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
   </head>
 
   <body style="margin: 0;">
@@ -26,6 +27,10 @@
     <button data-xml="true">XML FETCH</button>
 
     <button data-worker="true">Web Worker Request</button>
+
+    <form action="/upload"
+      class="dropzone"
+      id="my-awesome-dropzone"></form>
 
     <script src="mimic.js"></script>
 
