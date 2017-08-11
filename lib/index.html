@@ -12,9 +12,18 @@
         background-color: red !important;
       }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/basic.min.css"/>
     <script src="https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/g/es6-promise@4.1.0(es6-promise.auto.js)"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+
+    <script>
+      Dropzone.options.myAwesomeDropzone = {
+        init: function() {
+          this.on("success", function(file) { console.log('upload finished', file) });
+        }
+      };
+    </script>
   </head>
 
   <body style="margin: 0;">
@@ -27,6 +36,8 @@
     <button data-xml="true">XML FETCH</button>
 
     <button data-worker="true">Web Worker Request</button>
+
+    <progress id="progressBar" value="0" max="100"></progress>
 
     <form action="/upload"
       class="dropzone"
