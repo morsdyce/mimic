@@ -20,7 +20,7 @@ Add to your packages:
 
     npm install mimic --save
 
-Require in your app:
+Import in your app:
 
     import 'mimic';
 
