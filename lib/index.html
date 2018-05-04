@@ -37,6 +37,8 @@
 
     <button data-worker="true">Web Worker Request</button>
 
+    <button data-patch="true">PATCH request</button>
+
     <progress id="progressBar" value="0" max="100"></progress>
 
     <form action="/upload"
@@ -58,6 +60,21 @@
 
           if (event.target.dataset.worker) {
             window.requestWorker.postMessage({ type: 'SEND_REQUEST' });
+            return;
+          }
+
+          if (event.target.dataset.patch) {
+            fetch('https://jsonplaceholder.typicode.com/posts/1', {
+              method: 'PATCH',
+              body: JSON.stringify({
+                title: 'foo'
+              }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8"
+              }
+            })
+            .then(response => response.json())
+            .then(json => console.log(json));
             return;
           }
 
