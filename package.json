@@ -103,7 +103,7 @@
     "webpack": "3.0.0",
     "webpack-dev-server": "2.5.0",
     "worker-loader": "0.8.0",
-    "xhook": "1.4.4"
+    "xhook": "1.4.8"
   },
   "collective": {
     "type": "opencollective",
