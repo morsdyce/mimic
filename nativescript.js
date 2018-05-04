@@ -1,3 +1,4 @@
+require('./isProduction');
 require(__dirname + '/polyfills/fetch');
 
 const appSettings = require('application-settings');

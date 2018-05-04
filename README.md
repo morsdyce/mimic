@@ -29,6 +29,32 @@ right corner.
 
 Enjoy!
 
+Loading Mimic only in development environments
+--------------------------
+
+To load mimic only in development environments your application will need to be aware if it runs in development or production mode.
+
+If you are using webpack the most common way is to use the DefinePlugin to define NODE_ENV environment variable.
+Please see [webpack DefinePlugin](https://webpack.js.org/plugins/define-plugin/) for more information.
+
+If you are using create react app this is applied by default which you can read more about it [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables).
+
+Once your application is aware of the environment you need to add a conditional require or import statement to load Mimic.
+For example:
+
+```js
+if (process.env.NODE_ENV === 'development') {
+  require('mimic');
+}
+```
+
+Or using the dynamic import spec (you must have babel and [babel-plugin-syntax-dynamic-import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) installed to use this syntax).
+
+```js
+if (process.env.NODE_ENV === 'development') {
+  import('mimic');
+}
+```
 
 Using Mocks tracked by git
 --------------------------

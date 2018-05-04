@@ -25,6 +25,7 @@
     "remote.js",
     "react-native.js",
     "nativescript.js",
+    "isProduction.js",
     "polyfills/**/*"
   ],
   "repository": {

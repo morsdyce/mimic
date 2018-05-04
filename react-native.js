@@ -1,3 +1,4 @@
+require('./isProduction');
 const AsyncStorage = require('react-native').AsyncStorage;
 global.AsyncStorage = AsyncStorage;
 
