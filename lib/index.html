@@ -39,6 +39,8 @@
 
     <button data-patch="true">PATCH request</button>
 
+    <button data-binary="true">Binary request</button>
+
     <progress id="progressBar" value="0" max="100"></progress>
 
     <form action="/upload"
@@ -76,6 +78,14 @@
             .then(response => response.json())
             .then(json => console.log(json));
             return;
+          }
+
+          if (event.target.dataset.binary) {
+            fetch("http://i.imgur.com/QRlAg0b.png")
+              .then(r => r.blob())
+              .then((content) => {
+                fetch("http://example.com", {method: 'POST', body: content})
+              })
           }
 
           $.get('http://uinames.com/api/?amount=2&region=' + event.target.dataset.region);
