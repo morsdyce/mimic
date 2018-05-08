@@ -13,15 +13,12 @@ const distFilePattern   = '[name].js';
 const packageConfig     = require('./package.json');
 
 let config = {
-
   // The base directory for resolving `entry` (must be absolute path)
   context: libPath,
 
   entry: {
     'mimic.api': ['api/index.js'],
-    'mimic.worker': ['api/worker.js'],
     'mimic.remote': ['api/remote.js'],
-
     'mimic': 'index.js'
   },
 
@@ -108,26 +105,34 @@ if (appEnv === 'production') {
       paths: true,
       shorthands: true,
       collections: true
-    }),
-
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        warnings: false,
-        screw_ie8: true
-      },
-      comments: false
     })
   );
 }
 
-module.exports = config;
+function getConfigs(originalConfig) {
+  const webConfig = {
+    ...originalConfig,
+  };
+
+  const webWorkerConfig = {
+    ...originalConfig,
+    target: 'webworker',
+    entry: { 'mimic.worker': ['api/worker.js'] }
+  };
+
+  if (appEnv === 'production') {
+    webConfig.plugins.push(
+      new CleanPlugin(['dist'], {
+        exclude: ['mimic.worker.js']
+      })
+    );
+
+    webWorkerConfig.plugins.push(
+      new CleanPlugin(['dist/mimic.worker.js'])
+    );
+  }
+
+  return [webConfig, webWorkerConfig];
+}
+
+module.exports = getConfigs(config);
