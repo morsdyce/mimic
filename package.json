@@ -1,6 +1,6 @@
 {
   "name": "mimic",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Bad ass client side mocking solution",
   "main": "./index.js",
   "scripts": {
