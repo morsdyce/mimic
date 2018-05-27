@@ -1,6 +1,6 @@
 {
   "name": "mimic",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Bad ass client side mocking solution",
   "main": "./index.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "dist/mimic.api.js",
     "dist/mimic.worker.js",
     "dist/mimic.remote.js",
+    "index.js",
     "worker.js",
     "api.js",
     "remote.js",
