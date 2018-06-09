@@ -324,4 +324,60 @@ module.exports = {
       .assert.containsText('#result', '"FETCH-WORKER"')
       .end();
   },
+
+  'No response when mock is disabled - XHR' : function(browser) {
+    browser
+      .url('http://127.0.0.1:8080/integration-tests')
+      .execute(function(data) {
+        window.mimic.api.import('{"version":"2.0.0","groups": [],"mocks":[{"id":"1e4cef8d-5724-4e9b-812c-4ed260107194","active":false,"method":"GET","url":"http://mimic-example.com/get","headers":{"pragma":"no-cache","content-type":"text/plain; charset=utf-8","cache-control":"no-cache","expires":-1},"params":"","response":{"delay":20,"status":200,"body":"GET-FETCH"}}]}');
+      })
+      .waitForElementVisible('#disabled-get-xhr', 1000)
+      .click('#disabled-get-xhr')
+      .pause(500)
+      .assert.containsText('#result', 'request failed')
+      .end();
+  },
+
+  'No response when mock is disabled - fetch' : function(browser) {
+    browser
+      .url('http://127.0.0.1:8080/integration-tests')
+      .execute(function(data) {
+        window.mimic.api.import('{"version":"2.0.0","groups": [],"mocks":[{"id":"1e4cef8d-5724-4e9b-812c-4ed260107194","active":false,"method":"GET","url":"http://mimic-example.com/get","headers":{"pragma":"no-cache","content-type":"text/plain; charset=utf-8","cache-control":"no-cache","expires":-1},"params":"","response":{"delay":20,"status":200,"body":"GET-FETCH"}}]}');
+      })
+      .waitForElementVisible('#disabled-get-fetch', 1000)
+      .click('#disabled-get-fetch')
+      .pause(500)
+      .assert.containsText('#result', 'request failed')
+      .end();
+  },
+
+  'No response when master toggle is off - XHR' : function(browser) {
+    browser
+      .url('http://127.0.0.1:8080/integration-tests')
+      .execute(function(data) {
+        window.mimic.api.import('{"version":"2.0.0","groups": [],"mocks":[{"id":"1e4cef8d-5724-4e9b-812c-4ed260107194","active":true,"method":"GET","url":"http://mimic-example.com/get","headers":{"pragma":"no-cache","content-type":"text/plain; charset=utf-8","cache-control":"no-cache","expires":-1},"params":"","response":{"delay":20,"status":200,"body":"GET-FETCH"}}]}');
+        // disable mimic via master toggle
+        window.mimic.api.turnOff();
+      })
+      .waitForElementVisible('#master-get-xhr', 1000)
+      .click('#master-get-xhr')
+      .pause(500)
+      .assert.containsText('#result', 'request failed')
+      .end();
+  },
+
+  'No response when master toggle is off - fetch' : function(browser) {
+    browser
+      .url('http://127.0.0.1:8080/integration-tests')
+      .execute(function(data) {
+        window.mimic.api.import('{"version":"2.0.0","groups": [],"mocks":[{"id":"1e4cef8d-5724-4e9b-812c-4ed260107194","active":true,"method":"GET","url":"http://mimic-example.com/get","headers":{"pragma":"no-cache","content-type":"text/plain; charset=utf-8","cache-control":"no-cache","expires":-1},"params":"","response":{"delay":20,"status":200,"body":"GET-FETCH"}}]}');
+        // disable mimic via master toggle
+        window.mimic.api.turnOff();
+      })
+      .waitForElementVisible('#master-get-fetch', 1000)
+      .click('#master-get-fetch')
+      .pause(500)
+      .assert.containsText('#result', 'request failed')
+      .end();
+  }
 };

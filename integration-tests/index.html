@@ -46,6 +46,18 @@
   <button id="webworker-get-xhr">Get XHR</button>
 </div>
 
+<div>
+  <h3>Disabled mock request</h3>
+  <button id="disabled-get-fetch">Get FETCH</button>
+  <button id="disabled-get-xhr">Get XHR</button>
+</div>
+
+<div>
+  <h3>Master toggle off request</h3>
+  <button id="master-get-fetch">Get FETCH</button>
+  <button id="master-get-xhr">Get XHR</button>
+</div>
+
 <h3>Result</h3>
 <div id="result"></div>
 
@@ -213,6 +225,34 @@
       method: 'GET',
       requestMethod: 'xhr'
     });
+  });
+
+  $('#disabled-get-xhr').click(function() {
+    clearResponse();
+    $.get('http://mimic-example.com/get')
+      .then(outputResponse)
+      .fail(outputError);
+  });
+
+  $('#disabled-get-fetch').click(function() {
+    clearResponse();
+    $.get('http://mimic-example.com/get')
+      .then(outputResponse)
+      .fail(outputError);
+  });
+
+  $('#master-get-xhr').click(function() {
+    clearResponse();
+    $.get('http://mimic-example.com/get')
+      .then(outputResponse)
+      .fail(outputError);
+  });
+
+  $('#master-get-fetch').click(function() {
+    clearResponse();
+    $.get('http://mimic-example.com/get')
+      .then(outputResponse)
+      .fail(outputError);
   });
 </script>
 </body>
