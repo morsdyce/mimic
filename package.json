@@ -1,6 +1,6 @@
 {
   "name": "mimic",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Bad ass client side mocking solution",
   "main": "./index.js",
   "scripts": {
@@ -104,7 +104,7 @@
     "webpack": "3.0.0",
     "webpack-dev-server": "2.5.0",
     "worker-loader": "0.8.0",
-    "xhook": "1.4.8"
+    "xhook": "1.4.9"
   },
   "collective": {
     "type": "opencollective",
