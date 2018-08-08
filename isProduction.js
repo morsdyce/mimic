@@ -1,4 +1,4 @@
-if (process && process.env && process.env.NODE_ENV === 'production') {
+if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production') {
   console.warn([
   'You are running Mimic in production mode,',
   'in most cases you only want to run Mimic in development environments.\r\n',
