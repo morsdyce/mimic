@@ -20,7 +20,7 @@ Since mimic uses websockets to communicate with its UI,
 you also need to add the [nativescript-websockets](https://www.npmjs.com/package/nativescript-websockets) plugin:
 
 ```
-npm install --save-dev nativescript-websockets
+npm install --save nativescript-websockets
 tns plugin add nativescript-websockets
 ```
 
