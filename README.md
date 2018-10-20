@@ -17,7 +17,7 @@ Using Mimic in your project
 
 Add to your packages:
 
-    npm install mimic --save
+    npm install mimic --save-dev
 
 Import in your app:
 

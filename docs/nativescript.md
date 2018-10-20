@@ -13,7 +13,7 @@ the mimic itself and the proxy that would connect the UI with your NativeScript 
 
 ```
 npm install -g mimic-remote
-npm install --save mimic
+npm install --save-dev mimic
 ```
 
 Since mimic uses websockets to communicate with its UI,
