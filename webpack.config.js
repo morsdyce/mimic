@@ -49,18 +49,7 @@ let config = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [
-          path.resolve('lib'),
-          path.resolve('node_modules/preact-compat/src')
-        ]
-      },
-
-      // SCSS
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          'css-loader',
-          'autoprefixer-loader',
-          'sass-loader?includePaths[]=' + encodeURIComponent(libPath)
+          path.resolve('lib')
         ]
       },
 
