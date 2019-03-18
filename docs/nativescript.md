@@ -50,7 +50,7 @@ var connect = require('mimic/nativescript').default;
 connect();
 
 // you can also specify a custom host and port to connect to
-// connect({ host: 'localhost', port: 5000 });
+// connect({ hostname: 'localhost', port: 5000 });
 ```
 
 ## Using mimic
