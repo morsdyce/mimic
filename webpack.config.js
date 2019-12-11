@@ -1,34 +1,38 @@
-"use strict";
+'use strict';
 
-const webpack = require("webpack");
-const path = require("path");
-const CleanPlugin = require("clean-webpack-plugin");
-const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const webpack                       = require('webpack');
+const path                          = require('path');
+const CleanPlugin                   = require('clean-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
-const appEnv = process.env.NODE_ENV || "development";
-const libPath = path.join(__dirname, "lib");
-const distPath = path.join(__dirname, "dist");
-const assetsPathPattern = "[path][name].[hash].[ext]";
-const distFilePattern = "[name].js";
-const packageConfig = require("./package.json");
+const appEnv            = process.env.NODE_ENV || 'development';
+const libPath           = path.join(__dirname, 'lib');
+const distPath          = path.join(__dirname, 'dist');
+const assetsPathPattern = '[path][name].[hash].[ext]';
+const distFilePattern   = '[name].js';
+const packageConfig     = require('./package.json');
 
 let config = {
+
   // The base directory for resolving `entry` (must be absolute path)
   context: libPath,
 
   entry: {
-    "mimic.api": ["api/index.js"],
-    "mimic.worker": ["api/worker.js"],
-    "mimic.remote": ["api/remote.js"],
+    'mimic.api': ['api/index.js'],
+    'mimic.worker': ['api/worker.js'],
+    'mimic.remote': ['api/remote.js'],
 
-    mimic: "index.js"
+    'mimic': 'index.js'
   },
 
   // Options affecting the resolving of modules
   resolve: {
     // Enable resolving modules relative to these paths
-    modules: [libPath, "node_modules"],
-    extensions: [".webpack.js", ".js"]
+    modules: [
+      libPath,
+      'node_modules'
+    ],
+    extensions: ['.webpack.js', '.js']
   },
 
   output: {
@@ -37,8 +41,8 @@ let config = {
     // The output filename of the entry chunk, relative to `path`
     // [name] - Will be set per each key name in `entry`
     filename: distFilePattern,
-    libraryTarget: "umd",
-    library: "mimic"
+    libraryTarget: 'umd',
+    library: 'mimic'
   },
 
   module: {
@@ -46,10 +50,10 @@ let config = {
       // Babel
       {
         test: /\.jsx?$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         include: [
-          path.resolve("lib"),
-          path.resolve("node_modules/preact-compat/src")
+          path.resolve('lib'),
+          path.resolve('node_modules/preact-compat/src')
         ]
       },
 
@@ -57,7 +61,7 @@ let config = {
       // Inline assets under 5kb as Base64 data URI, otherwise uses `file-loader`
       {
         test: /\.(jpe?g|png|gif|eot|woff2?|ttf|svg)(\?.*)?$/i,
-        loader: "url-loader?limit=999999&name=" + assetsPathPattern
+        loader: 'url-loader?limit=999999&name=' + assetsPathPattern
       }
     ]
   },
@@ -67,8 +71,8 @@ let config = {
     new webpack.DefinePlugin({
       __VERSION: JSON.stringify(packageConfig.version),
       __ENV: JSON.stringify(appEnv),
-      "process.env": {
-        NODE_ENV: JSON.stringify(appEnv)
+      'process.env': {
+        'NODE_ENV': JSON.stringify(appEnv)
       }
     })
   ],
@@ -80,14 +84,14 @@ let config = {
   }
 };
 
-if (appEnv !== "production") {
-  config.devtool = "#inline-source-map";
+if (appEnv !== 'production') {
+  config.devtool = '#inline-source-map';
 }
 
-if (appEnv === "production") {
+if (appEnv === 'production') {
   config.plugins.push(
     // Remove build related folders
-    new CleanPlugin(["dist"]),
+    new CleanPlugin(['dist']),
 
     new LodashModuleReplacementPlugin({
       paths: true,
