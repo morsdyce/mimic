@@ -57,16 +57,6 @@ let config = {
         ]
       },
 
-      // SCSS
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          'css-loader',
-          'autoprefixer-loader',
-          'sass-loader?includePaths[]=' + encodeURIComponent(libPath)
-        ]
-      },
-
       // Allow `require`ing image/font files (also when included in CSS)
       // Inline assets under 5kb as Base64 data URI, otherwise uses `file-loader`
       {
@@ -92,7 +82,6 @@ let config = {
     noInfo: true,
     inline: true
   }
-
 };
 
 if (appEnv !== 'production') {
