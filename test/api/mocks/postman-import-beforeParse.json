@@ -36,8 +36,12 @@
 				},
 				"query": [
 					{
-						"key": "ben",
-						"value": "ben"
+						"key": "test",
+						"value": "test"
+					},
+					{
+						"key": "test1",
+						"value": "test"
 					}
 				]
 				
