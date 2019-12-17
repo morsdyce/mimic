@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"mocks": [
+		{
+			"id": "POSTMAN_0_6afb6c77-7888-47b3-b30e-f8b8870d496c",
+			"active": true,
+			"method": "GET",
+			"url": "https://www.ynet.co.il?ben=ben",
+			"headers": {
+				"User-Agent": "niantic",
+				"Content-Type": "application/json"
+			},
+			"params": "",
+			"response": {
+			"delay": 0,
+			"status": 200,
+			"headers": {
+				"Content-Type": "application/json"
+			},
+			"body": "hi hi hi hi"
+			},
+			"name": "https://www.ynet.co.il",
+			"origin": "PostMan",
+			"groupId": "6afb6c77-7888-47b3-b30e-f8b8870d496c"
+		}
+	],
+	"groups": [
+		[	{
+			"id": "6afb6c77-7888-47b3-b30e-f8b8870d496c",
+			"name": "Test",
+			"active": true
+		  }
+		]
+	]
+}
