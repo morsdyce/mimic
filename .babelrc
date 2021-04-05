@@ -5,6 +5,7 @@
   ],
   "plugins": [
     "lodash",
-    "styled-components"
+    "styled-components",
+    "@babel/plugin-proposal-class-properties"
   ]
 }

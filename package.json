@@ -52,12 +52,13 @@
   "homepage": "",
   "devDependencies": {
     "@babel/core": "7.13.14",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
     "@babel/preset-env": "7.13.12",
+    "@babel/preset-react": "7.13.13",
     "autoprefixer-loader": "3.2.0",
     "babel-loader": "8.2.2",
     "babel-plugin-lodash": "3.3.2",
     "babel-plugin-styled-components": "1.12.0",
-    "@babel/preset-react": "7.13.13",
     "clean-webpack-plugin": "0.1.19",
     "codemirror": "5.37.0",
     "css-loader": "0.28.11",
@@ -106,7 +107,19 @@
     "xhook": "1.4.8"
   },
   "jest": {
-    "testMatch": ["**/test/ui/**/*.js?(x)"]
+    "globals": {
+      "__VERSION": "1.0.0",
+      "__ENV": "test"
+    },
+    "testMatch": [
+      "**/test/ui/**/*.js?(x)"
+    ],
+    "moduleNameMapper": {
+      "ui/(.*)": [
+        "<rootDir>/lib/ui/$1"
+      ],
+      "api((\\/.*$)|$)": "<rootDir>/lib/api/$1"
+    }
   },
   "collective": {
     "type": "opencollective",
