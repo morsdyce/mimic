@@ -13,6 +13,7 @@
     "start:integration-server": "http-server .",
     "test:integration": "npm run build ; sleep 5 ; npm run start:integration-server & nightwatch ; pkill node",
     "test:integration-nobuild": "npm run start:integration-server & nightwatch ; pkill node",
+    "test:ui": "jest",
     "publish:next": "npm run build && npm publish --tag next"
   },
   "files": [
@@ -50,16 +51,14 @@
   "license": "MIT",
   "homepage": "",
   "devDependencies": {
+    "@babel/core": "7.13.14",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/preset-env": "7.13.12",
+    "@babel/preset-react": "7.13.13",
     "autoprefixer-loader": "3.2.0",
-    "babel-core": "6.26.3",
-    "babel-loader": "7.1.4",
+    "babel-loader": "8.2.2",
     "babel-plugin-lodash": "3.3.2",
-    "babel-plugin-styled-components": "1.5.1",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-flow": "6.23.0",
-    "babel-preset-react": "6.24.1",
+    "babel-plugin-styled-components": "1.12.0",
     "clean-webpack-plugin": "0.1.19",
     "codemirror": "5.37.0",
     "css-loader": "0.28.11",
@@ -68,6 +67,7 @@
     "http-server": "0.11.1",
     "http-status-codes": "1.3.0",
     "jasmine-core": "2.6.4",
+    "jest": "26.6.3",
     "js-beautify": "1.7.5",
     "karma": "1.7.0",
     "karma-chrome-launcher": "2.2.0",
@@ -105,6 +105,21 @@
     "webpack-dev-server": "3.1.4",
     "worker-loader": "1.1.1",
     "xhook": "1.4.8"
+  },
+  "jest": {
+    "globals": {
+      "__VERSION": "1.0.0",
+      "__ENV": "test"
+    },
+    "testMatch": [
+      "**/test/ui/**/*.js?(x)"
+    ],
+    "moduleNameMapper": {
+      "ui/(.*)": [
+        "<rootDir>/lib/ui/$1"
+      ],
+      "api((\\/.*$)|$)": "<rootDir>/lib/api/$1"
+    }
   },
   "collective": {
     "type": "opencollective",

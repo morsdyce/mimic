@@ -1,12 +1,11 @@
 {
   "presets": [
-    ["es2015", { "modules": false }],
-    "react"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
   "plugins": [
     "lodash",
-    "transform-object-rest-spread",
-    "transform-class-properties",
-    "styled-components"
+    "styled-components",
+    "@babel/plugin-proposal-class-properties"
   ]
 }
