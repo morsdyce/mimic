@@ -1,9 +1,9 @@
 Mimic
 ==========
 
-[![Build Status](https://travis-ci.org/500tech/mimic.svg?branch=master)](https://travis-ci.org/500tech/mimic)
+[![Build Status](https://travis-ci.org/500tech/mimic.svg?branch=master)](https://travis-ci.org/morsdyce/mimic)
 [![npm version](https://badge.fury.io/js/mimic.svg)](https://badge.fury.io/js/mimic)
-[![Known Vulnerabilities](https://snyk.io/test/github/500tech/mimic/badge.svg)](https://snyk.io/test/github/500tech/mimic)
+[![Known Vulnerabilities](https://snyk.io/test/github/500tech/mimic/badge.svg)](https://snyk.io/test/github/morsdyce/mimic)
 
 Seamless client side mocking [https://mimic.js.org](https://mimic.js.org)
 
@@ -124,7 +124,7 @@ License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 500Tech
+Copyright (c) 2015 Maayan Glikser
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
