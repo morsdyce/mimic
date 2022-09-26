@@ -80,7 +80,7 @@
     "karma-webpack": "2.0.3",
     "lodash": "4.17.4",
     "lodash-webpack-plugin": "0.11.4",
-    "nightwatch": "0.9.16",
+    "nightwatch": "2.3.9",
     "prop-types": "15.5.10",
     "raw-loader": "0.5.1",
     "react": "15.5.4",
